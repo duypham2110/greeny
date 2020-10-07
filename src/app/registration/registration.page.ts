@@ -21,23 +21,14 @@ export class RegistrationPage implements OnInit {
   ngOnInit() {
   }
 
-  signUp(email, password) {
-    if(this.local.RegisterUser(email.value, password.value)){
-      window.alert('Thêm thành công!')
-      this.router.navigate(['login']);
-    } else {
-      window.alert('Đã tồn tài!')
-    }
-  }
-
   // SIGNUP WITH FIREBASE
-  // signUp(email, password) {
-  //   this.authService.RegisterUser(email.value, password.value)
-  //     .then((res) => {
-  //       window.alert('Thêm thành công!')
-  //       this.router.navigate(['login']);
-  //     }).catch((error) => {
-  //       window.alert(error.message)
-  //     })
-  // }
+  signUp(email, password) {
+    this.authService.RegisterUser(email.value, password.value)
+      .then((res) => {
+        window.alert('Thêm thành công!')
+        this.router.navigate(['login']);
+      }).catch((error) => {
+        window.alert(error.message)
+      })
+  }
 }

@@ -21,11 +21,11 @@ export class AuthenticationService {
         this.ngFireAuth.authState.subscribe(user => {
             if (user) {
                 this.userData = user;
-               //localStorage.setItem('user', JSON.stringify(this.userData));
-                //JSON.parse(localStorage.getItem('user'));
+               localStorage.setItem('user', JSON.stringify(this.userData));
+                JSON.parse(localStorage.getItem('user'));
             } else {
-                //localStorage.setItem('user', null);
-                //JSON.parse(localStorage.getItem('user'))
+                localStorage.setItem('user', null);
+                JSON.parse(localStorage.getItem('user'))
             }
         })
     }
@@ -45,9 +45,8 @@ export class AuthenticationService {
 
     // Returns true when user is looged in
     get isLoggedIn(): boolean {
-        return false
-        // const user = JSON.parse(localStorage.getItem('user'));
-        // return (user !== null && user.emailVerified !== false) ? true : false;
+         const user = JSON.parse(localStorage.getItem('user'));
+         return (user !== null && user.emailVerified !== false) ? true : false;
     }
 
     GoogleAuth() {
@@ -59,10 +58,11 @@ export class AuthenticationService {
         return this.ngFireAuth.signInWithPopup(provider)
             .then((result) => {
                 this.ngZone.run(() => {
-                    this.router.navigate(['home']);
+                    this.router.navigate(['tabs']);
                 })
                 this.SetUserData(result.user);
             }).catch((error) => {
+                window.alert('AuthLogin')
                 window.alert(error)
             })
     }
@@ -71,9 +71,11 @@ export class AuthenticationService {
     SetUserData(user) {
         const userRef: AngularFirestoreDocument<any> = this.afStore.doc(`users/${user.uid}`);
         const userData: User = {
+            uid: user.uid,
             email: user.email,
-            amount: 1000,
-            password: user.password
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+            
         }
         return userRef.set(userData, {
             merge: true
@@ -82,7 +84,7 @@ export class AuthenticationService {
 
     SignOut() {
         return this.ngFireAuth.signOut().then(() => {
-           // localStorage.removeItem('user');
+           localStorage.removeItem('user');
             this.router.navigate(['login'])
         })
     }

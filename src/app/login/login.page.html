@@ -1,56 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Đăng nhập</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sign in User</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Hệ thống ATM</ion-card-title>
-    </ion-card-header>
-    <form>
-      <ion-item lines="full">
-        <ion-label position="floating">Email:</ion-label>
-        <ion-input type="text" #email required></ion-input>
-      </ion-item>
+  <form>    
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" #email required></ion-input>
+    </ion-item> 
 
-      <ion-item lines="full">
-        <ion-label position="floating">Mật khẩu:</ion-label>
-        <ion-input type="password" #password required></ion-input>
-      </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" #password required></ion-input>
+    </ion-item>
 
-      <ion-row>
-        <ion-col>
-          <ion-button type="submit" (click)="logIn(email, password)" expand="block">Đăng nhập</ion-button>
-        </ion-col>
-      </ion-row>
+    <ion-row>
+      <ion-col> 
+      <ion-button type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
+      </ion-col>
+    </ion-row>
 
-      <ion-row>
-        <ion-col>
-          <ion-button routerLink="/registration" type="submit" expand="block">Thêm</ion-button>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          <ion-button (click)="showAll()"expand="block">Xem tất cả</ion-button>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          <ion-button  (click)="delete(email, password)" expand="block">Xóa</ion-button>
-        </ion-col>
-      </ion-row>
-    </form>
-  </ion-card>
-
-</ion-content>
-
-
-<!-- 
-    <span class="divider line one-line">chưa có tài khoản?</span>
+    <span class="divider line one-line">or</span>
 
     <ion-row>
       <ion-col> 
@@ -59,19 +34,19 @@
          color="danger"
          (click)="authService.GoogleAuth()" 
          expand="block">
-           Đăng nhập bằng Google
+           Login with Google
         </ion-button>
       </ion-col>
     </ion-row>
 
-    <span class="divider line one-line">hoặc</span>
+    <span class="divider line one-line">or</span>
 
     <ion-row>
       <ion-col> 
-        <ion-button 
-         routerLink="/registration"
-         expand="block">
-           Đăng ký tài khoản mới
-        </ion-button>
+      <ion-button routerLink="/registration" expand="block">Register</ion-button>
       </ion-col>
-    </ion-row> -->
+    </ion-row>
+
+
+  </form>
+</ion-content>
