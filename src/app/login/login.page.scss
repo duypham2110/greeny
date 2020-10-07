@@ -1,0 +1,55 @@
+.small-text {
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.divider {
+    display: flex;
+    
+    &:before,
+    &:after {
+      content: "";
+      flex: 1;
+    }
+}
+  
+.line {
+    align-items: center;
+    margin: 1em -1em;
+    color: #cccccc;
+    
+    &:before,
+    &:after {
+      height: 1px;
+      margin: 0 1em;
+    }
+} 
+
+.one-line {
+    &:before,
+    &:after {
+       background: #cccccc;
+    }
+}
+
+ion-card {
+  height: 90%;
+  margin-top: 10%;
+  padding: 20px;
+}
+
+ion-card ion-item {
+  margin: 30px 0;
+}
+
+ion-button {
+  height: 50px;
+}
+
+ion-card-title {
+  text-align: center;
+  margin: 20px;
+}

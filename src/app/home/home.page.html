@@ -1,0 +1,35 @@
+<!-- Em tập trung làm phần service để kết nói dữ liệu nên giao diên hơi xâu @@ -->
+<!-- Mong thầy bỏ qua -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Hệ thống ATM
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Danh mục:</ion-card-title>
+    </ion-card-header>
+    <ion-row>
+      <ion-col>
+        <ion-button routerLink="/detail" expand="block">Xem thông tin tài khoản</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button (click)="takePicture()">
+          <ion-icon expand="block" name="camera"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" (click)="authService.SignOut()" expand="block" color="danger">Đăng xuất
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
