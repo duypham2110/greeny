@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication-service';
-import { LocalStorageService } from '../../services/localstorage-service';
 
 
 @Component({
@@ -14,8 +13,7 @@ export class RegistrationPage implements OnInit {
   constructor(
     //dependency injection 
     public authService: AuthenticationService,
-    public router: Router,
-    public local: LocalStorageService
+    public router: Router
   ) { }
 
   ngOnInit() {
