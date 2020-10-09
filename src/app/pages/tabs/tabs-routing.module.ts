@@ -8,7 +8,7 @@ import { ProfilePage } from '../profile/profile.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
@@ -26,6 +26,15 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../products/products.module#ProductsPageModule'
+          }
+        ]
+      },
+      {
+        path: 'detail',
+        children: [
+          {
+            path: '',
+            loadChildren: '../detail/detail.module#DetailPageModule'
           }
         ]
       },
@@ -56,7 +65,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/tabs/home',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

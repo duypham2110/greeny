@@ -7,6 +7,21 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let product of products">
+      <ion-avatar slot="start">
+        <ion-img [src]="product.images"></ion-img>
+      </ion-avatar>
+      <ion-label>{{ product.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button routerLink="/tabs/detail">Detail</ion-button>
 </ion-content>
+
+<!-- 
+- ion-list
+    - ion-item *ngFor
+        - ion-avatar
+            -ion-img [src]
+        - ion-label {{ }} -->
