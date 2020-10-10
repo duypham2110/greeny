@@ -23,17 +23,6 @@ export class HomePage {
 
   }
 
-  add(){
-    this.pdService.addPlace('v1',
-      'vegetable',
-       'carrot',
-       100,
-       'https://i5.walmartimages.ca/images/Enlarge/686/686/6000198686686.jpg',
-       100);
-    
-    console.log('add');
-  }
-
   // takePicture() {
   //   const options: CameraOptions = {
   //     quality: 100,

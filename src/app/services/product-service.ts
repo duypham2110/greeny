@@ -136,49 +136,4 @@ export class ProductService {
             return id === productTypes.id;
         })};
     }
-
-    addPlace( 
-        id: string,
-        type: string,
-        name: string,
-        price: number,
-        images: string,
-        quantity: number
-      ) {
-        let generatedId: string;
-        const newPlace = new Product(
-            id,
-            type,
-            name,
-            price,
-            images,
-            quantity
-        );
-        return this.http
-          .post<{ name: string }>(
-            'https://cho-ha-non.firebaseio.com/products.json',
-            {
-              ...newPlace,
-              id: null
-            }
-          )
-          .pipe(
-            switchMap(resData => {
-              generatedId = resData.name;
-              return this.product;
-            }),
-            take(1),
-            tap(places => {
-              newPlace.id = generatedId;
-              this._products.next(places.concat(newPlace));
-            })
-          );
-        // return this.places.pipe(
-        //   take(1),
-        //   delay(1000),
-        //   tap(places => {
-        //     this._places.next(places.concat(newPlace));
-        //   })
-        // );
-      }
 }
