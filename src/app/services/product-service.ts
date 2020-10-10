@@ -3,11 +3,20 @@ import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductType } from '../models/product-type';
 
+import { HttpClient } from '@angular/common/http';
+
+import { BehaviorSubject } from 'rxjs';
+import { take, map, tap, delay, switchMap } from 'rxjs/operators';
+
 @Injectable({
     providedIn: 'root'
 })
 
 export class ProductService {
+    private _products = new BehaviorSubject<Product[]>([]);
+    get product() {
+      return this._products.asObservable();
+    }
     private productTypes: ProductType[] = [
         {
             id: '1',
@@ -103,8 +112,7 @@ export class ProductService {
         }
     ];
 
-    constructor() {
-    }
+    constructor(private http:HttpClient) {}
 
     getProducts() {
         /// ...syntax means return the copy of the array but not the array itself ???

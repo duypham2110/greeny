@@ -16,12 +16,12 @@ export class HomePage {
   constructor(
     public authService: AuthenticationService,
     public camera: Camera,
-    pdService: ProductService
+    public pdService: ProductService
   ) { 
     this.products = pdService.getProducts();
     this.productTypes = pdService.getProductTypes();
-  }
 
+  }
 
   // takePicture() {
   //   const options: CameraOptions = {

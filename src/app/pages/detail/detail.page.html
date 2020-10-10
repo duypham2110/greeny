@@ -7,10 +7,14 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col><ion-img [src]="loadedProduct.images"></ion-img></ion-col>
+      <ion-col><ion-img [src]="imgUrl"></ion-img></ion-col>
     </ion-row>
     <ion-row>
       <h1>{{loadedProduct.name}}</h1>
+    </ion-row>
+    <ion-row>
+      <ion-img (click)="changeImg()" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg"></ion-img>
+      <ion-img (click)="changeImg1()" src="https://i5.walmartimages.ca/images/Enlarge/686/686/6000198686686.jpg"></ion-img>
     </ion-row>
   </ion-grid>
 </ion-content>
