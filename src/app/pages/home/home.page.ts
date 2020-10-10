@@ -16,12 +16,23 @@ export class HomePage {
   constructor(
     public authService: AuthenticationService,
     public camera: Camera,
-    pdService: ProductService
+    public pdService: ProductService
   ) { 
     this.products = pdService.getProducts();
     this.productTypes = pdService.getProductTypes();
+
   }
 
+  add(){
+    this.pdService.addPlace('v1',
+      'vegetable',
+       'carrot',
+       100,
+       'https://i5.walmartimages.ca/images/Enlarge/686/686/6000198686686.jpg',
+       100);
+    
+    console.log('add');
+  }
 
   // takePicture() {
   //   const options: CameraOptions = {
