@@ -1,11 +1,11 @@
-import { ProductType } from './product-type';
-
-export interface Product {
-    id: string;
-    type: string;
-    name: string;
-    price: number;
-    images: string;
-    quantity: number;
-    // donvi: enum;    
+export class Product {
+    constructor(
+        public id: string,
+        public type: string,
+        public name: string,
+        public price: number,
+        public images: string,
+        public quantity: number
+    ) { }
 }
+
