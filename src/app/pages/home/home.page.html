@@ -8,8 +8,18 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-label>Types</ion-label>
   <ion-list>
-    <ion-item *ngFor="let product of products">
+    <ion-item *ngFor="let productType of productTypes">
+      <ion-avatar slot="start">
+        <ion-img [src]="productType.images"></ion-img>
+      </ion-avatar>
+      <ion-label>{{ productType.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-label>Product</ion-label>
+  <ion-list>
+    <ion-item *ngFor="let product of products" [routerLink]="['../../products', product.id]">
       <ion-avatar slot="start">
         <ion-img [src]="product.images"></ion-img>
       </ion-avatar>

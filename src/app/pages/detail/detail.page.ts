@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { timeStamp } from 'console';
 import { AuthenticationService } from '../../services/authentication-service';
+import { ProductService } from '../../services/product-service';
+import { Product } from '../../models/product';
 
 
 @Component({
@@ -9,15 +12,23 @@ import { AuthenticationService } from '../../services/authentication-service';
   styleUrls: ['./detail.page.scss'],
 })
 export class DetailPage implements OnInit {
-  email: any;
-  amount: any;
+  loadedProduct: Product;
 
   constructor(
     //Dependency Injection
-    public authService: AuthenticationService
-  ) {}
+    private authService: AuthenticationService,
+    private activatedRoute: ActivatedRoute,
+    private pdService: ProductService
+  ) { }
 
   ngOnInit() {
+    this.activatedRoute.paramMap.subscribe(paramMap => {
+      if (!paramMap.has('id')) {
+        return;
+      }
+      const id = paramMap.get('id');
+      this.loadedProduct = this.pdService.getProduct(id);
+      console.log(this.loadedProduct);
+    });
   }
-
 }

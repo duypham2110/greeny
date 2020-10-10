@@ -26,14 +26,9 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../products/products.module#ProductsPageModule'
-          }
-        ]
-      },
-      {
-        path: 'detail',
-        children: [
+          },
           {
-            path: '',
+            path: ':id',
             loadChildren: '../detail/detail.module#DetailPageModule'
           }
         ]
