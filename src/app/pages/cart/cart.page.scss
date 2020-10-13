@@ -1,0 +1,270 @@
+@font-face {
+  font-family: 'Saira Extra Condensed';
+  src: url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,500,700');
+}
+ion-item {
+  padding-right: 8px;
+}
+
+.md ion-item {
+  --inner-padding-end: 10px;
+}
+
+.item-inner {
+  padding: 0 !important;
+}
+
+img.logo-google {
+  height: 4rem;
+}
+
+.box-input {
+  border: .5px solid;
+  height: 3.5rem;
+  margin: 1rem auto;
+  border-radius: 3px;
+}
+
+#btn-direction {
+  float: right;
+  margin-top: 1.5rem;
+  color: aliceblue;
+  font-weight: 600;
+  background-color: #1a73e8;
+  border-radius: 3px;
+  width: 8rem;
+  bottom: 11%;
+  right: 7%;
+  position: absolute;
+  text-transform: capitalize;
+}
+
+a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 24px ;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+
+#footer-bottom {
+  left: 0;
+  right: 0;
+  bottom: 9%;
+  margin: auto;
+  width: 440px;
+  display: flex;
+  position: absolute;
+}
+.languages {
+  width: 20%;
+}
+ul.nav-footer {
+  width: 80%;
+  right: 0;
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+}
+
+.nav-footer .nav-list {
+  text-align: right;
+  width: 33.3%;
+}
+
+.nav-footer .nav-list a {
+  padding: 1px;
+  color: #757575;
+  font-size: .75rem;
+}
+
+.weight-500 {
+  font-weight: 500;
+}
+
+.pdl-12px {
+  left: 11px;
+  padding-bottom: 0;
+}
+
+.top-right {
+  top: -6px;
+  right: 0;
+  position: absolute;
+}
+
+.backTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.title-content {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.ver-50 {
+  top: 9px;
+}
+.ver-8 {
+top: 11px;
+}
+
+.t-15rem {
+  font-size: 1.2rem;
+}
+
+.mid {
+  text-align: center;
+}
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.ios .d-none {
+  display: none;
+}
+
+.title-bold {
+  font-weight: 600;
+  font-size: .8rem;
+}
+
+.text-12 {
+  font-size: .7rem;
+}
+
+.text-14 {
+  font-size: .85rem;
+}
+
+.btn-href {
+  color: #1a73e8;
+  text-transform: initial;
+  font-size: .6rem;
+}
+
+.bg-color-title {
+  --ion-background-color:#f6f6f6;
+}
+
+ion-item .md{
+  padding:0px !important;
+}
+
+.fl-r3px {
+  right: 3px;
+}
+
+.btn-sell {
+  color: #757575;
+    width: 80%;
+    --background: #e0dfdf50;
+    opacity: 0.4;
+    font-size: 9px;
+    text-transform: inherit;
+  filter: alpha(opacity=40); /* msie */
+}
+
+.d-flex {
+  display: flex;
+}
+
+.ios ion-item.product {
+
+.r-0 {
+  right: -5px;
+  bottom: -6px;
+  position: absolute;
+}
+
+.r-5 {
+  right: 40px;
+  bottom: 4px;
+  position: absolute;
+}
+
+.r-8 {
+  right: 50px;
+  bottom: -7px;
+  position: absolute;
+}
+
+.p-0 {
+  padding: 0;
+  top: 8px;
+}
+
+}
+
+.md ion-item.product {
+  ion-grid {
+    padding: 5px;
+  }
+
+.r-0 {
+  right: 0;
+  bottom: -6px;
+  position: absolute;
+}
+
+.r-5 {
+  right: 40px;
+  bottom: 4px;
+  position: absolute;
+}
+
+.r-8 {
+  right: 50px;
+  bottom: -7px;
+  position: absolute;
+}
+
+.p-0 {
+  padding: 0;
+  top: 8px;
+}
+
+}
+
+.mg-l8 {
+  margin-left: 8px
+}
+.mg-t5 {
+  margin-top: 5px;
+}
+
+.text-r{
+  text-align: right;
+}
+
+.btn-footer {
+  width: 100%;
+}
+
+.row {
+  padding: 5px 15px 7px;
+  background: #fcf8f8;
+  .btn-footer {
+  width: 100%;
+  }
+}
+
+.ios .row {
+  padding: 0 13px 5px;
+  background: #fcf8f8;
+  
+  .btn-footer {
+    width: 100%;
+    padding: 2px;
+  }
+}
