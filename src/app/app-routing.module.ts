@@ -10,7 +10,11 @@ const routes: Routes = [
   },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'registration', loadChildren: './pages/registration/registration.module#RegistrationPageModule' },
-  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' }
+  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },  {
+    path: 'bill',
+    loadChildren: () => import('./pages/bill/bill.module').then( m => m.BillPageModule)
+  }
+
 ];
 
 @NgModule({
