@@ -16,6 +16,18 @@ export class ProductService {
     private _products = new BehaviorSubject<Product[]>([]);
     get product() {
       return this._products.asObservable();
+  }
+
+  private carts = {
+    username: 'Hieu dep trai',
+    address: 'cau giay',
+    products: [{
+      id: 'v1',
+      quantity: 2
+    }, {
+        id: 'f1',
+      quantity: 3
+    }]
     }
     private productTypes: ProductType[] = [
         {

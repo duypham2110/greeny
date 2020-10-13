@@ -52,12 +52,12 @@
       <ion-button class="btn-href" fill="clear" size="small">Mua thêm</ion-button>
     </ion-col>
   </ion-item>
-  <ion-item class="product">
+  <ion-item class="product" *ngFor="let productType of productTypes">
     <ion-grid>
       <ion-row>
         <ion-col size="2" class="p-0">
           <div class="ver-50">
-            <img src="../../assets/images/nho_mau_don.jpg" alt="">
+            <img [src]="productType.images" alt="">
           </div>
         </ion-col>
         <ion-col class="pdl-12px" size="10">
