@@ -1,20 +1,85 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Chi tiết</ion-title>
+    <ion-title>
+      Blank
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col><ion-img [src]="imgUrl"></ion-img></ion-col>
-    </ion-row>
-    <ion-row>
-      <h1>{{loadedProduct.name}}</h1>
-    </ion-row>
-    <ion-row>
-      <ion-img (click)="changeImg()" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg"></ion-img>
-      <ion-img (click)="changeImg1()" src="https://i5.walmartimages.ca/images/Enlarge/686/686/6000198686686.jpg"></ion-img>
-    </ion-row>
-  </ion-grid>
+<ion-content [fullscreen]="true">
+  <div class="img">
+    <!-- <div>
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/NYCS-bull-trans-2.svg/1200px-NYCS-bull-trans-2.svg.png" style="width:100%;height:100%;"></ion-img>
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/NYCS-bull-trans-2.svg/1200px-NYCS-bull-trans-2.svg.png" style="width:100%;height:100%;"></ion-img>
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+      <ion-img src="../../assets/cai-bap.jpg" style="width:100%;height:100%;"></ion-img>
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+      <ion-img src="../../assets/cai-bap.jpg" ></ion-img>
+    </div> -->
+    <ion-img [src]="imgUrl"></ion-img>
+    <!-- <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a> -->
+    <!-- </div> -->
+  </div>
+
+  <div class="tach"></div>
+  <div class="list">
+    <div class="row">
+      <ion-item *ngFor="let image of loadedProduct.images">
+        <div class="column">
+          <ion-img class="demo cursor" (click)="changeImg(image)" [src]="image"></ion-img>
+        </div>
+      </ion-item>
+    </div>
+  </div>
+  <div class="tach"></div>
+  <div class="price">
+    <h5 style="margin: 0%;padding-top: 10px;padding-left: 20px;">Đào Đà lạt</h5>
+    <p style="color:#58bc00;font-size:120%;margin: 0%;padding-left: 20px;">270.000đ</p>
+  </div>
+  <div class="tach"></div>
+  <div class="info">
+    <h5 class="test">Thông tin sản phẩm</h5>
+    <p class="test">Xuất xứ:</p>
+    <p class="test">Loại: Rau chân ngan</p>
+
+  </div>
+  <div class="tach"></div>
+
+
+  <div>
+    <h5>Mô tả sản phẩm</h5>
+    <p>Put simply, the public aspect of blockchains generally implies three interrelated things: 1)
+      Anyone can use the blockchain, 2) anyone can serve as a validating node of the blockchain, and 3)
+      anyone who becomes a node can, in turn, act as part of that blockchain's governance mechanism. In theory,
+      this makes blockchains decentralized and democratic structures resistant to undue control or influence from
+      any single party.By contrast, a distributed ledger generally doesn't enable any or most of these public features.
+      It restricts who can use and access it (hence the “permissioned” terminology), and it also restricts who can
+      operate
+      as a node. And in many cases, governance decisions are left to a single centralized company or body. Compared to
+      the
+      ideal of a public, decentralized blockchain, it exists solely to serve the interests of a concentrated group of
+      commercial players and interests. Below is an image detailing how centralized, decentralized and distributed
+      networks are structured:</p>
+
+  </div>
+
+
 </ion-content>
+
+<ion-footer class="footer">
+  <div>
+    <ion-button class="button" expand="block" color="success">Thêm vào giỏ hàng</ion-button>
+  </div>
+</ion-footer>

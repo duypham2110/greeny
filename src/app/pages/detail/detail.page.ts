@@ -21,20 +21,20 @@ export class DetailPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.imgUrl = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg";
     this.activatedRoute.paramMap.subscribe(paramMap => {
       if (!paramMap.has('id')) {
         return;
       }
       const id = paramMap.get('id');
       this.loadedProduct = this.pdService.getProduct(id);
+      this.imgUrl = this.loadedProduct.images[0];
+      console.log('init');
       console.log(this.loadedProduct);
+      console.log(this.loadedProduct.images[0]);
     });
   }
-  changeImg(){
-    this.imgUrl="https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg";
-  }
-  changeImg1(){
-    this.imgUrl="https://i5.walmartimages.ca/images/Enlarge/686/686/6000198686686.jpg";
+  
+  changeImg(url){
+    this.imgUrl=url;
   }
 }
