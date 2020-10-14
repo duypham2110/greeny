@@ -1,31 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Nhà cung cấp    
+      <ion-searchbar placeholder='Tìm kiếm'></ion-searchbar>
     </ion-title>
   </ion-toolbar>
+  <!-- Searchbar disabled -->
+
 </ion-header>
 
-<ion-content [fullscreen]="true" class="main">
-  <div class="producer">
-    <img src="../../assets/img/f99.png" alt="">
-    <div class="content">
-      <h3>ITSu</h3>
-      <p class="address">123 Phù Đổng Thiên Vương, Phường 8, TP.Đà Lạt</p>
-    </div>
+<ion-content [fullscreen]="true">
+  <div class="top">
+    <ul>
+      <li>
+        <a href="#1">Bán chạy</a>
+      </li>
+      <li>
+        <a href="#1">Cơm gà ta</a>
+      </li>
+      <li>
+        <a href="#1">Cơm gà Tam Hoàng</a>
+      </li>
+    </ul>
   </div>
-  <div class="introduce">
-    <h3>Giới thiệu</h3>
-    <p class="intro-content">ITSu là dịch vụ cung cấp trái cây, thực phẩm khi mua sắm trên ứng dụng ITSu. Mang tới những trải nghiệm về sản phẩm tươi ngon, chất lượng nguồn gốc đảm bảo và dinh dưỡng cho tất cả gia đình.</p>
-  </div>
-  <div class="product">
-    <h3>Sản phẩm</h3>
-    <div class="list-product">
-      <img src="../../assets/img/dautay.jpg" alt="">
-      <div class="info-product">
-        <p class="name-product">Dâu tây Đà lạt</p>
-        <p class="price">100.000/hộp</p>
+  <div class="nav">
+    <h4>Bán chạy</h4>
+    <div class="list-rice">
+      <div class="product1" *ngFor="let product of products">
+        <img [src]="product.images" alt="">
+        <div class="content">
+          <p>{{ product.name}}</p>
+          <h4>30.000</h4>
+        </div>
       </div>
     </div>
+
   </div>
 </ion-content>

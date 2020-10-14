@@ -13,6 +13,14 @@ const routes: Routes = [
   { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },  {
     path: 'detail-bill',
     loadChildren: () => import('./pages/detail-bill/detail-bill.module').then( m => m.DetailBillPageModule)
+  },
+  {
+    path: 'producer',
+    loadChildren: () => import('./pages/producer/producer.module').then( m => m.ProducerPageModule)
+  },
+  {
+    path: 'bill',
+    loadChildren: () => import('./pages/bill/bill.module').then( m => m.BillPageModule)
   }
 
 ];

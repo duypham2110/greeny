@@ -30,7 +30,6 @@ export class LoginPage implements OnInit {
         window.alert(error.message);
       })
   }
-
 }
   // LOGIN WITH FIREBASE
   // logIn(email, password) {
