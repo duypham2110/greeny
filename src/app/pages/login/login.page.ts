@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
   logIn(email, password) {
     this.authService.SignIn(email.value, password.value)
       .then((res) => {
-        this.router.navigate(['tabs']);
+        this.router.navigate(['home']);
       }).catch((error) => {
         window.alert(error.message);
       })

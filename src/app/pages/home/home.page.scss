@@ -1,0 +1,49 @@
+* {
+  font-size: 12px;
+}
+
+.backTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mid {
+  text-align: center;
+}
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.text-14 {
+  font-size: .85rem;
+}
+
+
+.ios .d-none {
+  display: none;
+}
+
+.advertise {
+  height: 80px;
+  background-color: antiquewhite;
+}
+
+.index {
+  height: 80px;
+  display: flex;
+  text-align: center;
+}
+
+.products {
+  height: 120px;
+  background-color: antiquewhite;
+}
+
+.list-img-products {
+  height: 80px;
+  background-color: aquamarine;
+}
