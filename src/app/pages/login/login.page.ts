@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
     public authService: AuthenticationService,
     public router: Router,
     public modalController: ModalController
-  ) {  }
+  ) { }
 
   ngOnInit() {
   }
@@ -30,7 +30,6 @@ export class LoginPage implements OnInit {
         window.alert(error.message);
       })
   }
-
 }
   // LOGIN WITH FIREBASE
   // logIn(email, password) {
