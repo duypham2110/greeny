@@ -14,6 +14,31 @@ ion-item {
   padding: 0 !important;
 }
 
+.backTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mid {
+  text-align: center;
+}
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.text-14 {
+  font-size: .85rem;
+}
+
+
+.ios .d-none {
+  display: none;
+}
+
 img.logo-google {
   height: 4rem;
 }
@@ -97,11 +122,6 @@ ul.nav-footer {
   position: absolute;
 }
 
-.backTop {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 .title-content {
   font-size: 1rem;
@@ -120,20 +140,6 @@ top: 11px;
   font-size: 1.2rem;
 }
 
-.mid {
-  text-align: center;
-}
-
-.title-header {
-  font-weight: 600;
-  font-size: 1rem;
-  text-align: center;
-}
-
-.ios .d-none {
-  display: none;
-}
-
 .title-bold {
   font-weight: 600;
   font-size: .8rem;
@@ -141,10 +147,6 @@ top: 11px;
 
 .text-12 {
   font-size: .7rem;
-}
-
-.text-14 {
-  font-size: .85rem;
 }
 
 .btn-href {
