@@ -25,35 +25,69 @@
   #container a {
     text-decoration: none;
   }
-  .list-product{
-    display: flex;
-    border-bottom: 2px solid #d4d4d4;
-      padding-bottom: 11px;
-      margin: 15px;
+  .product1, .product2{
+    margin-top: 10px;
   }
-  p.name-product{
-    margin-left: 20px;
-    margin-top: 0px;
+  .product1{
+    float: left;
+    width: 50%
   }
-  p.price{
-    margin: 0 0 0 20px;
-    color: #119a11;
+  .product2{
+    float: left;
+    width: 50%;
+  }
+  .list-rice img{
+    width: 165px;
+    text-align: center;
+  }
+  .list-rice{
+    margin-left: 10px;
+  }
+  .content p{
+    width: 85%;
+  }
+  .top{
+    border-bottom: 1px solid #6a6464;
+    margin-bottom: 35px;
+  }
+  .nav h4{
+    margin-left: 10px;
+    font-weight: 600;
+    color: #464343;
+  }
+  .top ul{
+    padding: 0px;
+    text-align: center;
+  }
+  .top ul li{
+    list-style: none;
+    display: inline;
+  }
+  .top li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    transition: linear 0.4s;
+    font-size: 100%;
+  }
+  .content p{
+    margin: 5px 0px 0px 0px;
+  }
+  .content h4{
     font-weight: bold;
   }
-  .introduce{
-    border-bottom: 2px solid #d4d4d4;
-    padding-bottom: 11px;
-    margin: 15px;
+  .top ul li:hover a{
+    color: green;
+
   }
-  .product{
-    margin: 15px;
+  .top li:hover{
+    border-bottom: 3px solid green;
+     
   }
-  .producer{
-    display: flex;
-    margin-top: 10px;
-    margin: 15px;
-  }
-  .content{
-    margin-left: 10px;
+
+  ion-searchbar{
+    --border-radius: 25px;
+    --icon-color:green;
+    --placeholder-color: grey;
   }
   
