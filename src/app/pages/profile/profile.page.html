@@ -1,9 +1,56 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-grid>
+      <ion-row >
+        <ion-col size="2">
+          <div>
+           
+          </div>
+        </ion-col >
+        <ion-col size="8">
+          <div>
+            <ion-title> <h2 class="auth-title">
+              Thông tin
+            </h2></ion-title>
+          </div>
+        </ion-col>
+        <ion-col size="2">
+          <div>
+            
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button routerLink="/login">Login</ion-button>
+<ion-content class="profile-content">
+  
+  <ion-row>
+    <ion-col size="12">
+      <img src="{{photo}}" alt="">
+      
+    </ion-col>
+    <ion-col size="12">
+      <h4> Xin chào {{name}}</h4>
+      
+    </ion-col>
+    <ion-col size="12">
+      <h4>Email {{ email }}</h4>
+      <p>
+       
+      </p>
+    </ion-col>
+    <ion-col size="12">
+     
+      <h4>Số điện thoại {{ phoneNumber }}</h4>
+    </ion-col>
+    <ion-col size="12">
+      <ion-button type ="blank" expand="block" fill="outline" color="primary" (click)=resetPassword() >Đặt lại mật khẩu</ion-button>
+    </ion-col>
+    <ion-col size="12">
+      <ion-button  expand="block" fill="outline" color="primary" (click)=signOut() >Đăng xuất</ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>
