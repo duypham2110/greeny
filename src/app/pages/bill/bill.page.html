@@ -1,13 +1,15 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <div>
       <ion-buttons class="backTop" slot="start">
-        <ion-back-button icon="chevron-back-outline" defaultHref="login"></ion-back-button>
+        <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
       </ion-buttons>
     </div>
-    <ion-title class="title-header">
-      Đơn hàng
-    </ion-title>
+    <ion-row>
+      <ion-col class="mid">
+        <ion-title class="title-header">Đơn hàng của tôi</ion-title>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
@@ -68,7 +70,7 @@
   </ion-item>
   <ion-item>
     <ion-col size="4">
-      <img src="../../assets/images/nho_mau_don.jpg" alt="">
+      <img src="../../../assets/images/background-img-organic.jpg" alt="">
     </ion-col>
     <ion-col size="8">
       <ion-note class="font-normal text-14 d-block">Những kẻ xuất chúng</ion-note>

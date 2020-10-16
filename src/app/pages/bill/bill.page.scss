@@ -3,14 +3,16 @@
   src: url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,700');
 }
 
-.md ion-item {
-  --inner-padding-end: 10px;
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-.item-inner {
-  padding: 0 !important;
+.mid {
+  text-align: center;
 }
-
 
 .backTop {
   position: absolute;

@@ -16,6 +16,6 @@ export class DetailBillPage implements OnInit {
   }
 
   detailBill() {
-    this.router.navigate(['tabs']);
+    this.router.navigate(['tabs/bill']);
   }
 }
