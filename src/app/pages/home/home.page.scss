@@ -3,8 +3,9 @@
 }
 
 ion-item {
-  --padding-start: 8px;
+  --padding-start: 0;
   --inner-padding-end: 0;
+  padding-left: 8px;
   padding-right: 8px;
 }
 

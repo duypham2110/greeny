@@ -1,56 +1,58 @@
-<ion-header class="ion-no-border">
+<ion-header>
   <ion-toolbar>
-    <ion-grid>
-      <ion-row >
-        <ion-col size="2">
-          <div>
-           
-          </div>
-        </ion-col >
-        <ion-col size="8">
-          <div>
-            <ion-title> <h2 class="auth-title">
-              Thông tin
-            </h2></ion-title>
-          </div>
-        </ion-col>
-        <ion-col size="2">
-          <div>
-            
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    
+    <div>
+      <ion-buttons class="backTop" slot="start">
+        <ion-back-button icon="chevron-back-outline" defaultHref="tabsgt/home"></ion-back-button>
+      </ion-buttons>
+    </div>
+    <ion-row>
+      <ion-col class="mid">
+        <ion-title class="title-header">Tôi</ion-title>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="profile-content">
-  
-  <ion-row>
+<ion-content>
+  <div class="avatar-div">
+    <img src="../../../assets/images/avt_me.jpg" alt="">
+    <ion-label>Nguyễn Đức Hiếu</ion-label>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="person-circle" class="blue-sky-color"></ion-icon>
+      <ion-label>Trang cá nhân</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="newspaper" class="green-color"></ion-icon>
+      <ion-label>Quản lý đơn hàng</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="cart" class="red-light-color"></ion-icon>
+      <ion-label>Sản phẩm đã mua</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="star" class="yellow-color"></ion-icon>
+      <ion-label>Sản phẩm đã đánh giá</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="notifications-circle" class="purple-color"></ion-icon>
+      <ion-label>Thông báo</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="chatbubbles" class="blue-sky-slight-color"></ion-icon>
+      <ion-label>Chia sẻ phản hồi</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <ion-row class="logout-row">
     <ion-col size="12">
-      <img src="{{photo}}" alt="">
-      
-    </ion-col>
-    <ion-col size="12">
-      <h4> Xin chào {{name}}</h4>
-      
-    </ion-col>
-    <ion-col size="12">
-      <h4>Email {{ email }}</h4>
-      <p>
-       
-      </p>
-    </ion-col>
-    <ion-col size="12">
-     
-      <h4>Số điện thoại {{ phoneNumber }}</h4>
-    </ion-col>
-    <ion-col size="12">
-      <ion-button type ="blank" expand="block" fill="outline" color="primary" (click)=resetPassword() >Đặt lại mật khẩu</ion-button>
-    </ion-col>
-    <ion-col size="12">
-      <ion-button  expand="block" fill="outline" color="primary" (click)=signOut() >Đăng xuất</ion-button>
+      <ion-button expand="block" (click)=signOut()>Đăng xuất</ion-button>
     </ion-col>
   </ion-row>
 </ion-content>
