@@ -8,20 +8,27 @@
 </ion-header>
 
 <ion-content>
-  <form>    
+  <form [formGroup]="signUpForm">    
+
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" #email required></ion-input>
+      <ion-input formControlName = "email" type="text" #email required></ion-input>
     </ion-item> 
 
     <ion-item lines="full">
       <ion-label position="floating">Mật khẩu</ion-label>
-      <ion-input type="password" #password required></ion-input>
+      <ion-input formControlName = "password" type="password" #password required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Xác nhận mật khẩu</ion-label>
+      <ion-input formControlName = "rePassword" type="password" #rePassword required></ion-input>
     </ion-item>
 
     <ion-row>
       <ion-col> 
-      <ion-button type="submit" (click)="signUp(email, password)" expand="block">Đăng ký</ion-button>
+      <ion-button [disabled]="!signUpForm.valid&&!checkPassword(password, rePassword)"
+      type="submit" (click)="signUp(email, password)" expand="block">Đăng ký</ion-button>
       </ion-col>
     </ion-row>
   </form>

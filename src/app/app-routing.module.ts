@@ -21,6 +21,14 @@ const routes: Routes = [
   {
     path: 'bill',
     loadChildren: () => import('./pages/bill/bill.module').then( m => m.BillPageModule)
+  },
+  {
+    path: 'verify-email',
+    loadChildren: () => import('./pages/verify-email/verify-email.module').then( m => m.VerifyEmailPageModule)
+  },
+  {
+    path: 'forget-pass',
+    loadChildren: () => import('./pages/forget-pass/forget-pass.module').then( m => m.ForgetPassPageModule)
   }
 
 ];

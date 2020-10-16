@@ -7,17 +7,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="sign-in-content">
   <form>    
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" #email required></ion-input>
+      <ion-input class="input-item" type="text" #email required></ion-input>
     </ion-item> 
 
     <ion-item lines="full">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" #password required></ion-input>
+      <ion-input class="input-item" type="password" #password required></ion-input>
     </ion-item>
+
+    <ion-row class="sign-up-btn-wrapper">
+      <ion-button class="sign-up-btn" fill="clear" routerLink ="/forget-pass">
+        Quên mật khẩu?
+      </ion-button>
+    </ion-row>
 
     <ion-row>
       <ion-col> 
@@ -25,7 +31,7 @@
       </ion-col>
     </ion-row>
 
-    <span class="divider line one-line">or</span>
+    
 
     <ion-row>
       <ion-col> 
@@ -39,14 +45,24 @@
       </ion-col>
     </ion-row>
 
-    <span class="divider line one-line">or</span>
+    <ion-row>
+      <ion-col> 
+        <ion-button 
+         type="submit" 
+         color="primary"
+         (click)="authService.FacebookAuth()"
+         expand="block">
+           Login with Facebook
+        </ion-button>
+      </ion-col>
+    </ion-row>
 
     <ion-row>
       <ion-col> 
       <ion-button routerLink="/registration" expand="block">Register</ion-button>
       </ion-col>
     </ion-row>
-
+    
 
   </form>
 </ion-content>

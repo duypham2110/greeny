@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>verify-email</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <p h2> Please check your email and click the link sent to verify your email address!</p>
+  </ion-item>
+
+  <ion-button type="submit" (click) = "authService.SendVerificationEmail()">
+    Resend Verification Email
+  </ion-button>
+
+  <ion-button type="submit" routerLink="/tabs/login">
+    Login
+  </ion-button>
+</ion-content>
