@@ -1,13 +1,18 @@
 <ion-header [translucent]="true">
 
   <ion-toolbar>
-    <ion-icon name="chevron-back-outline"></ion-icon>
-    <ion-title>
-      Đơn hàng của tôi
-    </ion-title>
-  </ion-toolbar>
-
-  <ion-toolbar color="success">
+    <ion-toolbar>
+      <div>
+        <ion-buttons class="backTop" slot="start">
+          <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
+        </ion-buttons>
+      </div>
+      <ion-row>
+        <ion-col class="mid">
+          <ion-title class="title-header">Đơn hàng của tôi</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
 
     <ion-segment value="all" color="tertiary" scrollable="true" mode="ios" [(ngModel)]="segmentModel"
       (ionChange)="segmentChanged($event)">

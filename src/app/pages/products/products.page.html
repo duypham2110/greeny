@@ -1,14 +1,20 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      <ion-searchbar placeholder='Tìm kiếm'></ion-searchbar>
-    </ion-title>
+    <ion-row>
+      <div>
+        <ion-buttons class="backTop" slot="start">
+          <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
+        </ion-buttons>
+      </div>
+      <ion-col class="mid">
+        <ion-title class="title-header">Sản phẩm</ion-title>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
-  <!-- Searchbar disabled -->
-
 </ion-header>
 
 <ion-content [fullscreen]="true" id="ion-content">
+  <ion-searchbar placeholder='Tìm kiếm'></ion-searchbar>
   <ion-list class="hot">
     <ion-item lines="none" class="title-item">Bán chạy</ion-item>
     <ion-row class="products-hot-row">

@@ -2,7 +2,7 @@
   <ion-toolbar>
     <div>
       <ion-buttons class="backTop" slot="start">
-        <ion-back-button icon="chevron-back-outline" defaultHref="tabsgt/home"></ion-back-button>
+        <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
       </ion-buttons>
     </div>
     <ion-row>
@@ -15,16 +15,19 @@
 
 <ion-content>
   <div class="avatar-div">
+    <div class="replace_avt_div">
+      <ion-icon name="camera"></ion-icon>
+    </div>
     <img src="../../../assets/images/avt_me.jpg" alt="">
     <ion-label>Nguyễn Đức Hiếu</ion-label>
   </div>
   <ion-list>
-    <ion-item>
+    <ion-item (click)="openMyInfo()">
       <ion-icon name="person-circle" class="blue-sky-color"></ion-icon>
       <ion-label>Trang cá nhân</ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </ion-item>
-    <ion-item>
+    <ion-item (click)="openDetailBill()">
       <ion-icon name="newspaper" class="green-color"></ion-icon>
       <ion-label>Quản lý đơn hàng</ion-label>
       <ion-icon name="chevron-forward-outline"></ion-icon>

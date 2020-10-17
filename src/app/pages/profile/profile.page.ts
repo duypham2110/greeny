@@ -17,10 +17,10 @@ export class ProfilePage implements OnInit {
   photo: any |null;
   name: string | null;
 
-  constructor( public authService: AuthenticationService, public route: Router) { 
-    
-    
-  }
+  constructor(
+    public authService: AuthenticationService,
+    public route: Router
+  ) {}
 
   ngOnInit() {
     console.log(this.userData);
@@ -37,11 +37,15 @@ export class ProfilePage implements OnInit {
     this.name = firebase.auth().currentUser.displayName;
   }
 
-  signOut(){
+  signOut() {
     this.authService.SignOut();
   }
 
-  resetPassword(){
-    
+  openMyInfo() {
+    this.route.navigate(['tabs/my-info']);
+  }
+
+  openDetailBill() {
+    this.route.navigate(['tabs/detail-bill']);
   }
 }
