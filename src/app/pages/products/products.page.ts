@@ -8,8 +8,11 @@ import { AuthenticationService } from '../../services/authentication-service';
 })
 export class ProductsPage implements OnInit {
   currentImage: any;
-  products;
+  products: any;
   productTypes;
+
+  listItem = ["Khuyến mãi", "Bán chạy", "Rau củ", "Trái cây", "Gợi ý cho bạn", "Thực phẩm khác"];
+
   constructor(
     public authService: AuthenticationService,
     public pdService: ProductService
