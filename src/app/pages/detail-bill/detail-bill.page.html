@@ -1,135 +1,162 @@
-<ion-header [translucent]="true">
-
+<ion-header>
   <ion-toolbar>
-    <ion-toolbar>
-      <div>
-        <ion-buttons class="backTop" slot="start">
-          <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
-        </ion-buttons>
-      </div>
-      <ion-row>
-        <ion-col class="mid">
-          <ion-title class="title-header">Đơn hàng của tôi</ion-title>
-        </ion-col>
-      </ion-row>
-    </ion-toolbar>
-
-    <ion-segment value="all" color="tertiary" scrollable="true" mode="ios" [(ngModel)]="segmentModel"
-      (ionChange)="segmentChanged($event)">
-
-      <ion-segment-button value="all">
-        <ion-label>Tất cả đơn</ion-label>
-      </ion-segment-button>
-
-      <ion-segment-button value="shipped">
-        <ion-label>Đã giao</ion-label>
-      </ion-segment-button>
-
-      <ion-segment-button value="being-transporting">
-        <ion-label>Đang tới</ion-label>
-      </ion-segment-button>
-
-      <ion-segment-button value="cancel">
-        <ion-label>Đã hủy</ion-label>
-      </ion-segment-button>
-
-    </ion-segment>
-
+    <div>
+      <ion-buttons class="backTop" slot="start">
+        <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
+      </ion-buttons>
+    </div>
+    <ion-row>
+      <ion-col class="mid">
+        <ion-title class="title-header">Đơn hàng của tôi</ion-title>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-
-  <ion-list *ngIf="segmentModel === 'all'">
-    <ion-item>
-      <ion-label>Giao hàng thành công</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-col size="3">
-        <img src="../../assets/images/nho_mau_don.jpg" alt="">
-      </ion-col>
-      <ion-col size="9">
-        <ion-label>Nho mẫu đơn</ion-label>
-        <ion-card-subtitle>1 hộp | 50.000 đ</ion-card-subtitle>
-      </ion-col>
-    </ion-item>
-    <ion-item>
-      <ion-col size="6">
-        <ion-button (click)="detailBill()">Xem Chi Tiết</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button>Mua lại</ion-button>
-      </ion-col>
-    </ion-item>
-  </ion-list>
-
-  <ion-list *ngIf="segmentModel === 'being-transporting'">
-    <ion-item>
-      <ion-label>Đang vận chuyển</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-col size="3">
-        <img src="../../assets/images/nho_mau_don.jpg" alt="">
-      </ion-col>
-      <ion-col size="9">
-        <ion-label>Nho mẫu đơn</ion-label>
-        <ion-card-subtitle>1 hộp | 50.000 đ</ion-card-subtitle>
-      </ion-col>
-    </ion-item>
-    <ion-item>
-      <ion-col size="6">
-        <ion-button>Xem Chi Tiết</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button>Mua lại</ion-button>
-      </ion-col>
-    </ion-item>
-  </ion-list>
-
-  <ion-list *ngIf="segmentModel === 'shipped'">
-    <ion-item>
-      <ion-label>Giao hàng thành công</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-col size="3">
-        <img src="../../assets/images/nho_mau_don.jpg" alt="">
-      </ion-col>
-      <ion-col size="9">
-        <ion-label>Nho mẫu đơn</ion-label>
-        <ion-card-subtitle>1 hộp | 50.000 đ</ion-card-subtitle>
-      </ion-col>
-    </ion-item>
-    <ion-item>
-      <ion-col size="6">
-        <ion-button>Xem Chi Tiết</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button>Mua lại</ion-button>
-      </ion-col>
-    </ion-item>
-  </ion-list>
-
-  <ion-list *ngIf="segmentModel === 'cancel'">
-    <ion-item>
-      <ion-label>Đã hủy</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-col size="3">
-        <img src="../../assets/images/nho_mau_don.jpg" alt="">
-      </ion-col>
-      <ion-col size="9">
-        <ion-label>Nho mẫu đơn</ion-label>
-        <ion-card-subtitle>1 hộp | 50.000 đ</ion-card-subtitle>
-      </ion-col>
-    </ion-item>
-    <ion-item>
-      <ion-col size="6">
-        <ion-button>Xem Chi Tiết</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button>Mua lại</ion-button>
-      </ion-col>
-    </ion-item>
-  </ion-list>
-
+<ion-content>
+  <ion-item>
+    <ion-col size="2">
+      <ion-icon color="primary" name="newspaper-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="10">
+      <ion-label class="title-bold">Mã đơn hàng: 838998960</ion-label>
+      <ion-note class="font-note">
+        Ngày đặt hàng: 00:03, 25/08/2020
+      </ion-note>
+      <ion-note class="font-note-bold">Giao hàng thành công</ion-note>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col size="2">
+      <ion-icon color="success" name="paw-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="7">
+      <ion-label class="title-bold">Theo dõi đơn hàng</ion-label>
+      <ion-note class="font700">Giao hàng thành công</ion-note>
+      <ion-note class="font-note">
+        Ngày đặt hàng: 00:03, 25/08/2020
+      </ion-note>
+    </ion-col>
+    <ion-col size="3">
+      <ion-button fill="clear" color="primary" class="btn-detail">Xem chi tiết</ion-button>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col size="2">
+      <ion-icon color="danger" name="location-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="10">
+      <ion-label class="title-bold">Địa chỉ người nhận</ion-label>
+      <ion-note class="font-normal">
+        Nguyễn Đức Hiếu
+      </ion-note>
+      <ion-note class="font-note">
+        0865638117
+      </ion-note>
+      <ion-note class="font-note">
+        104, Đông Anh 4, Thị trấn Nam Ban, Huyện Lâm Hà, Lâm Đồng
+      </ion-note>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col size="2">
+      <ion-icon color="primary" name="albums-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="10">
+      <ion-label class="title-bold">
+        Thông Tin Kiện Hàng
+      </ion-label>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col size="4">
+      <img src="../../../assets/images/background-img-organic.jpg" alt="">
+    </ion-col>
+    <ion-col size="8">
+      <ion-note class="font-normal text-14 d-block">Những kẻ xuất chúng</ion-note>
+      <ion-note class="font-note d-block">
+        Cung cấp bởi Phương Đông
+      </ion-note>
+      <ion-note class="font-note d-block">
+        Books
+      </ion-note>
+      <ion-label class="title-bold d-block">
+        129.500 đ x1
+      </ion-label>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col size="2">
+      <ion-icon color="primary" name="rocket-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="10">
+      <ion-label class="title-bold">
+        Hình Thức Giao Hàng
+      </ion-label>
+      <ion-note class="font-note">
+        Giao hàng tiêu chuẩn
+      </ion-note>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col size="2">
+      <ion-icon color="primary" name="wallet-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="10">
+      <ion-label class="title-bold">
+        Hình Thức Thanh Toán
+      </ion-label>
+      <ion-note class="font-note">
+        Thanh toán tiền mặt khi nhận hàng
+      </ion-note>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col size="6">
+      <ion-note class="font-note">
+        Tạm tính
+      </ion-note>
+    </ion-col>
+    <ion-col size="6" class="text-r">
+      <ion-label class="title-bold">
+        304.500 đ
+      </ion-label>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col size="6">
+      <ion-note class="font-note">
+        Phí vận chuyển
+      </ion-note>
+    </ion-col>
+    <ion-col size="6" class="text-r">
+      <ion-label class="title-bold">
+        19.000 đ
+      </ion-label>
+    </ion-col>
+  </ion-item>
+  <ion-item>
+    <ion-col size="6">
+      <ion-note class="font-note">
+        Tổng tiền
+      </ion-note>
+    </ion-col>
+    <ion-col size="6" class="text-r">
+      <ion-label class="font-big">
+        304.500 đ
+      </ion-label>
+      <ion-label class="font700">
+        Đã gồm VAT nếu có
+      </ion-label>
+    </ion-col>
+  </ion-item>
 </ion-content>
+
+<ion-footer>
+  <ion-row class="row">
+    <ion-button color="success" class="btn-footer">
+      Mua lại
+    </ion-button>
+  </ion-row>
+
+</ion-footer>

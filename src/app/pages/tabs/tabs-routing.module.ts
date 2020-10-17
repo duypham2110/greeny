@@ -1,11 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-import { CartPage } from '../cart/cart.page';
-import { HomePage } from '../home/home.page';
-import { ProductsPage } from '../products/products.page';
-import { ProfilePage } from '../profile/profile.page';
-import { DetailBillPage } from '../detail-bill/detail-bill.page';
 
 const routes: Routes = [
   {
@@ -53,6 +48,16 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../profile/profile.module#ProfilePageModule'
+          }
+        ]
+      },
+      // chuyển đến detail
+      {
+        path: 'detail',
+        children: [
+          {
+            path: '',
+            loadChildren: '../detail/detail.module#DetailPageModule'
           }
         ]
       },

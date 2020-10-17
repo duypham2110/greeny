@@ -62,7 +62,7 @@
     <ion-row class="list-img-products">
       <ion-slides [options]="sliderConfig">
         <ion-slide *ngFor="let item of products">
-            <ion-card class="ion-card">
+            <ion-card class="ion-card" (click)="openDetail(item.name)">
               <!-- <img [src]="item.images" alt=""> -->
               <img src="../../../assets/images/background-img-organic.jpg" alt="">
               <div>
