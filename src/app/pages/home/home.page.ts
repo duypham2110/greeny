@@ -39,6 +39,12 @@ export class HomePage {
     this.route.navigate(['tabs/products']);
   }
 
+  openDetail(name) {
+    if (name == this.products[0].name) {
+      this.route.navigate(['tabs/detail']);
+    }
+  }
+
   // takePicture() {
   //   const options: CameraOptions = {
   //     quality: 100,

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail-bill',
@@ -8,14 +7,9 @@ import { Router } from '@angular/router';
 })
 export class DetailBillPage implements OnInit {
 
-  constructor(
-    public router: Router
-  ) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  detailBill() {
-    this.router.navigate(['tabs/bill']);
-  }
 }
