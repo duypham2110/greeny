@@ -25,7 +25,7 @@ ion-searchbar {
 
 .backTop {
   position: absolute;
-  top: 0;
+  top: 4px;
   left: 0;
 }
 
@@ -58,19 +58,25 @@ ion-searchbar {
     font-weight: 600;
 }
   .products-hot-row {
-    display: block;
+    display: flex;
     padding: 0 10px;
     ion-col {
-      height: 180px;
+      display: block;
+      height: 160px;
       padding: 0;
-      img {
-        height: 70%;
+      margin-bottom: 10px;
+      .item {
+        width: 90%;
+        margin: 0 6px;
+        height: 100%;
+        img {
+        height: 55%;
         width: -webkit-fill-available;
         border-radius: 6px;
       }
       div {
         display: block;
-        height: 15%;
+        height: 22.5%;
         padding: 8px 8px 0;
         .ticket-icon {
           margin-right: 5px;
@@ -78,20 +84,14 @@ ion-searchbar {
         
         .add-icon {
           right: 8px;
-          bottom: -2px;
+          bottom: 8px;
           position: absolute;
           display: block;
           font-size: 1.5rem;
         }
       }
-    }
-
-    ion-col:first-child {
-      float: left;
-    }
-
-    ion-col:nth-child(2) {
-      float: right;
+      }
+     
     }
   }
 }
@@ -103,13 +103,12 @@ ion-searchbar {
 
 .promotion {
   padding-bottom: 0;
-  ion-item:last-child {
-    --inner-border-width: 0;
-  }
   ion-col {
-    height: 100px;
+    height: 90px;
     img {
-      border-radius: 6px;
+      max-width: 100%;
+      border: 0;
+      margin-top: 5px;
     }
     ion-row {
       height: 50%;
@@ -133,7 +132,7 @@ ion-searchbar {
     ion-row:nth-child(2) {
       padding-right: 5px;
       padding-top: 0;
-      height: 41%;
+      height: 58%;
       --overflow: hidden;
       ion-note {
         overflow: hidden;
