@@ -14,6 +14,22 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" id="ion-content">
+
+  <ion-searchbar #search placeholder='Tìm kiếm'(ionChange)="_searchChange($event)"></ion-searchbar>
+  <ion-list class="hot">
+    <ion-item lines="none" class="title-item">Bán chạy</ion-item>
+    <ion-row class="products-hot-row" *ngFor= "let product of searchedItem">
+      <ion-col size="5.7">
+        <img src="{{product.images}}" alt="">
+        <div>
+          <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+          <ion-note>{{product.name}}</ion-note>
+        </div>
+        <div>
+          <ion-label class="cost-label">{{product.price}}</ion-label>
+          <ion-icon class="add-icon" name="add-circle" color="success"></ion-icon>
+        </div>
+<!-- =======
   <ion-searchbar placeholder='Tìm kiếm'></ion-searchbar>
   <ion-list class="hot" *ngFor="let run of listItem">
     <ion-item lines="none" class="title-item">
@@ -32,7 +48,8 @@
             <ion-label class="cost-label">{{item.price}}</ion-label>
             <ion-icon class="add-icon" name="add-circle" color="success"></ion-icon>
           </div>
-        </ion-card>
+        </ion-card> -->
+<!-- >>>>>>> dev -->
       </ion-col>
     </ion-row>
   </ion-list>
