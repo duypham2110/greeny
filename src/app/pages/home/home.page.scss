@@ -47,20 +47,10 @@ ion-button {
 .ios .d-none {
   display: none;
 }
-.search-item {
-  margin: 2px 0 2px 0;
-    
-  .search-row {
-    background-color: #f6f6f6;
-    width: 100%;
-    border-radius: 4px;
-    align-items: baseline;
 
-    ion-icon {
-      margin-right: 15px;
-      margin-left: 10px;
-    }
-  }
+ion-searchbar {
+  --icon-color:#2dd66f;
+  --placeholder-color: grey;
 }
 
 .advertise {
@@ -92,6 +82,7 @@ ion-button {
       padding: 0 3px;
       height: 100%;
       border-left: 0.3px #fa8231 dashed;
+      right: -8px;
       ion-button {
         padding-left: 5px;
         padding-right: 5px;
@@ -107,17 +98,26 @@ ion-button {
   height: 80px;
   display: flex;
   text-align: center;
+  padding: 0 3px;
   .col-index {
     height: 100%;
+    ion-card {
+      margin: 0;
+      height: 100%;
+      background: aliceblue;
 
-    .index-title {
-    display: block;
-    margin-top: 10px;
-    }
+      .index-title {
+        display: block;
+        margin-top: 5px;
+        font-weight: 600;
+        color: #3a3838;
+      }
 
-    img {
-      width: 30px;
-      height: 30px;
+      img {
+        width: 30px;
+        height: 30px;
+        margin-top: 5px;
+      }
     }
   }
 }
