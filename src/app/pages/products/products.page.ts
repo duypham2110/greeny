@@ -12,6 +12,7 @@ export class ProductsPage implements OnInit {
   currentImage: any;
   products;
   productTypes;
+  private searchedItem: any;
   constructor(
     public authService: AuthenticationService,
     public pdService: ProductService
@@ -30,9 +31,10 @@ export class ProductsPage implements OnInit {
   _searchChange(event)
   {
     const val=event.target.value;
+    this.searchedItem = this.products;
     if(val&&val.trim()!='')
     { 
-      this.products=this.products.filter((item:any) => {
+      this.searchedItem=this.searchedItem.filter((item:any) => {
         return (item.name.toLowerCase().indexOf(val.toLowerCase())> -1);
       })
     }

@@ -17,7 +17,7 @@
   <ion-searchbar #search placeholder='Tìm kiếm'(ionChange)="_searchChange($event)"></ion-searchbar>
   <ion-list class="hot">
     <ion-item lines="none" class="title-item">Bán chạy</ion-item>
-    <ion-row class="products-hot-row" *ngFor= "let product of products">
+    <ion-row class="products-hot-row" *ngFor= "let product of searchedItem">
       <ion-col size="5.7">
         <img src="{{product.images}}" alt="">
         <div>
