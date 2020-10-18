@@ -13,10 +13,14 @@ import { take, map, tap, delay, switchMap } from 'rxjs/operators';
 })
 
 export class ProductService {
-    private _products = new BehaviorSubject<Product[]>([]);
-    get product() {
-      return this._products.asObservable();
-    }
+  private _products = new BehaviorSubject<Product[]>([]);
+  searchedItem: any;
+
+
+  get product() {
+    return this._products.asObservable();
+  }
+  
     private productTypes: ProductType[] = [
         {
             id: '1',
@@ -112,7 +116,11 @@ export class ProductService {
         }
     ];
 
-    constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {
+      
+    this.searchedItem = this.products;
+  }
+  
 
     getProducts() {
         /// ...syntax means return the copy of the array but not the array itself ???
@@ -136,4 +144,5 @@ export class ProductService {
             return id === productTypes.id;
         })};
     }
+
 }
