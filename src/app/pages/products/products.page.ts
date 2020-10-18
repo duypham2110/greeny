@@ -18,6 +18,7 @@ export class ProductsPage implements OnInit {
     public pdService: ProductService
   ) {
     this.products = pdService.getProducts();
+    this.searchedItem=this.products;
     this.productTypes = pdService.getProductTypes();
   }
 
