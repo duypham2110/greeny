@@ -9,12 +9,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-item lines="none" class="search-item">
-    <ion-row class="search-row">
-      <ion-icon name="search-outline" color="success"></ion-icon>
-      <ion-input class="bg-color-title" placeholder="Tìm kiếm rau củ quả trên Greeny"></ion-input>
-    </ion-row>
-  </ion-item>
+  <ion-searchbar placeholder="Tìm kiếm..." search-icon="search-sharp"></ion-searchbar>
   <div class="advertise">
     <img src="../../../assets/images/advertise-vegetable-2.jpg" alt="">
   </div>
@@ -30,20 +25,28 @@
   </ion-item>
   <ion-row class="index mgb-10">
     <ion-col size="3" class="col-index">
-      <img src="../../../assets/images/green-energy.png" alt="">
-      <ion-label class="index-title">Khuyến Mãi</ion-label>
+      <ion-card>
+        <img src="../../../assets/images/discount.png" alt="">
+        <ion-label class="index-title">Khuyến Mãi</ion-label>
+      </ion-card>
     </ion-col>
     <ion-col size="3" class="col-index">
-      <img src="../../../assets/images/bonfire.png" alt="">
-      <ion-label class="index-title">Bán Chạy</ion-label>
+      <ion-card>
+        <img src="../../../assets/images/flash.png" alt="">
+        <ion-label class="index-title">Bán Chạy</ion-label>
+      </ion-card>
     </ion-col>
     <ion-col size="3" class="col-index">
-      <img src="../../../assets/images/salad.png" alt="">
-      <ion-label class="index-title">Rau Củ</ion-label>
+      <ion-card>
+        <img src="../../../assets/images/salad.png" alt="">
+        <ion-label class="index-title">Rau Củ</ion-label>
+      </ion-card>
     </ion-col>
     <ion-col size="3" class="col-index">
-      <img src="../../../assets/images/grapes.png" alt="">
-      <ion-label class="index-title">Trái Cây</ion-label>
+      <ion-card>
+        <img src="../../../assets/images/grapes.png" alt="">
+        <ion-label class="index-title">Trái Cây</ion-label>
+      </ion-card>
     </ion-col>
   </ion-row>
   <div class="mgb-20 products" *ngFor="let item of arrayItem">
@@ -62,19 +65,19 @@
     <ion-row class="list-img-products">
       <ion-slides [options]="sliderConfig">
         <ion-slide *ngFor="let item of products">
-            <ion-card class="ion-card" (click)="openDetail(item.name)">
-              <!-- <img [src]="item.images" alt=""> -->
-              <img src="../../../assets/images/background-img-organic.jpg" alt="">
+          <ion-card class="ion-card" (click)="openDetail(item.name)">
+            <!-- <img [src]="item.images" alt=""> -->
+            <img src="../../../assets/images/background-img-organic.jpg" alt="">
+            <div>
+              <ion-label class="title-products-label">{{item.name}}</ion-label>
+              <ion-note>Best Seller Giảm 50%</ion-note>
               <div>
-                <ion-label class="title-products-label">{{item.name}}</ion-label>
-                <ion-note>Best Seller Giảm 50%</ion-note>
-                <div>
-                  <ion-label color="success">{{item.price}}</ion-label>
-                  <ion-note>/kg</ion-note>
-                  <ion-icon name="add-circle" color="success"></ion-icon>
-                </div>
+                <ion-label color="success">{{item.price}}</ion-label>
+                <ion-note>/kg</ion-note>
+                <ion-icon name="add-circle" color="success"></ion-icon>
               </div>
-            </ion-card>
+            </div>
+          </ion-card>
         </ion-slide>
       </ion-slides>
     </ion-row>

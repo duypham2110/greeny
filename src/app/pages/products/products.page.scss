@@ -15,7 +15,7 @@ ion-col {
 
 ion-searchbar {
   --border-radius: 25px;
-  --icon-color:green;
+  --icon-color:#2dd66f;
   --placeholder-color: grey;
 }
 
@@ -52,6 +52,8 @@ ion-searchbar {
         }
 
 .hot {
+  padding-top: 0;
+  
 .title-item {
     color: #484646f2;
     font-size: 1rem;
