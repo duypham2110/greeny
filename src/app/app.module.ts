@@ -18,6 +18,8 @@ import { environment } from '../environments/environment';
 import { Camera } from '@ionic-native/camera/ngx';
 import { HttpClientModule } from '@angular/common/http';
 
+import { SuperTabsModule } from '@ionic-super-tabs/angular';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -28,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireAuthModule, 
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    HttpClientModule
+    HttpClientModule,
+    SuperTabsModule.forRoot()
   ],
   providers: [
     Camera,

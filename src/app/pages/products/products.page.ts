@@ -10,9 +10,14 @@ import { IonSearchbar } from '@ionic/angular';
 export class ProductsPage implements OnInit {
   @ViewChild('search',{static:false}) search:IonSearchbar;
   currentImage: any;
-  products;
+  products: any;
   productTypes;
   private searchedItem: any;
+  
+// =======
+//   listItem = ["Khuyến mãi", "Bán chạy", "Rau củ", "Trái cây", "Gợi ý cho bạn", "Thực phẩm khác"];
+// >>>>>>> dev
+  
   constructor(
     public authService: AuthenticationService,
     public pdService: ProductService

@@ -3,7 +3,7 @@ export class Product {
         public id: string,
         public type: string,
         public name: string,
-        public price: number,
+        public price: string,
         public images: string[],
         public quantity: number
     ) { }

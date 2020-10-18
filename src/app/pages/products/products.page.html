@@ -14,6 +14,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" id="ion-content">
+
   <ion-searchbar #search placeholder='Tìm kiếm'(ionChange)="_searchChange($event)"></ion-searchbar>
   <ion-list class="hot">
     <ion-item lines="none" class="title-item">Bán chạy</ion-item>
@@ -28,267 +29,46 @@
           <ion-label class="cost-label">{{product.price}}</ion-label>
           <ion-icon class="add-icon" name="add-circle" color="success"></ion-icon>
         </div>
+<!-- =======
+  <ion-searchbar placeholder='Tìm kiếm'></ion-searchbar>
+  <ion-list class="hot" *ngFor="let run of listItem">
+    <ion-item lines="none" class="title-item">
+      {{run}}
+    </ion-item>
+    <ion-row class="products-hot-row">
+      <ion-col size="6" *ngFor="let item of products">
+        <ion-card class="item">
+          <!-- <img [src]="item.images" alt=""> -->
+          <img src="../../../assets/images/background-img-organic.jpg" alt="">
+          <div>
+            <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+            <ion-note>{{item.name}}</ion-note>
+          </div>
+          <div>
+            <ion-label class="cost-label">{{item.price}}</ion-label>
+            <ion-icon class="add-icon" name="add-circle" color="success"></ion-icon>
+          </div>
+        </ion-card> -->
+<!-- >>>>>>> dev -->
       </ion-col>
     </ion-row>
   </ion-list>
   <div class="line"></div>
-  <ion-list class="promotion">
-    <ion-item lines="none" class="title-item">Ưu đãi hôm nay</ion-item>
-    <ion-item>
+  <ion-list class="promotion" *ngFor="let item of listItem">
+    <ion-item lines="none" class="title-item">item</ion-item>
+    <ion-item *ngFor="let item of products">
       <ion-row>
         <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
+          <!-- <img [src]="item.images" alt=""> -->
+          <img src="../../../assets/images/background-img-organic.jpg" alt="">
         </ion-col>
         <ion-col size="8">
           <ion-row>
             <div>
               <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
+              <ion-note>{{item.name}}</ion-note>
             </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-  </ion-list>
-  <div class="line"></div>
-  <ion-list class="promotion">
-    <ion-item lines="none" class="title-item">Rau củ</ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-  </ion-list>
-  <div class="line"></div>
-  <ion-list class="promotion">
-    <ion-item lines="none" class="title-item">Trái cây</ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-  </ion-list>
-  <div class="line"></div>
-  <ion-list class="promotion">
-    <ion-item lines="none" class="title-item">Thực phẩm khác</ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-    <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">40.500</ion-label>
+            <ion-label class="cost-label">{{item.price}}</ion-label>
           </ion-row>
           <ion-row>
             <ion-note class="text-11">
