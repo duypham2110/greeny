@@ -8,16 +8,18 @@
       </div>
       <ion-col class="mid">
         <ion-title class="title-header">Giỏ hàng</ion-title>
-        <ion-label size="small" class="text-14 d-none">Khoảng cách tới chỗ bạn: 1,9km</ion-label>
+        <!-- <ion-label size="small" class="text-14 d-none">Khoảng cách tới chỗ bạn: 1,9km</ion-label> -->
       </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-list>
-    <ion-item lines="none" class="title-item">
-      <ion-label class="title-content">Giao tới</ion-label>
-    </ion-item>
+    <ion-row lines="none" class="title-row">
+      <ion-col>
+        <ion-label class="title-content">Giao tới</ion-label>
+      </ion-col>
+    </ion-row>
     <ion-item class="location-item">
       <ion-row>
         <ion-col class="location-col" size="1">
@@ -38,109 +40,109 @@
         </ion-col>
       </ion-row>
     </ion-item>
-    <ion-item lines="none">
-      <ion-col size="9">
-        <ion-label class="">Thời gian giao</ion-label>
-        <ion-label class="text-14">Giao ngay (10 phút)</ion-label>
-      </ion-col>
-      <ion-col size="3" class="fl-r3px">
-        <ion-button class="btn-href" fill="clear" size="small">Thay đổi</ion-button>
-      </ion-col>
+    <ion-item lines="none" class="time-ship-item">
+      <ion-row>
+        <ion-col size="9">
+          <ion-label class="">Thời gian giao</ion-label>
+          <ion-label class="text-14">Giao ngay (10 phút)</ion-label>
+        </ion-col>
+        <ion-col size="3" class="fl-r3px">
+          <ion-button class="btn-href" fill="clear" size="small">Thay đổi</ion-button>
+        </ion-col>
+      </ion-row>
     </ion-item>
   </ion-list>
-  <ion-list>
-    <ion-item lines="none" class="title-item">
-      <ion-col size="9">
-        <ion-label class="title-content">Tóm tắt đơn hàng</ion-label>
-      </ion-col>
-      <ion-col size="3" class="fl-r3px">
-        <ion-button class="btn-href" fill="clear" size="small" (click)="openHome()">Mua thêm</ion-button>
-      </ion-col>
-    </ion-item>
-    <ion-item class="product">
-      <ion-grid>
-        <ion-row>
-          <ion-col size="2" class="p-0">
-            <div class="">
-              <img src="../../../assets/images/background-img-organic.jpg" alt="">
-            </div>
-          </ion-col>
-          <ion-col class="" size="10">
-            <ion-label class="text-14">
-              Sầu riêng hột lép
-            </ion-label>
-            <ion-button class="top-right" fill="clear">
-              <ion-icon name="close-outline"></ion-icon>
-            </ion-button>
-            <ion-label class="">1 hộp</ion-label>
-            <ion-row>
-              <ion-text color="danger" class="text-14">
-                40,000 đ
-              </ion-text>
-              <ion-button class="r-8" fill="clear">
-                <ion-icon name="remove-outline"></ion-icon>
-              </ion-button>
-              <ion-text class=" r-5">1</ion-text>
-              <ion-button class="r-0" fill="clear">
-                <ion-icon name="add-outline"></ion-icon>
-              </ion-button>
-            </ion-row>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
+
+  <ion-row lines="none" class="title-row">
+    <ion-col size="9">
+      <ion-label class="title-content">Tóm tắt đơn hàng</ion-label>
+    </ion-col>
+    <ion-col size="3" class="fl-r3px">
+      <ion-button class="btn-href" fill="clear" size="small" (click)="openHome()">Mua thêm</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-list class="products">
     <ion-item>
-      <ion-col size="5" class="d-flex">
+      <ion-row>
+        <ion-col size="4">
+          <!-- <img [src]="item.images" alt=""> -->
+          <img src="../../../assets/images/background-img-organic.jpg" alt="">
+        </ion-col>
+        <ion-col size="8">
+          <ion-row>
+            <div>
+              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+              <ion-note>Cà rốt</ion-note>
+            </div>
+            <ion-label class="cost-label">39.000đ</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-note class="text-11">
+              1 phần cơm 2 người gồm tôm nướng
+            </ion-note>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+  <div class="line"></div>
+
+  <ion-item>
+    <ion-row class="discount-row">
+      <ion-col size="5">
         <ion-icon color="danger" name="pricetag"></ion-icon>
-        <ion-label class=" mg-l8">Mã giảm giá</ion-label>
-      </ion-col>
-      <ion-col size="7" class="d-flex">
-        <ion-button class="btn-sell">Chọn mã giảm giá</ion-button>
-        <ion-button class="r-0" fill="clear">
-          <ion-icon name="chevron-forward-outline" class="mg-t5"></ion-icon>
-        </ion-button>
+        <ion-label>Mã giảm giá</ion-label>
       </ion-col>
 
-    </ion-item>
-    <ion-item lines="none">
-      <ion-col class="">
-        <ion-row>
-          <ion-col size="6">
-            <ion-text>Tổng tạm tính</ion-text>
-          </ion-col>
-          <ion-col size="6" class="text-r">
-            <ion-text>40.000đ</ion-text>
-          </ion-col>
-        </ion-row>
-        <ion-row class="mg-t5">
-          <ion-col size="6">
-            <ion-text>Phí áp dụng <ion-icon name="information-outline"></ion-icon>
-            </ion-text>
-          </ion-col>
-          <ion-col size="6" class="text-r">
-            <ion-text>19.000</ion-text>
-          </ion-col>
-        </ion-row>
+      <ion-col size="7">
+        <ion-button>Chọn mã giảm giá</ion-button>
+        <ion-button fill="clear">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-button>
       </ion-col>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item lines="none" class="title-item">
-      <ion-label class="title-content">
-        Phương thức thanh toán
-      </ion-label>
-    </ion-item>
+    </ion-row>
+  </ion-item>
+
+  <ion-item>
+    <ion-grid>
+      <ion-row class="cost-row">
+        <ion-col size="6">
+          <ion-text>Tổng tạm tính</ion-text>
+        </ion-col>
+        <ion-col size="6" class="text-r">
+          <ion-text class="cost-right">40.000đ</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="cost-row">
+        <ion-col size="6">
+          <ion-text>Phí áp dụng <ion-icon name="information-outline"></ion-icon>
+          </ion-text>
+        </ion-col>
+        <ion-col size="6" class="text-r">
+          <ion-text class="cost-right">19.000</ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-row lines="none" class="title-row">
+    <ion-col>
+      <ion-label class="title-content">Phương thức thanh toán</ion-label>
+    </ion-col>
+  </ion-row>
     <ion-item>
-      <ion-col size="6">
-        <ion-icon name="cash-outline"></ion-icon>
-        <ion-text class="mg-l8 text-14">Tiền mặt</ion-text>
-      </ion-col>
-      <ion-col size="6">
-        <ion-icon name="flower-outline"></ion-icon>
-        <ion-text class="mg-l8 text-14">Ưu đãi</ion-text>
-      </ion-col>
+      <ion-row class="method-pay-row">
+        <ion-col size="6">
+          <ion-icon name="cash-outline"></ion-icon>
+          <ion-text>Tiền mặt</ion-text>
+        </ion-col>
+        <ion-col size="6">
+          <ion-icon name="flower-outline"></ion-icon>
+          <ion-text>Ưu đãi</ion-text>
+        </ion-col>
+      </ion-row>
     </ion-item>
-  </ion-list>
+
 </ion-content>
 
 <ion-footer>

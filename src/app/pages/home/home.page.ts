@@ -14,6 +14,7 @@ export class HomePage {
   currentImage: any;
   products;
   productTypes;
+  searchedItem: any;
 
   arrayItem = ["Khuyến mãi", "Bán chạy", "Rau củ", "Trái cây", "Gợi ý cho bạn", "Thực phẩm khác"];
 
@@ -30,7 +31,7 @@ export class HomePage {
   ) {
     this.products = pdService.getProducts();
     this.productTypes = pdService.getProductTypes();
-
+    this.searchedItem = this.products;
   }
 
   ngOnInit() { }
@@ -43,6 +44,22 @@ export class HomePage {
     if (name == this.products[0].name) {
       this.route.navigate(['tabs/detail']);
     }
+  }
+
+  /**
+   * Tìm kiếm danh sách sản phẩm trong products
+   * @param event | String
+   */
+  _searchChange(event) {
+    const val = event.target.value;
+    this.searchedItem = this.products;
+    if (val && val.trim() != '') {
+      this.searchedItem = this.searchedItem.filter((item: any) => {
+        console.log(item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+
   }
 
   // takePicture() {

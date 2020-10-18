@@ -37,7 +37,11 @@ export class ProductsPage implements OnInit {
       this.search.setFocus();
     })
   }
-
+  
+  /**
+   * Tìm kiếm danh sách sản phẩm trong products
+   * @param event | String
+   */
   _searchChange(event) {
     const val = event.target.value;
     this.searchedItem = this.products;

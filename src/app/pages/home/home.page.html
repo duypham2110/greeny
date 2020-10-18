@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-searchbar placeholder="Tìm kiếm..." search-icon="search-sharp"></ion-searchbar>
+  <ion-searchbar #search placeholder='Tìm kiếm...' (ionChange)="_searchChange($event)"></ion-searchbar>
   <div class="advertise">
     <img src="../../../assets/images/advertise-vegetable-2.jpg" alt="">
   </div>
@@ -64,7 +64,7 @@
     </ion-item>
     <ion-row class="list-img-products">
       <ion-slides [options]="sliderConfig">
-        <ion-slide *ngFor="let item of products">
+        <ion-slide *ngFor="let item of searchedItem">
           <ion-card class="ion-card" (click)="openDetail(item.name)">
             <!-- <img [src]="item.images" alt=""> -->
             <img src="../../../assets/images/background-img-organic.jpg" alt="">
