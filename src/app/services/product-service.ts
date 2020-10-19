@@ -30,12 +30,12 @@ export class ProductService {
     private productTypes: ProductType[] = [
         {
             id: '1',
-            name: 'vegetable',
+            name: 'Rau củ',
             images: ['https://img1.mashed.com/img/uploads/2017/07/vegetables.jpg']
         },
         {
             id: '2',
-            name: 'fruit',
+            name: 'Trái cây',
             images: ['https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg']
         },
     ]
@@ -55,7 +55,7 @@ export class ProductService {
         this.productList = this.db.list('/product');
         return this.productList;
     }
-
+    
     getProduct(id: string) {
         this.product1 = this.db.object('/product/'+id);
         console.log(id);

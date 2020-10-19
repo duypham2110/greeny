@@ -12,12 +12,11 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['home.page.scss'],
 })
 
-
-
-
 export class HomePage {
   currentImage: any;
   products;
+  veggies;
+  fruits;
   productTypes;
   searchedItem: any;
 
@@ -27,7 +26,7 @@ export class HomePage {
     address: '34 street, Delhi, India'
   }
 
-  arrayItem = ["Khuyến mãi", "Bán chạy", "Rau củ", "Trái cây", "Gợi ý cho bạn", "Thực phẩm khác"];
+  arrayItem = ["Bán chạy", "Gợi ý cho bạn", "Thực phẩm khác"];
 
   sliderConfig = {
     spaceBetween: 5,
@@ -49,6 +48,8 @@ export class HomePage {
         a['$key'] = item.key;
         this.products.push(a as Product);
       })
+      this.veggies=this.products.filter(product=>product.productType == "Rau củ")
+      this.fruits=this.products.filter(product=>product.productType == "Trái cây")
       this.searchedItem = this.products;
     })
     this.productTypes = this.pdService.getProductTypes();
