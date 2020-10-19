@@ -49,10 +49,10 @@ export class HomePage {
         a['$key'] = item.key;
         this.products.push(a as Product);
       })
-      console.log(this.products);
+      this.searchedItem = this.products;
     })
     this.productTypes = this.pdService.getProductTypes();
-    this.searchedItem = this.products;
+    
    }
 
   openProducts() {
