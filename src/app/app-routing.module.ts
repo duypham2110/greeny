@@ -10,7 +10,8 @@ const routes: Routes = [
   },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'registration', loadChildren: './pages/registration/registration.module#RegistrationPageModule' },
-  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },  {
+  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
+  {
     path: 'detail-bill',
     loadChildren: () => import('./pages/detail-bill/detail-bill.module').then( m => m.DetailBillPageModule)
   },
@@ -31,8 +32,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/forget-pass/forget-pass.module').then( m => m.ForgetPassPageModule)
   },
   {
-    path: 'my-info',
-    loadChildren: () => import('./pages/my-info/my-info.module').then( m => m.MyInfoPageModule)
+    path: 'edit-profile',
+    loadChildren: () => import('./pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
   }
 
 ];
