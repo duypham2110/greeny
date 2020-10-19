@@ -67,7 +67,7 @@
         <ion-slide  *ngFor="let item of searchedItem" (click)="viewDetail(item)">
           <ion-card class="ion-card">
             <!-- <img [src]="item.images" alt=""> -->
-            <img src="../../../assets/images/background-img-organic.jpg" alt="">
+            <img [src]="item.images[0]" alt="">
             <div>
               <ion-label class="title-products-label">{{item.name}}</ion-label>
               <ion-note>Best Seller Giảm 50%</ion-note>
