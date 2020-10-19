@@ -20,6 +20,12 @@ export class ProductService {
     productList: AngularFireList<any>;
     product1: AngularFireObject<any>;
 
+    productTypeList: AngularFireList<any>;
+    productType: AngularFireObject<any>;
+
+    collectionList: AngularFireList<any>;
+    collection: AngularFireObject<any>;
+
     private _products = new BehaviorSubject<Product[]>([]);
     searchedItem: any;
 
@@ -27,18 +33,7 @@ export class ProductService {
         return this._products.asObservable();
     }
 
-    private productTypes: ProductType[] = [
-        {
-            id: '1',
-            name: 'Rau củ',
-            images: ['https://img1.mashed.com/img/uploads/2017/07/vegetables.jpg']
-        },
-        {
-            id: '2',
-            name: 'Trái cây',
-            images: ['https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg']
-        },
-    ]
+
 
     private products: Product[];
 
@@ -50,45 +45,60 @@ export class ProductService {
 
     }
 
+    // ===Product===
 
     getProducts() {
         this.productList = this.db.list('/product');
         return this.productList;
     }
-    
+
     getProduct(id: string) {
-        this.product1 = this.db.object('/product/'+id);
+        this.product1 = this.db.object('/product/' + id);
         console.log(id);
         console.log(this.product1);
         return this.product1;
     }
 
-    updateProduct(id, prd: Product){
+    updateProduct(id, prd: Product) {
         return this.product1.update({
-          name: prd.name,
-          productType: prd.productType,
-          price: prd.price,
-          description: prd.description,
-          madeIn: prd.madeIn
+            name: prd.name,
+            productType: prd.productType,
+            price: prd.price,
+            description: prd.description,
+            madeIn: prd.madeIn
         })
-      }
-      
-      deleteProduct(id: string){
-        this.product1 = this.db.object('/product/'+id);
+    }
+
+    deleteProduct(id: string) {
+        this.product1 = this.db.object('/product/' + id);
         this.product1.remove();
-      }
+    }
+
+    // ===Product Type===
 
     getProductTypes() {
-        return [...this.productTypes];
+        this.productList = this.db.list('/productType');
+        return this.productList;
     }
 
     getProductType(id: string) {
-        /// ...syntax means return the copy of the array but not the array itself ???
-        return {
-            ...this.productTypes.find(productTypes => {
-                return id === productTypes.id;
-            })
-        };
+        this.productType = this.db.object('/productType/' + id);
+        console.log(id);
+        console.log(this.productType);
+        return this.productType;
     }
 
+    // ===Collection===
+
+    getCollectionList() {
+        this.collectionList = this.db.list('/collection');
+        return this.collectionList;
+    }
+
+    getCollection(id: string) {
+        this.collection = this.db.object('/collection/' + id);
+        console.log(id);
+        console.log(this.collection);
+        return this.collection;
+    }
 }

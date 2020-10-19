@@ -5,6 +5,7 @@ import { ProductService } from '../../services/product-service';
 
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
+import { Collection } from 'src/app/models/collection';
 
 @Component({
   selector: 'app-home',
@@ -13,18 +14,14 @@ import { Product } from 'src/app/models/product';
 })
 
 export class HomePage {
-  currentImage: any;
+  productTypes;
   products;
+  collections;
+
+  currentImage: any;
   veggies;
   fruits;
-  productTypes;
   searchedItem: any;
-
-  object = {
-    name: 'subham',
-    age: '34',
-    address: '34 street, Delhi, India'
-  }
 
   arrayItem = ["Bán chạy", "Gợi ý cho bạn", "Thực phẩm khác"];
 
@@ -40,6 +37,13 @@ export class HomePage {
   ) {}
 
   ngOnInit() {
+    this.loadProducts();
+    this.loadCollections();
+    this.productTypes = this.pdService.getProductTypes();
+    
+   }
+
+   loadProducts(){
     let temp = this.pdService.getProducts();
     temp.snapshotChanges().subscribe(res => {
       this.products = [];
@@ -48,13 +52,40 @@ export class HomePage {
         a['$key'] = item.key;
         this.products.push(a as Product);
       })
-      this.veggies=this.products.filter(product=>product.productType == "Rau củ")
-      this.fruits=this.products.filter(product=>product.productType == "Trái cây")
       this.searchedItem = this.products;
     })
-    this.productTypes = this.pdService.getProductTypes();
-    
    }
+
+   loadCollections(){
+    let temp = this.pdService.getCollectionList();
+    temp.snapshotChanges().subscribe(res => {
+      this.collections = [];
+      res.forEach(item => {
+        let a = item.payload.toJSON();
+        a['$key'] = item.key;
+        this.collections.push(a as Collection);
+      })
+    })
+   }   
+
+   // Change Producst Ids in collection to product json
+   loadProductsCollection(products){
+    const idsArray = Object.keys(products).map(product => {
+      return {id: products[product]} 
+    });
+
+    let rs=[];
+
+    idsArray.forEach(item => {
+      this.products.find(product=>{
+      if(product.$key==item.id)
+        rs.push(product);
+      })
+    })
+    console.log(rs);
+    return rs;
+   }
+ 
 
   openProducts() {
     this.route.navigate(['tabs/products']);
