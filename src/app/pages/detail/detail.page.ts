@@ -21,20 +21,10 @@ export class DetailPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe(paramMap => {
-      if (!paramMap.has('id')) {
-        return;
-      }
-      const id = paramMap.get('id');
+    this.activatedRoute.queryParams.subscribe(paramMap => {
+      const id = paramMap.id;
       this.loadedProduct = this.pdService.getProduct(id);
       this.imgUrl = this.loadedProduct.images[0];
-      console.log('init');
-      console.log(this.loadedProduct);
-      console.log(this.loadedProduct.images[0]);
     });
-  }
-  
-  changeImg(url){
-    this.imgUrl=url;
   }
 }

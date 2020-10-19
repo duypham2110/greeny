@@ -129,7 +129,8 @@ export class ProductService {
 
     getProduct(id: string) {
         /// ...syntax means return the copy of the array but not the array itself ???
-        return {...this.products.find(product => {
+      return {
+        ...this.products.find(product => {
             return product.id === id;
         })};
     }

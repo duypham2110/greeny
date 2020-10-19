@@ -64,8 +64,8 @@
     </ion-item>
     <ion-row class="list-img-products">
       <ion-slides [options]="sliderConfig">
-        <ion-slide *ngFor="let item of searchedItem">
-          <ion-card class="ion-card" (click)="openDetail(item.name)">
+        <ion-slide *ngFor="let item of searchedItem" (click)="viewRestaurant(item)">
+          <ion-card class="ion-card">
             <!-- <img [src]="item.images" alt=""> -->
             <img src="../../../assets/images/background-img-organic.jpg" alt="">
             <div>

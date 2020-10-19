@@ -8,45 +8,23 @@
 
 <ion-content [fullscreen]="true">
   <div class="img">
-    <!-- <div>
-    <div class="mySlides">
-      <div class="numbertext">1 / 6</div>
-      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/NYCS-bull-trans-2.svg/1200px-NYCS-bull-trans-2.svg.png" style="width:100%;height:100%;"></ion-img>
-    </div>
-    <div class="mySlides">
-      <div class="numbertext">2 / 6</div>
-      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/NYCS-bull-trans-2.svg/1200px-NYCS-bull-trans-2.svg.png" style="width:100%;height:100%;"></ion-img>
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">3 / 6</div>
-      <ion-img src="../../assets/cai-bap.jpg" style="width:100%;height:100%;"></ion-img>
-    </div>
-      
-    <div class="mySlides">
-      <div class="numbertext">4 / 6</div>
-      <ion-img src="../../assets/cai-bap.jpg" ></ion-img>
-    </div> -->
-    <ion-img [src]="imgUrl"></ion-img>
-    <!-- <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a> -->
-    <!-- </div> -->
+    <ion-img [src]="loadedProduct.images"></ion-img>
   </div>
 
   <div class="tach"></div>
   <div class="list">
     <div class="row">
-      <ion-item *ngFor="let image of loadedProduct.images">
+      <ion-item>
         <div class="column">
-          <ion-img class="demo cursor" (click)="changeImg(image)" [src]="image"></ion-img>
+          <ion-img class="demo cursor"></ion-img>
         </div>
       </ion-item>
     </div>
   </div>
   <div class="tach"></div>
   <div class="price">
-    <h5 style="margin: 0%;padding-top: 10px;padding-left: 20px;">Đào Đà lạt</h5>
-    <p style="color:#58bc00;font-size:120%;margin: 0%;padding-left: 20px;">270.000đ</p>
+    <h5 style="margin: 0%;padding-top: 10px;padding-left: 20px;">{{loadedProduct.name}}</h5>
+    <p style="color:#58bc00;font-size:120%;margin: 0%;padding-left: 20px;">{{loadedProduct.price}}</p>
   </div>
   <div class="tach"></div>
   <div class="info">
