@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication-service';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { ProductService } from '../../services/product-service';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,12 +10,21 @@ import { Router } from '@angular/router';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+  
+  
+  
 
 export class HomePage {
   currentImage: any;
   products;
   productTypes;
   searchedItem: any;
+
+  object = {
+    name: 'subham',
+    age: '34',
+    address: '34 street, Delhi, India'
+  }
 
   arrayItem = ["Khuyến mãi", "Bán chạy", "Rau củ", "Trái cây", "Gợi ý cho bạn", "Thực phẩm khác"];
 
@@ -32,6 +42,7 @@ export class HomePage {
     this.products = pdService.getProducts();
     this.productTypes = pdService.getProductTypes();
     this.searchedItem = this.products;
+    
   }
 
   ngOnInit() { }
@@ -40,10 +51,16 @@ export class HomePage {
     this.route.navigate(['tabs/products']);
   }
 
-  openDetail(name) {
-    if (name == this.products[0].name) {
-      this.route.navigate(['tabs/detail']);
-    }
+  // openDetail(name) {
+  //   this.products.find(name => {
+  //       this.route.navigate(['tabs/detail']);
+  //   })
+  // }
+  viewDetail(item) {
+    // console.log(item);
+    this.route.navigate(['tabs/detail'], {
+      queryParams: item,
+    });
   }
 
   /**

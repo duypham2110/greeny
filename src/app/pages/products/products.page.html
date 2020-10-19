@@ -21,7 +21,7 @@
     </ion-item>
     <ion-row class="products-hot-row">
       <ion-col size="6" *ngFor="let item of searchedItem">
-        <ion-card class="item">
+        <ion-card class="item"  (click)="viewDetail(item)">
           <!-- <img [src]="item.images" alt=""> -->
           <img src="../../../assets/images/background-img-organic.jpg" alt="">
           <div>

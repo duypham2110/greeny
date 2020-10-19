@@ -5,6 +5,8 @@ import { IonSearchbar } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { OrderService } from 'src/app/services/order-service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.page.html',
@@ -26,7 +28,8 @@ export class ProductsPage implements OnInit {
     public authService: AuthenticationService,
     public pdService: ProductService,
     public orderService: OrderService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public route: Router
   ) {
     this.products = pdService.getProducts();
     this.searchedItem = this.products;
@@ -40,6 +43,13 @@ export class ProductsPage implements OnInit {
     setTimeout(() => {
       this.search.setFocus();
     })
+  }
+
+  viewDetail(item) {
+    // console.log(item);
+    this.route.navigate(['tabs/detail'], {
+      queryParams: item,
+    });
   }
   
   /**
