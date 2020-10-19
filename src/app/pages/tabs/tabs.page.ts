@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from 'src/app/services/order-service';
 
 @Component({
   selector: 'app-tabs',
@@ -6,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabs.page.scss'],
 })
 export class TabsPage implements OnInit {
+  isCartChecked:boolean;
 
-  constructor() { }
+  constructor(
+    public orderService: OrderService
+    ) { 
+      this.isCartChecked=orderService.isCartChecked;
+    }
+
+  CartChecked(){
+    this.orderService.CartChecked();
+    this.isCartChecked=this.orderService.isCartChecked;  
+  }
 
   ngOnInit() {
   }

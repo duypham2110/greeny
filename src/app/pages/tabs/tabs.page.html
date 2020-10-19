@@ -8,7 +8,10 @@
       <ion-icon name="leaf-outline"></ion-icon>
       <ion-label>Products</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="cart">
+    <ion-tab-button tab="cart" (click)="CartChecked()">
+      <ng-container *ngIf="!isCartChecked">
+        <ion-badge color="primary"></ion-badge>
+      </ng-container>
       <ion-icon name="cart-outline"></ion-icon>
       <ion-label>Cart</ion-label>
     </ion-tab-button>
