@@ -6,6 +6,7 @@ import { ToastController } from '@ionic/angular';
 import { OrderService } from 'src/app/services/order-service';
 
 import { Router } from '@angular/router';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-products',
@@ -27,16 +28,25 @@ export class ProductsPage implements OnInit {
   constructor(
     public authService: AuthenticationService,
     public pdService: ProductService,
-    public orderService: OrderService,
     public toastController: ToastController,
     public route: Router
   ) {
-    this.products = pdService.getProducts();
-    this.searchedItem = this.products;
-    this.productTypes = pdService.getProductTypes();
   }
 
   ngOnInit() {
+    this.fetchProductList();
+    let temp = this.pdService.getProducts();
+    temp.snapshotChanges().subscribe(res => {
+      this.products = [];
+      res.forEach(item => {
+        let a = item.payload.toJSON();
+        a['$key'] = item.key;
+        this.products.push(a as Product);
+      })
+      console.log(this.products);
+    })
+    this.searchedItem = this.products;
+    this.productTypes = this.pdService.getProductTypes();
   }
 
   ionViewDidEnter() {
@@ -46,12 +56,18 @@ export class ProductsPage implements OnInit {
   }
 
   viewDetail(item) {
-    // console.log(item);
+    console.log(item);
     this.route.navigate(['tabs/detail'], {
       queryParams: item,
     });
   }
   
+  fetchProductList() {
+    this.pdService.getProducts().valueChanges().subscribe(res => {
+      this.searchedItem=this.products;
+    })
+  }
+
   /**
    * Tìm kiếm danh sách sản phẩm trong products
    * @param event | String
@@ -65,15 +81,6 @@ export class ProductsPage implements OnInit {
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
-  }
-
-  async addToCart() {
-    this.orderService.CartNotChecked();
-    const toast = await this.toastController.create({
-      message: 'Thêm hàng.',
-      duration: 2000
-    });
-    toast.present();
   }
 
 }

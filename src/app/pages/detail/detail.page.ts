@@ -11,7 +11,7 @@ import { Product } from '../../models/product';
   styleUrls: ['./detail.page.scss'],
 })
 export class DetailPage implements OnInit {
-  loadedProduct: Product;
+  loadedProduct: any;
   imgUrl: string;
   constructor(
     //Dependency Injection
@@ -22,9 +22,13 @@ export class DetailPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(paramMap => {
-      const id = paramMap.id;
-      this.loadedProduct = this.pdService.getProduct(id);
-      this.imgUrl = this.loadedProduct.images[0];
+      const $key = paramMap.$key;
+      let temp = this.pdService.getProduct($key);
+      temp.snapshotChanges().subscribe(item => {{
+        this.loadedProduct = item.payload.toJSON();
+        console.log(this.loadedProduct);
+      }
+      })
     });
   }
 }

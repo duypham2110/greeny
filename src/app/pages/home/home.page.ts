@@ -4,15 +4,16 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { ProductService } from '../../services/product-service';
 
 import { Router } from '@angular/router';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-  
-  
-  
+
+
+
 
 export class HomePage {
   currentImage: any;
@@ -35,17 +36,24 @@ export class HomePage {
 
   constructor(
     public authService: AuthenticationService,
-    public camera: Camera,
     public pdService: ProductService,
     public route: Router
-  ) {
-    this.products = pdService.getProducts();
-    this.productTypes = pdService.getProductTypes();
-    this.searchedItem = this.products;
-    
-  }
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    let temp = this.pdService.getProducts();
+    temp.snapshotChanges().subscribe(res => {
+      this.products = [];
+      res.forEach(item => {
+        let a = item.payload.toJSON();
+        a['$key'] = item.key;
+        this.products.push(a as Product);
+      })
+      console.log(this.products);
+    })
+    this.productTypes = this.pdService.getProductTypes();
+    this.searchedItem = this.products;
+   }
 
   openProducts() {
     this.route.navigate(['tabs/products']);
@@ -79,20 +87,10 @@ export class HomePage {
 
   }
 
-  // takePicture() {
-  //   const options: CameraOptions = {
-  //     quality: 100,
-  //     destinationType: this.camera.DestinationType.DATA_URL,
-  //     encodingType: this.camera.EncodingType.JPEG,
-  //     mediaType: this.camera.MediaType.PICTURE
-  //   };
-
-  //   this.camera.getPicture(options).then((imageData) => {
-  //     this.currentImage = 'data:image/jpeg;base64,' + imageData;
-  //   }, (err) => {
-  //     // Handle error
-  //     console.log("Camera issue:" + err);
-  //   });
-  // }
+  fetchProductList() {
+    this.pdService.getProducts().valueChanges().subscribe(res => {
+      console.log(res)
+    })
+  }
 
 }
