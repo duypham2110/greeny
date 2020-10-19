@@ -1,17 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title style="text-align: center;" >Quên Mật Khẩu</ion-title>
+    <ion-title>forgetPass</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <img src="../../../assets/images/forget-pass.png" alt="">
+  <h1>Forgot Password</h1>
   <form class="form">
     <div>
-      <p class="label">Your email <a>*</a></p>
-      <ion-input class="fix" type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required></ion-input>
+      <p class="label">Your email <a>*</a></p> <br />
+      <ion-input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required></ion-input>
     </div>
-    <ion-button color="btnsend" class="btn-submit" type="submit" (click)="sendPasswordReset()" expand="block">Send Link</ion-button>
-    <ion-button class="back" color="btnback" expand="block" (click)=backLogin()>Back to log in</ion-button>
+    <ion-button type="submit" color="03A87C" (click)="sendPasswordReset()">Send Link</ion-button>
+    <ion-button (click)=backLogin()>Back to log in</ion-button>
   </form>
 </ion-content>
