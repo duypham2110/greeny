@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <div>
+      <ion-buttons class="backTop" slot="start">
+        <ion-back-button icon="chevron-back-outline" defaultHref="tabs/profile"></ion-back-button>
+      </ion-buttons>
+    </div>
+    <ion-row>
+      <ion-col class="mid">
+        <ion-title class="title-header">Thông tin tài khoản</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="avatar-div">
+    <div class="replace_avt_div">
+      <ion-icon name="camera"></ion-icon>
+    </div>
+    <img src="../../../assets/images/avt_me.jpg" alt="">
+    <ion-label>Nguyễn Đức Hiếu</ion-label>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Họ và tên</ion-label>
+      <ion-input class="input-item" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Địa chỉ</ion-label>
+      <ion-input class="input-item" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Số điện thoại</ion-label>
+      <ion-input class="input-item" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input class="input-item" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ngày sinh</ion-label>
+      <ion-input class="input-item" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-row class="radio-row">
+    <ion-radio-group>
+      <ion-col>
+        <ion-item>
+          <ion-radio value="Nam"></ion-radio>
+          <ion-label>Nam</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-radio value="Nu"></ion-radio>
+          <ion-label>Nữ</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-radio-group>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row class="row">
+      <ion-button color="success" class="btn-footer">Lưu thay đổi</ion-button>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

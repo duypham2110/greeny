@@ -1,20 +1,15 @@
-@font-face {
-  font-family: 'Saira Extra Condensed';
-  src: url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,700');
+*{
+  font-size: 11px;
+  text-transform: inherit;
 }
 
-.md ion-item {
-  --inner-padding-end: 10px;
+.mid {
+  text-align: center;
 }
-
-.item-inner {
-  padding: 0 !important;
-}
-
 
 .backTop {
   position: absolute;
-  top: 0;
+  top: 4px;
   left: 0;
 }
 
@@ -24,75 +19,77 @@
   text-align: center;
 }
 
-.font-note {
-  font-size: .7rem;
-  color: #70757A;
-  font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
+super-tabs-toolbar {
+  background: #fff;
 
-.text-14 {
-  font-size: .85rem !important;
-}
-
-.font-normal {
-  font-size: .7rem;
-  color: #000000fa;
-}
-
-.font-note-bold {
-  font-size: .7rem;
-  color: #34495e;
-}
-
-.font700{
-  font-size: .7rem;
-  font-weight: 700;
-  color: #34495e;
-}
-
-.title-bold {
-  font-weight: 600;
-  font-size: .8rem;
-}
-
-.btn-detail {
-  box-sizing: border-box;
-  padding: 1px;
-  font-size: .6rem;
-  text-transform: inherit;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-}
-
-.d-block {
-  display: block;
-}
-
-
-.text-r{
-  text-align: right;
-}
-
-.font-big {
-  font-weight: 600;
-  font-size: .96rem;
-}
-
-.row {
-  padding: 5px 15px 7px;
-  background: #fcf8f8;
-  .btn-footer {
-  width: 100%;
+  super-tab-button {
+    padding: 0;
+      
   }
 }
 
-.ios .row {
-  padding: 0 13px 5px;
-  background: #fcf8f8;
-  
-  .btn-footer {
+.line {
+  background: #edf2f6;
+  height: 10px;
+}
+
+ion-list {
+  padding: 0;
+  ion-item {
+    --min-height: 25px;
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    
+  }
+}
+
+
+.promotion {
+  --background: red;
+  ion-col {
+    height: 90px;
+    img {
+      max-width: 100%;
+      border: 0;
+    }
+    ion-row {
+      height: 50%;
+      padding: 10px 0 15px 10px;
+    }
+    ion-row:first-child {
+      padding-bottom: 0;
+      div {
+        width: 70%;
+        .ticket-icon {
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+      }
+      ion-label {
+          text-align: end;
+          padding-right: 5px;
+          width: 30%;
+        }
+    }
+    ion-row:nth-child(2) {
+      padding-right: 5px;
+      padding-top: 0;
+      
+      ion-note {
+        height: 100%;
+      }
+    }
+  }
+
+  .btn-row {
     width: 100%;
-    padding: 2px;
+    display: flex;
+    height: 56px;
+
+    ion-col {
+      height: 100%;
+    }
   }
 }

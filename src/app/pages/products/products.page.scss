@@ -15,9 +15,26 @@ ion-col {
 
 ion-searchbar {
   --border-radius: 25px;
-  --icon-color:green;
+  --icon-color:#2dd66f;
   --placeholder-color: grey;
 }
+
+.mid {
+  text-align: center;
+}
+
+.backTop {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
 
 .text-11 {
   font-size: 11px;
@@ -35,25 +52,33 @@ ion-searchbar {
         }
 
 .hot {
+  padding-top: 0;
+  
 .title-item {
     color: #484646f2;
     font-size: 1rem;
     font-weight: 600;
 }
   .products-hot-row {
-    display: block;
+    display: flex;
     padding: 0 10px;
     ion-col {
-      height: 180px;
+      display: block;
+      height: 160px;
       padding: 0;
-      img {
-        height: 70%;
+      margin-bottom: 10px;
+      .item {
+        width: 90%;
+        margin: 0 6px;
+        height: 100%;
+        img {
+        height: 55%;
         width: -webkit-fill-available;
         border-radius: 6px;
       }
       div {
         display: block;
-        height: 15%;
+        height: 22.5%;
         padding: 8px 8px 0;
         .ticket-icon {
           margin-right: 5px;
@@ -61,38 +86,31 @@ ion-searchbar {
         
         .add-icon {
           right: 8px;
-          bottom: -2px;
+          bottom: 8px;
           position: absolute;
           display: block;
           font-size: 1.5rem;
         }
       }
-    }
-
-    ion-col:first-child {
-      float: left;
-    }
-
-    ion-col:nth-child(2) {
-      float: right;
+      }
+     
     }
   }
 }
 
 .line {
-  background: #f6f6f6;
+  background: #edf2f6;
   height: 8px;
 }
 
 .promotion {
   padding-bottom: 0;
-  ion-item:last-child {
-    --inner-border-width: 0;
-  }
   ion-col {
-    height: 100px;
+    height: 90px;
     img {
-      border-radius: 6px;
+      max-width: 100%;
+      border: 0;
+      margin-top: 5px;
     }
     ion-row {
       height: 50%;
@@ -116,7 +134,7 @@ ion-searchbar {
     ion-row:nth-child(2) {
       padding-right: 5px;
       padding-top: 0;
-      height: 41%;
+      height: 58%;
       --overflow: hidden;
       ion-note {
         overflow: hidden;
@@ -124,7 +142,4 @@ ion-searchbar {
       }
     }
   }
-}
-.infomation{
-  margin-bottom: 8px;
 }

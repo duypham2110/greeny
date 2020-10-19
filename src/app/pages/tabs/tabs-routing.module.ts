@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-import { CartPage } from '../cart/cart.page';
-import { HomePage } from '../home/home.page';
-import { ProductsPage } from '../products/products.page';
-import { ProfilePage } from '../profile/profile.page';
 
 const routes: Routes = [
   {
     path: '',
     component: TabsPage,
     children: [
+      // chuyển đến products
       {
         path: 'home',
         children: [
@@ -20,6 +17,7 @@ const routes: Routes = [
           }
         ]
       },
+      // chuyển đến products
       {
         path: 'products',
         children: [
@@ -33,6 +31,7 @@ const routes: Routes = [
           }
         ]
       },
+      // chuyển đến cart
       {
         path: 'cart',
         children: [
@@ -42,6 +41,7 @@ const routes: Routes = [
           }
         ]
       },
+      // chuyển đến profile
       {
         path: 'profile',
         children: [
@@ -51,6 +51,37 @@ const routes: Routes = [
           }
         ]
       },
+      // chuyển đến detail
+      {
+        path: 'detail',
+        children: [
+          {
+            path: '',
+            loadChildren: '../detail/detail.module#DetailPageModule'
+          }
+        ]
+      },
+      // chuyển đến detail-bill
+      {
+        path: 'detail-bill',
+        children: [
+          {
+            path: '',
+            loadChildren: '../detail-bill/detail-bill.module#DetailBillPageModule'
+          }
+        ]
+      },
+      // chuyển đến bill
+      {
+        path: 'bill',
+        children: [
+          {
+            path: '',
+            loadChildren: '../bill/bill.module#BillPageModule'
+          }
+        ]
+      },
+      // chuyển đến login
       {
         path: 'login',
         children: [
@@ -60,6 +91,17 @@ const routes: Routes = [
           }
         ]
       },
+      // chuyển đến my info
+      {
+        path: 'my-info',
+        children: [
+          {
+            path: '',
+            loadChildren: '../my-info/my-info.module#MyInfoPageModule'
+          }
+        ]
+      },
+      // chuyển đến home
       {
         path: '',
         redirectTo: '/tabs/home',

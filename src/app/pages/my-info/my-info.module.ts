@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BillPageRoutingModule } from './bill-routing.module';
+import { MyInfoPageRoutingModule } from './my-info-routing.module';
 
-import { BillPage } from './bill.page';
-import { SuperTabsModule } from '@ionic-super-tabs/angular';
+import { MyInfoPage } from './my-info.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BillPageRoutingModule,
-    SuperTabsModule
+    MyInfoPageRoutingModule
   ],
-  declarations: [BillPage]
+  declarations: [MyInfoPage]
 })
-export class BillPageModule {}
+export class MyInfoPageModule {}
