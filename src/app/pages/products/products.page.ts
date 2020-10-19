@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../../services/product-service';
 import { AuthenticationService } from '../../services/authentication-service';
 import { IonSearchbar } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
+import { OrderService } from 'src/app/services/order-service';
 
 @Component({
   selector: 'app-products',
@@ -22,7 +24,9 @@ export class ProductsPage implements OnInit {
 
   constructor(
     public authService: AuthenticationService,
-    public pdService: ProductService
+    public pdService: ProductService,
+    public orderService: OrderService,
+    public toastController: ToastController
   ) {
     this.products = pdService.getProducts();
     this.searchedItem = this.products;
@@ -51,7 +55,15 @@ export class ProductsPage implements OnInit {
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
 
+  async addToCart() {
+    this.orderService.CartNotChecked();
+    const toast = await this.toastController.create({
+      message: 'Thêm hàng.',
+      duration: 2000
+    });
+    toast.present();
   }
 
 }

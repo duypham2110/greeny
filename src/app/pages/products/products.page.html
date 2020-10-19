@@ -30,7 +30,9 @@
           </div>
           <div>
             <ion-label class="cost-label">{{item.price}}</ion-label>
-            <ion-icon class="add-icon" name="add-circle" color="success"></ion-icon>
+            <a (click)="addToCart()">
+              <ion-icon class="add-icon" name="add-circle" color="success"></ion-icon>
+            </a>
           </div>
         </ion-card>
       </ion-col>

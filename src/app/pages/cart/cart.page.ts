@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderService } from 'src/app/services/order-service';
 
 @Component({
   selector: 'app-cart',
@@ -7,10 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
-
+  
   constructor(
-    private route: Router
-  ) { }
+    private route: Router,
+  ) { 
+  }
 
   ngOnInit() {
   }
