@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Sign in User</ion-title>
+    <ion-title style="text-align: center;">LOGIN</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -27,12 +27,14 @@
 
     <ion-row>
       <ion-col> 
-      <ion-button type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
+      <ion-button color="success" type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
       </ion-col>
     </ion-row>
 
     
-
+    <div class="login-with">
+      Quick login with:
+    </div>
     <ion-row>
       <ion-col> 
         <ion-button 
@@ -49,7 +51,7 @@
       <ion-col> 
         <ion-button 
          type="submit" 
-         color="primary"
+         color="secondary"
          (click)="authService.FacebookAuth()"
          expand="block">
            Login with Facebook
@@ -59,7 +61,7 @@
 
     <ion-row>
       <ion-col> 
-      <ion-button routerLink="/registration" expand="block">Register</ion-button>
+      <ion-button color="favorite" routerLink="/registration" expand="block">Register</ion-button>
       </ion-col>
     </ion-row>
     
