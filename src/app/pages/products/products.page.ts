@@ -3,6 +3,8 @@ import { ProductService } from '../../services/product-service';
 import { AuthenticationService } from '../../services/authentication-service';
 import { IonSearchbar } from '@ionic/angular';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.page.html',
@@ -22,7 +24,8 @@ export class ProductsPage implements OnInit {
 
   constructor(
     public authService: AuthenticationService,
-    public pdService: ProductService
+    public pdService: ProductService,
+    public route: Router
   ) {
     this.products = pdService.getProducts();
     this.searchedItem = this.products;
@@ -36,6 +39,13 @@ export class ProductsPage implements OnInit {
     setTimeout(() => {
       this.search.setFocus();
     })
+  }
+
+  viewDetail(item) {
+    // console.log(item);
+    this.route.navigate(['tabs/detail'], {
+      queryParams: item,
+    });
   }
   
   /**

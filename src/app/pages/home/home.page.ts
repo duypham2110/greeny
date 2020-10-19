@@ -4,7 +4,6 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { ProductService } from '../../services/product-service';
 
 import { Router } from '@angular/router';
-import { DetailPage } from '../../pages/detail/detail.page';
 
 @Component({
   selector: 'app-home',
@@ -57,7 +56,7 @@ export class HomePage {
   //       this.route.navigate(['tabs/detail']);
   //   })
   // }
-  viewRestaurant(item) {
+  viewDetail(item) {
     // console.log(item);
     this.route.navigate(['tabs/detail'], {
       queryParams: item,
