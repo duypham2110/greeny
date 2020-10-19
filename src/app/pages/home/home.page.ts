@@ -59,13 +59,7 @@ export class HomePage {
     this.route.navigate(['tabs/products']);
   }
 
-  // openDetail(name) {
-  //   this.products.find(name => {
-  //       this.route.navigate(['tabs/detail']);
-  //   })
-  // }
   viewDetail(item) {
-    // console.log(item);
     this.route.navigate(['tabs/detail'], {
       queryParams: item,
     });

@@ -19,7 +19,7 @@ export class ProductsPage implements OnInit {
   currentImage: any;
   products: any;
   productTypes;
-  private searchedItem: any;
+  searchedItem: any;
 
 
   listItem = ["Khuyến mãi", "Bán chạy", "Rau củ", "Trái cây", "Gợi ý cho bạn", "Thực phẩm khác"];
@@ -36,6 +36,7 @@ export class ProductsPage implements OnInit {
   ngOnInit() {
     this.fetchProductList();
     let temp = this.pdService.getProducts();
+    console.log('temp = ' + temp);
     temp.snapshotChanges().subscribe(res => {
       this.products = [];
       res.forEach(item => {
@@ -43,9 +44,8 @@ export class ProductsPage implements OnInit {
         a['$key'] = item.key;
         this.products.push(a as Product);
       })
-      console.log(this.products);
+      this.searchedItem = this.products;
     })
-    this.searchedItem = this.products;
     this.productTypes = this.pdService.getProductTypes();
   }
 
@@ -77,7 +77,7 @@ export class ProductsPage implements OnInit {
     this.searchedItem = this.products;
     if (val && val.trim() != '') {
       this.searchedItem = this.searchedItem.filter((item: any) => {
-        console.log(item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        // console.log(item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
