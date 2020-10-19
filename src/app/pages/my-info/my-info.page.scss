@@ -1,0 +1,79 @@
+* {
+  font-size: 13px;
+}
+
+ion-list {
+  padding: 0 8px;
+}
+
+.backTop {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.mid {
+  text-align: center;
+}
+
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  display: contents;
+}
+
+
+.avatar-div {
+  height: 110px;
+  padding-top: 3%;
+  text-align: center;
+  background: url("../../../assets/images/background-avt-green.jpg");
+
+  .replace_avt_div {
+    top: 55px;
+    right: 94px;
+    display: flex;
+    position: absolute;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: #f6f6f6;
+    ion-icon {
+      font-size: 1.3rem;
+    }
+  }
+
+  img {
+    height: 70px;
+    width: 70px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 60%;
+  }
+
+  ion-label {
+    font-weight: 800;
+    font-size: 1rem;
+    margin-top: 3px;
+    display: block;
+  }
+}
+
+.radio-row {
+  ion-radio-group {
+    display: flex;
+
+    ion-label {
+      margin-left: 8px;
+    }
+  }
+}
+
+.row {
+  padding: 5px 15px 7px;
+  background: #fcf8f8;
+  .btn-footer {
+  width: 100%;
+  }
+}

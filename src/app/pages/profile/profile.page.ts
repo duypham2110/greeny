@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication-service';
 import * as firebase from 'firebase';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,22 +12,22 @@ import {Router} from '@angular/router';
 export class ProfilePage implements OnInit {
 
   userData: object | null;
-  email:any | null;
+  email: any | null;
   phoneNumber: any;
-  photo: any |null;
+  photo: any | null;
   name: string | null;
 
-  constructor( public authService: AuthenticationService, public route: Router) { 
-    
-    
-  }
+  constructor(
+    public authService: AuthenticationService,
+    public route: Router
+  ) { }
 
   ngOnInit() {
     console.log(this.userData);
   }
 
   ionViewDidEnter() {
-    if(firebase.auth().currentUser === null) {
+    if (firebase.auth().currentUser === null) {
       this.route.navigate(['tabs/login'])
     }
     this.userData = firebase.auth().currentUser;
@@ -37,11 +37,15 @@ export class ProfilePage implements OnInit {
     this.name = firebase.auth().currentUser.displayName;
   }
 
-  signOut(){
+  signOut() {
     this.authService.SignOut();
   }
 
-  resetPassword(){
-    
+  openMyInfo() {
+    this.route.navigate(['tabs/my-info']);
+  }
+
+  openBill() {
+    this.route.navigate(['tabs/bill']);
   }
 }

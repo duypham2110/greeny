@@ -8,29 +8,22 @@
   }
   
   .sign-in-content {
-    --ion-background-color:#4CAF50;
-      text-align: center;
-      --padding-bottom: 16px;
-      --padding-end: 16px;
-      --padding-start: 16px;
+    text-align: center;
+    --padding-bottom: 16px;
+    --padding-end: 16px;
+    --padding-start: 16px;
       
-      
-  
-      
-    
       .social-auth-options {
         .options-divider {
               text-align: center;
         }
       }
     
-      .inputs-list {
         .input-item {
           --padding-start: 0px;
           --padding-end: 0px;
           --inner-padding-end: 0px;
         }
-      }
     
       .error-container {
         .error-message {
