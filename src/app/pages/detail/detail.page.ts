@@ -29,7 +29,8 @@ export class DetailPage implements OnInit {
       temp.snapshotChanges().subscribe(item => {
         {
           this.loadedProduct = item.payload.toJSON();
-          console.log('tao = ' + this.loadedProduct);
+          console.log('tao: ');
+          console.log(this.loadedProduct);
         }
       })
     });

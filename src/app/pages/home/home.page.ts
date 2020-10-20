@@ -117,4 +117,7 @@ export class HomePage {
     })
   }
 
+  addTocart(){
+    console.log('add');
+  }
 }
