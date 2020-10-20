@@ -15,24 +15,20 @@
 
 <ion-content [fullscreen]="true" id="ion-content">
   <ion-searchbar #search placeholder='Tìm kiếm...' (ionChange)="_searchChange($event)"></ion-searchbar>
-<<<<<<< HEAD
   <!-- <ion-list class="hot" *ngFor="let run of listItem">
-=======
-  <ion-list class="hot" *ngFor="let collection of collections">
->>>>>>> 283e1253b6d5c9d8ef607778c4bea69072a6b38c
     <ion-item lines="none" class="title-item">
-      {{collection.name}}
+      {{run}}
     </ion-item>
     <ion-row class="products-hot-row">
-      <ion-col size="6" *ngFor="let item of loadProductsCollection(collection.products)">
-        <ion-card class="item" (click)="viewDetail(item)">
+      <ion-col size="6" *ngFor="let item of searchedItem">
+        <ion-card class="item"  (click)="viewDetail(item)">
           <img [src]="item.images[0]" alt="">
           <div>
             <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
             <ion-note>{{item.name}}</ion-note>
           </div>
           <div>
-            <ion-label color="success" class="cost-label">{{item.price}}đ</ion-label>
+            <ion-label class="cost-label">{{item.price}}</ion-label>
             <a (click)="addToCart()">
               <ion-icon class="add-icon" name="add-circle" color="success"></ion-icon>
             </a>
@@ -42,19 +38,13 @@
     </ion-row>
   </ion-list> -->
   <div class="line"></div>
-<<<<<<< HEAD
   <ion-list class="promotion">
     <div *ngFor="let productType of productTypes">
     <ion-item lines="none" class="title-item">{{productType.name}}</ion-item>
     <ion-item *ngFor="let item of loadProductsFromType(productType)">
       <ion-row (click)="viewDetail(item)">
-=======
-  <!-- <ion-list class="promotion" *ngFor="let collection of collections">
-    <ion-item lines="none" class="title-item">item</ion-item>
-    <ion-item *ngFor="let item of loadProductsCollection(collection.products)">
-      <ion-row>
->>>>>>> 283e1253b6d5c9d8ef607778c4bea69072a6b38c
         <ion-col size="4">
+          <!-- <img [src]="item.images" alt=""> -->
           <img src="../../../assets/images/background-img-organic.jpg" alt="">
         </ion-col>
         <ion-col size="8">
@@ -73,10 +63,6 @@
         </ion-col>
       </ion-row>
     </ion-item>
-<<<<<<< HEAD
   </div>
   </ion-list>
-=======
-  </ion-list> -->
->>>>>>> 283e1253b6d5c9d8ef607778c4bea69072a6b38c
 </ion-content>
