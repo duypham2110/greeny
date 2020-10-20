@@ -7,11 +7,8 @@ import { OrderService } from 'src/app/services/order-service';
 
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
-<<<<<<< HEAD
 import { ProductType } from 'src/app/models/product-type';
-=======
 import { Collection } from 'src/app/models/collection';
->>>>>>> 283e1253b6d5c9d8ef607778c4bea69072a6b38c
 
 @Component({
   selector: 'app-products',
@@ -48,24 +45,6 @@ export class ProductsPage implements OnInit {
    
     this.productTypes = this.pdService.getProductTypes();
   }
-  
-  loadProducts(){
-    let temp = this.pdService.getProducts();
-<<<<<<< HEAD
-=======
-    
->>>>>>> 283e1253b6d5c9d8ef607778c4bea69072a6b38c
-    temp.snapshotChanges().subscribe(res => {
-      this.products = [];
-      res.forEach(item => {
-        let a = item.payload.toJSON();
-        a['$key'] = item.key;
-        this.products.push(a as Product);
-      })
-      this.searchedItem = this.products;
-    }) 
-   }
-
    loadProductTypes(){
     let temp = this.pdService.getProductTypes();
     temp.snapshotChanges().subscribe(res => {
@@ -173,7 +152,5 @@ export class ProductsPage implements OnInit {
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
-
   }
-
 }

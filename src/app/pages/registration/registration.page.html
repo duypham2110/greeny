@@ -1,30 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Đăng ký tài khoản</ion-title>
+    <ion-row>
+      <div>
+        <ion-buttons class="backTop" slot="start">
+          <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
+        </ion-buttons>
+      </div>
+      <ion-col class="mid">
+        <ion-title class="title-header">Sign Up</ion-title>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <form [formGroup]="signUpForm">
+    <div class="logo-div">
+      <img src="../../../assets/images/vegetables.png" alt="">
+    </div>
 
-    <ion-label class="account">Email:</ion-label>
-    <ion-input class="input" formControlName="email" type="text" #email required></ion-input>
+    <div class="margin-bottom"></div>
+    <ion-item class="input-item" lines="full">
+      <ion-label position="floating">Full Name</ion-label>
+      <ion-input formControlName="name" type="text" #name required></ion-input>
+    </ion-item>
 
-    <ion-label class="account">Mật khẩu:</ion-label>
-    <ion-icon class="icon" name="eye-outline"></ion-icon>
-    <ion-input class="input" formControlName="password" type="password" #password required></ion-input>
+    <div class="margin-bottom"></div>
+    <ion-item class="input-item" lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="text" #email required></ion-input>
+    </ion-item>
 
-    <ion-label class="account">Nhập lại mật khẩu:</ion-label>
-    <ion-icon class="icon2" name="eye-outline"></ion-icon>
-    <ion-input class="input" formControlName="rePassword" type="password" #rePassword required></ion-input>
+    <div class="margin-bottom"></div>
+    <ion-item class="input-item" lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password" #password required></ion-input>
+    </ion-item>
 
-    <ion-row>
+    <div class="margin-bottom"></div>
+    <ion-item class="input-item" lines="full">
+      <ion-label position="floating">RePassword</ion-label>
+      <ion-input formControlName="rePassword" type="password" #rePassword required></ion-input>
+    </ion-item>
+
+    <div class="margin-bottom"></div>
+    <ion-row class="sign-in-row">
       <ion-col>
-        <ion-button color="buttongreen" [disabled]="!signUpForm.valid&&!checkPassword(password, rePassword)"
-          type="submit" (click)="signUp(email, password)" expand="block" color="buttongreen">Đăng ký</ion-button>
+        <ion-button [disabled]="!signUpForm.valid&&!checkPassword(password, rePassword)" type="submit"
+          (click)="signUp(email, password)" expand="block">Sign up</ion-button>
       </ion-col>
     </ion-row>
   </form>
