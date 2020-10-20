@@ -15,11 +15,7 @@
 
 <ion-content [fullscreen]="true" id="ion-content">
   <ion-searchbar #search placeholder='Tìm kiếm...' (ionChange)="_searchChange($event)"></ion-searchbar>
-<<<<<<< HEAD
-  <!-- <ion-list class="hot" *ngFor="let run of listItem">
-=======
   <ion-list class="hot" *ngFor="let collection of collections">
->>>>>>> 283e1253b6d5c9d8ef607778c4bea69072a6b38c
     <ion-item lines="none" class="title-item">
       {{collection.name}}
     </ion-item>
@@ -40,20 +36,12 @@
         </ion-card>
       </ion-col>
     </ion-row>
-  </ion-list> -->
+  </ion-list>
   <div class="line"></div>
-<<<<<<< HEAD
-  <ion-list class="promotion">
-    <div *ngFor="let productType of productTypes">
-    <ion-item lines="none" class="title-item">{{productType.name}}</ion-item>
-    <ion-item *ngFor="let item of loadProductsFromType(productType)">
-      <ion-row (click)="viewDetail(item)">
-=======
   <!-- <ion-list class="promotion" *ngFor="let collection of collections">
     <ion-item lines="none" class="title-item">item</ion-item>
     <ion-item *ngFor="let item of loadProductsCollection(collection.products)">
       <ion-row>
->>>>>>> 283e1253b6d5c9d8ef607778c4bea69072a6b38c
         <ion-col size="4">
           <img src="../../../assets/images/background-img-organic.jpg" alt="">
         </ion-col>
@@ -73,10 +61,5 @@
         </ion-col>
       </ion-row>
     </ion-item>
-<<<<<<< HEAD
-  </div>
-  </ion-list>
-=======
   </ion-list> -->
->>>>>>> 283e1253b6d5c9d8ef607778c4bea69072a6b38c
 </ion-content>
