@@ -92,7 +92,7 @@ export class HomePage {
   }
 
   viewDetail(item) {
-    this.route.navigate(['tabs/detail-product'], {
+    this.route.navigate(['tabs/detail'], {
       queryParams: item,
     });
   }

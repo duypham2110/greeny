@@ -33,10 +33,6 @@ const routes: Routes = [
   {
     path: 'my-info',
     loadChildren: () => import('./pages/my-info/my-info.module').then( m => m.MyInfoPageModule)
-  },
-  {
-    path: 'detail-product',
-    loadChildren: () => import('./pages/detail-product/detail-product.module').then( m => m.DetailProductPageModule)
   }
 
 ];
