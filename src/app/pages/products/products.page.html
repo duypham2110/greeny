@@ -21,14 +21,14 @@
     </ion-item>
     <ion-row class="products-hot-row">
       <ion-col size="6" *ngFor="let item of searchedItem">
-        <ion-card class="item"  (click)="viewDetail(item)">
+        <ion-card class="item" (click)="viewDetail(item)">
           <img [src]="item.images[0]" alt="">
           <div>
             <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
             <ion-note>{{item.name}}</ion-note>
           </div>
           <div>
-            <ion-label class="cost-label">{{item.price}}</ion-label>
+            <ion-label color="success" class="cost-label">{{item.price}}đ</ion-label>
             <a (click)="addToCart()">
               <ion-icon class="add-icon" name="add-circle" color="success"></ion-icon>
             </a>

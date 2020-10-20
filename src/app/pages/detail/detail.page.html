@@ -17,7 +17,7 @@
         </ion-buttons>
       </div>
       <ion-col class="mid">
-        <ion-title class="title-header">Nhà cung cấp</ion-title>
+        <ion-title class="title-header">Chi tiết</ion-title>
       </ion-col>
     </ion-row>
     
@@ -26,46 +26,58 @@
 <ion-content>
   <ion-slides [options]="sliderConfig">
     <ion-slide>
-      <ion-card>
-        <div class="advertise">
-          <ion-img class="img" [src]="loadedProduct.images[0]"></ion-img>
-        </div>
-      </ion-card>
+      <div class="advertise">
+        <ion-img class="img" [src]="loadedProduct.images[0]"></ion-img>
+      </div>
     </ion-slide>
   </ion-slides>
-  <ion-row lines="none" class="cost-row" color="success">
-    <ion-label>{{loadedProduct.price}}</ion-label>
-  </ion-row>
-
-  <ion-row lines="none" class="name-product-row">
-    <ion-label>{{loadedProduct.name}}</ion-label>
-  </ion-row>
-  <ion-item class="introduce">
-    <ion-row>
-      <ion-col size="3">
-        <ion-icon name="home" color="success"></ion-icon>
+  <ion-list>
+    <ion-item class="item">
+      <ion-col size="5">
+        <ion-label>Tên sản phẩm:</ion-label>
       </ion-col>
-      <ion-col size="6">
-        <ion-label>Greeny Farm</ion-label>
-        <ion-text>Nông trại organic cung cấp trái cây, thực phẩm.</ion-text>
+      <ion-col size="7">
+        <ion-label>{{loadedProduct.name}}</ion-label>
       </ion-col>
-      <ion-col size="3">
-        <ion-button>Xem</ion-button>
+    </ion-item>
+    <ion-item class="item">
+      <ion-col size="5">
+        <ion-label>Giá</ion-label>
       </ion-col>
-    </ion-row>
-
-  </ion-item>
-  <ion-list class="introduce">
-    <ion-row>
-      <ion-label>Thông tin dinh dưỡng</ion-label>
-      <ion-text>Vitamin A, B, C , X, Y, Z</ion-text>
-      <ion-text>Chất béo, chất xơ</ion-text>
-    </ion-row>
-    <ion-row>
-      <ion-label>HDSD & Bảo quản</ion-label>
-      <ion-text>Dùng trong vòng 1 - 2 ngày</ion-text>
-      <ion-text>Tránh ánh nắng trực tiếp</ion-text>
-    </ion-row>
+      <ion-col size="7">
+        <ion-label color="success">{{loadedProduct.price}}đ</ion-label>
+      </ion-col>
+    </ion-item>
+    <ion-item class="item">
+      <ion-col size="5">
+        <ion-label>Sản xuất tại:</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        <ion-label>{{loadedProduct.madeIn}}</ion-label>
+      </ion-col>
+    </ion-item>
+    <ion-item class="item">
+      <ion-col size="5">
+        <ion-label>Mô tả:</ion-label>
+      </ion-col>
+      <ion-col size="7">
+        <ion-label>{{loadedProduct.description}}</ion-label>
+      </ion-col>
+    </ion-item>
+    <ion-item class="producer">
+      <ion-row>
+        <ion-col size="2">
+          <ion-icon name="home" color="success"></ion-icon>
+        </ion-col>
+        <ion-col size="7">
+          <ion-label>Greeny Farm</ion-label>
+          <ion-text>Nông trại organic cung cấp trái cây, thực phẩm.</ion-text>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button fill="clear" (click)="openProducer()">Xem</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
   </ion-list>
 </ion-content>
 <ion-footer>
