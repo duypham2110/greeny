@@ -61,6 +61,7 @@ export class DetailPage implements OnInit {
       getItemLocalStorage.products.push({ id: this.$key, quantity: 1 });
     }
 
+    console.log('Add to cart')
     console.log(getItemLocalStorage);
 
     localStorage.setItem(this.user.uid, JSON.stringify(getItemLocalStorage));
