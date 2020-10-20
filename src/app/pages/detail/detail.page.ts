@@ -4,7 +4,6 @@ import { AuthenticationService } from '../../services/authentication-service';
 import { ProductService } from '../../services/product-service';
 import { Product } from '../../models/product';
 
-import { Router } from '@angular/router';
 
 
 @Component({
