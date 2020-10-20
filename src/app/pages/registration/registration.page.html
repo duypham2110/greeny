@@ -10,22 +10,26 @@
 <ion-content>
   <form [formGroup]="signUpForm">    
 
-      <ion-label class="account">Email:</ion-label>
-      <ion-input class="input" formControlName = "email" type="text" #email required></ion-input>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName = "email" type="text" #email required></ion-input>
+    </ion-item> 
 
-      <ion-label class="account">Mật khẩu:</ion-label>
-      <ion-icon class="icon" name="eye-outline"></ion-icon>
-      <ion-input class="input" formControlName = "password" type="password" #password required></ion-input>
+    <ion-item lines="full">
+      <ion-label position="floating">Mật khẩu</ion-label>
+      <ion-input formControlName = "password" type="password" #password required></ion-input>
+    </ion-item>
 
-      <ion-label class="account">Nhập lại mật khẩu:</ion-label>
-      <ion-icon class="icon2" name="eye-outline"></ion-icon>
-      <ion-input class="input" formControlName = "rePassword" type="password" #rePassword required></ion-input>
+    <ion-item lines="full">
+      <ion-label position="floating">Xác nhận mật khẩu</ion-label>
+      <ion-input formControlName = "rePassword" type="password" #rePassword required></ion-input>
+    </ion-item>
 
     <ion-row>
       <ion-col> 
-      <ion-button color="buttongreen" [disabled]="!signUpForm.valid&&!checkPassword(password, rePassword)"
-      type="submit" (click)="signUp(email, password)" expand="block" color="buttongreen" >Đăng ký</ion-button>
-    </ion-col>
+      <ion-button [disabled]="!signUpForm.valid&&!checkPassword(password, rePassword)"
+      type="submit" (click)="signUp(email, password)" expand="block">Đăng ký</ion-button>
+      </ion-col>
     </ion-row>
   </form>
 </ion-content>
