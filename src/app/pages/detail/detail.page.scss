@@ -25,45 +25,74 @@ ion-item {
   text-align: center;
 }
 
-ion-card {
-  padding: 0;
-  margin: 0;
-    
   .advertise {
     height: 130px;
     .img {
       width: 100%;
       height: 100%;
+      object-fit: fill;
+    }
+  }
+
+.item {
+  ion-col:first-child {
+    ion-label {
+      font-weight: 600;
+    }
+  }
+  
+}
+
+.producer {
+  ion-row {
+    margin-bottom: 6px;
+    ion-col {
+      ion-icon {
+        font-size: 1.5rem;
+        height: 100%;
+      }
+    }
+
+    ion-col:nth-child(2) {
+      display: block;
+      ion-label {
+        height: 40%;
+        font-size: 14px;
+        font-weight: 600;
+        padding-top: 4%;
+        margin-bottom: 5px;
+      }
+      ion-text {
+        height: 60%;
+      }
+    }
+
+    ion-col:nth-child(3) {
+      display: inherit;
+
+      ion-button {
+        margin: auto;
+        text-transform: lowercase;
+        color: #77390d;
+        font-weight: 600;
+      }
     }
   }
 }
 
-.cost-row {
-  color: #fff;
-  background-color: aqua;
-  height: 100px;
-  ion-label {
-    font-size: 14px;
-    font-weight: 600;
-  }
+#content {
+  position: absolute;
 }
 
-.name-product-row {
-  ion-label {
-    font-weight: 600;
-    color: black;
-  }
-}
 
 ion-footer {
   width: 100%;
-  height: 100px;
-
-.row {
-  padding: 5px 15px 7px;
-  .btn-footer {
-  width: 100%;
+  bottom: 0;
+  position: absolute;
+    .row {
+    padding: 10px 15px 7px;
+    .btn-footer {
+      width: 100%;
+    }
   }
-}
-
 }

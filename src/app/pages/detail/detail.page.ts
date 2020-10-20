@@ -4,6 +4,8 @@ import { AuthenticationService } from '../../services/authentication-service';
 import { ProductService } from '../../services/product-service';
 import { Product } from '../../models/product';
 
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-detail',
@@ -17,7 +19,8 @@ export class DetailPage implements OnInit {
     //Dependency Injection
     private authService: AuthenticationService,
     private activatedRoute: ActivatedRoute,
-    private pdService: ProductService
+    private pdService: ProductService,
+    public route: Router
   ) { }
 
   ngOnInit() {
@@ -27,9 +30,13 @@ export class DetailPage implements OnInit {
       temp.snapshotChanges().subscribe(item => {
         {
           this.loadedProduct = item.payload.toJSON();
-          console.log('tao = '+this.loadedProduct);
+          console.log('tao = ' + this.loadedProduct);
         }
       })
     });
+  }
+
+  openProducer() {
+    this.route.navigate(['tabs/producer']);
   }
 }
