@@ -15,7 +15,7 @@
 
 <ion-content [fullscreen]="true" id="ion-content">
   <ion-searchbar #search placeholder='Tìm kiếm...' (ionChange)="_searchChange($event)"></ion-searchbar>
-  <!-- <ion-list class="hot" *ngFor="let run of listItem">
+  <ion-list class="hot" *ngFor="let collection of collections">
     <ion-item lines="none" class="title-item">
       {{run}}
     </ion-item>
@@ -36,7 +36,7 @@
         </ion-card>
       </ion-col>
     </ion-row>
-  </ion-list> -->
+  </ion-list>
   <div class="line"></div>
   <ion-list class="promotion">
     <div *ngFor="let productType of productTypes">

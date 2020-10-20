@@ -45,8 +45,6 @@ export class ProductsPage implements OnInit {
    
     this.productTypes = this.pdService.getProductTypes();
   }
-  
-
    loadProductTypes(){
     let temp = this.pdService.getProductTypes();
     temp.snapshotChanges().subscribe(res => {
@@ -167,7 +165,5 @@ export class ProductsPage implements OnInit {
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
-
   }
-
 }
