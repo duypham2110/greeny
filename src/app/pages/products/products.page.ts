@@ -102,7 +102,7 @@ export class ProductsPage implements OnInit {
   //       a['$key'] = item.key;
   //       this.products.push(a as Product);
   //     })
-  //     this.searchedItem = this.products;
+  //     this.searchedItem = this.products
   //   }) 
   //  }
 

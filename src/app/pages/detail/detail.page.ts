@@ -49,9 +49,7 @@ export class DetailPage implements OnInit {
 
     if (getItemLocalStorage === null) {
       getItemLocalStorage = {
-        products: [
-
-        ]
+        products: []
       }
     }
 

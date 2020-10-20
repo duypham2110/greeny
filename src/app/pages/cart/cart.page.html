@@ -62,10 +62,16 @@
     </ion-col>
   </ion-row>
   <ion-list class="products">
-    <ion-item>
+    <div *ngFor="let item of cart.products">
+      <ion-item>Code:{{item.id}}</ion-item>
+      <ion-item>Quantity:{{item.quantity}}</ion-item>
+      <ion-item *ngFor="let product of loadCartProduct(item)">
+        Name:{{product.name}}
+      </ion-item>
+    </div>
+    <!-- <ion-item>
       <ion-row>
         <ion-col size="4">
-          <!-- <img [src]="item.images" alt=""> -->
           <img src="../../../assets/images/background-img-organic.jpg" alt="">
         </ion-col>
         <ion-col size="8">
@@ -83,7 +89,7 @@
           </ion-row>
         </ion-col>
       </ion-row>
-    </ion-item>
+    </ion-item> -->
   </ion-list>
   <div class="line"></div>
 

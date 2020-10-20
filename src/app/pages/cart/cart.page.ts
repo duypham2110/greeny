@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/models/product';
 import { OrderService } from 'src/app/services/order-service';
+import { ProductService } from 'src/app/services/product-service';
 
 @Component({
   selector: 'app-cart',
@@ -8,16 +10,54 @@ import { OrderService } from 'src/app/services/order-service';
   styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
-  
+  user: any;
+  cart: any;
+  products: any;
   constructor(
     private route: Router,
+    public pdService: ProductService,
   ) { 
   }
 
   ngOnInit() {
+    this.loadProducts();
+    this.user = JSON.parse(localStorage.getItem('user'));
+    this.cart = JSON.parse(localStorage.getItem(this.user.uid));
   }
+
+  loadProducts() {
+    let temp = this.pdService.getProducts();
+    temp.snapshotChanges().subscribe(res => {
+      this.products = [];
+      res.forEach(item => {
+        let a = item.payload.toJSON();
+        a['$key'] = item.key;
+        this.products.push(a as Product);
+      })
+    })
+  }
+
   openHome() {
     this.route.navigate(['tabs/home']);
+  }
+
+  //===BUG===
+  loadCartProduct(products) {
+    const idsArray = Object.keys(products).map(product => {
+      return { id: products[product]}
+    });
+
+    let rs = [];
+
+    idsArray.forEach(item => {
+      this.products.find(product => {
+        if (product.$key == item.id)
+        {
+          rs.push(product);
+        }
+      })
+    })
+    return rs;
   }
 
 }
