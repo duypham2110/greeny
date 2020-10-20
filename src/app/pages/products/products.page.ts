@@ -7,6 +7,7 @@ import { OrderService } from 'src/app/services/order-service';
 
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
+import { ProductType } from 'src/app/models/product-type';
 
 @Component({
   selector: 'app-products',
@@ -18,12 +19,10 @@ export class ProductsPage implements OnInit {
   @ViewChild('search', { static: false }) search: IonSearchbar;
   currentImage: any;
   products: any;
-  productTypes;
+  productTypes: any;
   searchedItem: any;
 
-
-  listItem = ["Khuyến mãi", "Bán chạy", "Rau củ", "Trái cây", "Gợi ý cho bạn", "Thực phẩm khác"];
-
+  // listItem = ["Khuyến mãi", "Bán chạy", "Rau củ", "Trái cây", "Gợi ý cho bạn", "Thực phẩm khác"];
 
   constructor(
     public authService: AuthenticationService,
@@ -35,8 +34,14 @@ export class ProductsPage implements OnInit {
 
   ngOnInit() {
     this.fetchProductList();
+    this.loadProducts();
+    this.loadProductTypes();
+   
+    this.productTypes = this.pdService.getProductTypes();
+  }
+  
+  loadProducts(){
     let temp = this.pdService.getProducts();
-    console.log('temp = ' + temp);
     temp.snapshotChanges().subscribe(res => {
       this.products = [];
       res.forEach(item => {
@@ -45,9 +50,40 @@ export class ProductsPage implements OnInit {
         this.products.push(a as Product);
       })
       this.searchedItem = this.products;
+    }) 
+   }
+
+   loadProductTypes(){
+    let temp = this.pdService.getProductTypes();
+    temp.snapshotChanges().subscribe(res => {
+      this.productTypes = [];
+      res.forEach(item => {
+        let a = item.payload.toJSON();
+        a['$key'] = item.key;
+        this.productTypes.push(a as ProductType);
+      })
     })
-    this.productTypes = this.pdService.getProductTypes();
-  }
+   }
+
+   loadProductsFromType(products){
+    console.log('load')
+     console.log(products)
+    const idsArray = Object.keys(products).map(product => {
+      return {productType: products[product]} 
+    });
+
+    let rs=[];
+
+    idsArray.forEach(item => {
+      this.products.find(product=>{
+      if(product.productType==item.productType)
+        rs.push(product);
+      })
+    })
+    console.log('rs');
+    console.log(rs);
+    return rs;
+   }
 
   ionViewDidEnter() {
     setTimeout(() => {

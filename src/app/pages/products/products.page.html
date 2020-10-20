@@ -15,7 +15,7 @@
 
 <ion-content [fullscreen]="true" id="ion-content">
   <ion-searchbar #search placeholder='Tìm kiếm...' (ionChange)="_searchChange($event)"></ion-searchbar>
-  <ion-list class="hot" *ngFor="let run of listItem">
+  <!-- <ion-list class="hot" *ngFor="let run of listItem">
     <ion-item lines="none" class="title-item">
       {{run}}
     </ion-item>
@@ -36,12 +36,13 @@
         </ion-card>
       </ion-col>
     </ion-row>
-  </ion-list>
+  </ion-list> -->
   <div class="line"></div>
-  <ion-list class="promotion" *ngFor="let item of listItem">
-    <ion-item lines="none" class="title-item">item</ion-item>
-    <ion-item *ngFor="let item of searchedItem">
-      <ion-row>
+  <ion-list class="promotion">
+    <div *ngFor="let productType of productTypes">
+    <ion-item lines="none" class="title-item">{{productType.name}}</ion-item>
+    <ion-item *ngFor="let item of loadProductsFromType(productType)">
+      <ion-row (click)="viewDetail(item)">
         <ion-col size="4">
           <!-- <img [src]="item.images" alt=""> -->
           <img src="../../../assets/images/background-img-organic.jpg" alt="">
@@ -56,11 +57,12 @@
           </ion-row>
           <ion-row>
             <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
+              {{item.description}}
             </ion-note>
           </ion-row>
         </ion-col>
       </ion-row>
     </ion-item>
+  </div>
   </ion-list>
 </ion-content>

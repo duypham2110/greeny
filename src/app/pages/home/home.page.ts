@@ -14,9 +14,9 @@ import { Collection } from 'src/app/models/collection';
 })
 
 export class HomePage {
-  productTypes;
-  products;
-  collections;
+  productTypes: any;
+  products: any;
+  collections: any;
 
   currentImage: any;
   veggies;
@@ -82,7 +82,6 @@ export class HomePage {
         rs.push(product);
       })
     })
-    console.log(rs);
     return rs;
    }
  
@@ -115,7 +114,6 @@ export class HomePage {
 
   fetchProductList() {
     this.pdService.getProducts().valueChanges().subscribe(res => {
-      console.log(res)
     })
   }
 
