@@ -16,6 +16,7 @@ export class ForgetPassPage implements OnInit {
   }
 
   async sendPasswordReset(){
+    this.router.navigate(['tabs/verify-email']);
     await this.authService.RecoverPassword(this.email);
     this.email = await '';
     await alert(this.authService.mess);

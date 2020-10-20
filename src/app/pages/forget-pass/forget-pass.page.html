@@ -13,7 +13,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <div class="logo-div">
     <img src="../../../assets/images/confusion.png" alt="">
   </div>
@@ -25,10 +25,11 @@
       <ion-input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
     <div class="margin-bottom"></div>
-    
+
     <ion-row class="sign-in-row">
       <ion-col>
-        <ion-button type="submit" (click)="sendPasswordReset()" expand="block">Send Link</ion-button>
+        <ion-button [disabled]="!signUpForm.valid&&!checkPassword(password, rePassword)" type="submit"
+          (click)="sendPasswordReset()" expand="block">Send Link</ion-button>
       </ion-col>
     </ion-row>
 
