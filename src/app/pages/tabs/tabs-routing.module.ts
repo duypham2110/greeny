@@ -75,6 +75,16 @@ const routes: Routes = [
           }
         ]
       },
+      // chuyển đến detail-product
+      {
+        path: 'detail-product',
+        children: [
+          {
+            path: '',
+            loadChildren: '../detail-product/detail-product.module#DetailProductPageModule'
+          }
+        ]
+      },
       // chuyển đến detail-bill
       {
         path: 'detail-bill',
