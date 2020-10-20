@@ -7,6 +7,7 @@ import { OrderService } from 'src/app/services/order-service';
 
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
+import { Collection } from 'src/app/models/collection';
 
 @Component({
   selector: 'app-products',
@@ -20,6 +21,7 @@ export class ProductsPage implements OnInit {
   products: any;
   productTypes;
   searchedItem: any;
+  collections;
 
 
   listItem = ["Khuyến mãi", "Bán chạy", "Rau củ", "Trái cây", "Gợi ý cho bạn", "Thực phẩm khác"];
@@ -34,9 +36,13 @@ export class ProductsPage implements OnInit {
   }
 
   ngOnInit() {
+    this.loadProducts();
+    this.loadCollections();
+    this.productTypes = this.pdService.getProductTypes();
+    this.searchedItem = this.products;
     this.fetchProductList();
     let temp = this.pdService.getProducts();
-    console.log('temp = ' + temp);
+    
     temp.snapshotChanges().subscribe(res => {
       this.products = [];
       res.forEach(item => {
@@ -49,6 +55,50 @@ export class ProductsPage implements OnInit {
     this.productTypes = this.pdService.getProductTypes();
   }
 
+
+  loadProducts() {
+    let temp = this.pdService.getProducts();
+    temp.snapshotChanges().subscribe(res => {
+      this.products = [];
+      res.forEach(item => {
+        let a = item.payload.toJSON();
+        a['$key'] = item.key;
+        this.products.push(a as Product);
+      })
+      this.searchedItem = this.products;
+    })
+  }
+
+  loadCollections() {
+    let temp = this.pdService.getCollectionList();
+    temp.snapshotChanges().subscribe(res => {
+      this.collections = [];
+      res.forEach(item => {
+        let a = item.payload.toJSON();
+        a['$key'] = item.key;
+        this.collections.push(a as Collection);
+      })
+    })
+  }
+
+  // Change Producst Ids in collection to product json
+  loadProductsCollection(products) {
+    const idsArray = Object.keys(products).map(product => {
+      return { id: products[product] }
+    });
+
+    let rs = [];
+
+    idsArray.forEach(item => {
+      this.products.find(product => {
+        if (product.$key == item.id)
+          rs.push(product);
+      })
+    })
+    // console.log(rs);
+    return rs;
+  }
+
   ionViewDidEnter() {
     setTimeout(() => {
       this.search.setFocus();
@@ -56,7 +106,6 @@ export class ProductsPage implements OnInit {
   }
 
   viewDetail(item) {
-    console.log(item);
     this.route.navigate(['tabs/detail'], {
       queryParams: item,
     });
@@ -74,13 +123,14 @@ export class ProductsPage implements OnInit {
    */
   _searchChange(event) {
     const val = event.target.value;
-    this.searchedItem = this.products;
+    this.products = this.searchedItem;
     if (val && val.trim() != '') {
-      this.searchedItem = this.searchedItem.filter((item: any) => {
+      this.products = this.products.filter((item: any) => {
         // console.log(item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+
   }
 
 }
