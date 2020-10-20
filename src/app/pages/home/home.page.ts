@@ -40,6 +40,7 @@ export class HomePage {
     this.loadProducts();
     this.loadCollections();
     this.productTypes = this.pdService.getProductTypes();
+    this.searchedItem = this.products;
     
    }
 
@@ -82,7 +83,7 @@ export class HomePage {
         rs.push(product);
       })
     })
-    console.log(rs);
+    // console.log(rs);
     return rs;
    }
  
@@ -103,10 +104,10 @@ export class HomePage {
    */
   _searchChange(event) {
     const val = event.target.value;
-    this.searchedItem = this.products;
+    this.products = this.searchedItem;
     if (val && val.trim() != '') {
-      this.searchedItem = this.searchedItem.filter((item: any) => {
-        console.log(item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.products = this.products.filter((item: any) => {
+        // console.log(item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }

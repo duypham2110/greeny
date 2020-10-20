@@ -13,13 +13,13 @@ import { Product } from '../../models/product';
 })
 export class DetailPage implements OnInit {
   loadedProduct: any;
-  imgUrl: string;
   constructor(
     //Dependency Injection
+    public route: Router,
     private authService: AuthenticationService,
     private activatedRoute: ActivatedRoute,
     private pdService: ProductService,
-    public route: Router
+    
   ) { }
 
   ngOnInit() {
@@ -29,7 +29,6 @@ export class DetailPage implements OnInit {
       temp.snapshotChanges().subscribe(item => {
         {
           this.loadedProduct = item.payload.toJSON();
-          console.log('tao = ' + this.loadedProduct);
         }
       })
     });

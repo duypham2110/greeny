@@ -54,8 +54,8 @@ export class ProductService {
 
     getProduct(id: string) {
         this.product1 = this.db.object('/product/' + id);
-        console.log(id);
-        console.log(this.product1);
+        // console.log(id);
+        // console.log(this.product1);
         return this.product1;
     }
 

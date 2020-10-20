@@ -15,12 +15,12 @@
 
 <ion-content [fullscreen]="true" id="ion-content">
   <ion-searchbar #search placeholder='Tìm kiếm...' (ionChange)="_searchChange($event)"></ion-searchbar>
-  <ion-list class="hot" *ngFor="let run of listItem">
+  <ion-list class="hot" *ngFor="let collection of collections">
     <ion-item lines="none" class="title-item">
-      {{run}}
+      {{collection.name}}
     </ion-item>
     <ion-row class="products-hot-row">
-      <ion-col size="6" *ngFor="let item of searchedItem">
+      <ion-col size="6" *ngFor="let item of loadProductsCollection(collection.products)">
         <ion-card class="item" (click)="viewDetail(item)">
           <img [src]="item.images[0]" alt="">
           <div>
@@ -38,12 +38,11 @@
     </ion-row>
   </ion-list>
   <div class="line"></div>
-  <ion-list class="promotion" *ngFor="let item of listItem">
+  <!-- <ion-list class="promotion" *ngFor="let collection of collections">
     <ion-item lines="none" class="title-item">item</ion-item>
-    <ion-item *ngFor="let item of searchedItem">
+    <ion-item *ngFor="let item of loadProductsCollection(collection.products)">
       <ion-row>
         <ion-col size="4">
-          <!-- <img [src]="item.images" alt=""> -->
           <img src="../../../assets/images/background-img-organic.jpg" alt="">
         </ion-col>
         <ion-col size="8">
@@ -62,5 +61,5 @@
         </ion-col>
       </ion-row>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 </ion-content>
