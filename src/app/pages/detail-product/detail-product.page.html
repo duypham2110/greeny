@@ -1,15 +1,5 @@
 <ion-header>
   <ion-toolbar>
-
-<!-- <<<<<<< HEADER -->
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>
-      Chi tiết
-    </ion-title>
-<!-- ======= -->
-
     <ion-row>
       <div>
         <ion-buttons class="backTop" slot="start">
@@ -20,17 +10,14 @@
         <ion-title class="title-header">Nhà cung cấp</ion-title>
       </ion-col>
     </ion-row>
-    
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-slides [options]="sliderConfig">
     <ion-slide>
-      <ion-card>
         <div class="advertise">
           <ion-img class="img" [src]="loadedProduct.images[0]"></ion-img>
         </div>
-      </ion-card>
     </ion-slide>
   </ion-slides>
   <ion-row lines="none" class="cost-row" color="success">

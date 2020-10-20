@@ -31,6 +31,20 @@ const routes: Routes = [
           }
         ]
       },
+      // chuyển đến producer
+      {
+        path: 'producer',
+        children: [
+          {
+            path: '',
+            loadChildren: '../producer/producer.module#ProducerPageModule'
+          },
+          {
+            path: ':id',
+            loadChildren: '../detail/detail.module#DetailPageModule'
+          }
+        ]
+      },
       // chuyển đến cart
       {
         path: 'cart',
@@ -58,6 +72,16 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../detail/detail.module#DetailPageModule'
+          }
+        ]
+      },
+      // chuyển đến detail-product
+      {
+        path: 'detail-product',
+        children: [
+          {
+            path: '',
+            loadChildren: '../detail-product/detail-product.module#DetailProductPageModule'
           }
         ]
       },

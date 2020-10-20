@@ -1,32 +1,66 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Nhà cung cấp
-    </ion-title>
+    <ion-row>
+      <div>
+        <ion-buttons class="backTop" slot="start">
+          <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
+        </ion-buttons>
+      </div>
+      <ion-col class="mid">
+        <ion-title class="title-header">Nhà cung cấp</ion-title>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="main">
-  <div class="producer">
-    <img src="../../assets/img/f99.png" alt="">
-    <div class="content">
-      <h3>ITSu</h3>
-      <p class="address">123 Phù Đổng Thiên Vương, Phường 8, TP.Đà Lạt</p>
-    </div>
-  </div>
-  <div class="introduce">
-    <h3>Giới thiệu</h3>
-    <p class="intro-content">ITSu là dịch vụ cung cấp trái cây, thực phẩm khi mua sắm trên ứng dụng ITSu. Mang tới những
-      trải nghiệm về sản phẩm tươi ngon, chất lượng nguồn gốc đảm bảo và dinh dưỡng cho tất cả gia đình.</p>
-  </div>
-  <div class="product">
-    <h3>Sản phẩm</h3>
-    <div class="list-product">
-      <img src="../../assets/img/dautay.jpg" alt="">
-      <div class="info-product">
-        <p class="name-product">Dâu tây Đà lạt</p>
-        <p class="price">100.000/hộp</p>
-      </div>
-    </div>
-  </div>
+  <ion-slides [options]="sliderConfig">
+    <ion-slide *ngFor="let item of products">
+      <ion-card>
+        <div class="advertise">
+          <img [src]="item.images[0]" alt="">
+        </div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-row lines="none" class="title-row">
+    <ion-col>
+      <ion-label>Grenny Farm</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-list class="introduce">
+    <ion-item>
+      <ion-icon name="home" color="success"></ion-icon>
+      <ion-text>Nông trại organic cung cấp trái cây, thực phẩm.</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="location" color="danger"></ion-icon>
+      <ion-text>Phù Đổng Thiên Vương, Đà Lạt</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="finger-print" color="primary"></ion-icon>
+      <ion-text>Đạt tiêu chuẩn VietGap</ion-text>
+    </ion-item>
+  </ion-list>
+  <ion-list class="hot">
+    <ion-item lines="none" class="title-item">Sản phẩm</ion-item>
+    <ion-row class="products-hot-row">
+      <ion-col size="6" *ngFor="let item of products">
+        <ion-card class="item" (click)="viewDetail(item)">
+          <img [src]="item.images[0]" alt="">
+          <div>
+            <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+            <ion-note>{{item.name}}</ion-note>
+          </div>
+          <div>
+            <ion-label class="cost-label">{{item.price}}</ion-label>
+            <a (click)="addToCart()">
+              <ion-icon class="add-icon" name="add-circle" color="success"></ion-icon>
+            </a>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-list>
 </ion-content>

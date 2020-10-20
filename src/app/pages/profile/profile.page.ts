@@ -48,4 +48,8 @@ export class ProfilePage implements OnInit {
   openBill() {
     this.route.navigate(['tabs/bill']);
   }
+
+  openProducer() {
+    this.route.navigate(['tabs/producer']);
+  }
 }

@@ -25,19 +25,21 @@ ion-item {
   text-align: center;
 }
 
-ion-card {
-  padding: 0;
-  margin: 0;
-    
-  .advertise {
-    height: 130px;
-    .img {
+ion-slides {
+  width: 100%;
+  ion-slide {
+    .advertise {
+      height: 130px;
       width: 100%;
-      height: 100%;
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
     }
-  }
 }
 
+}
 .cost-row {
   color: #fff;
   background-color: aqua;
@@ -56,8 +58,8 @@ ion-card {
 }
 
 ion-footer {
-  width: 100%;
-  height: 100px;
+  bottom: 0;
+  position: absolute;
 
 .row {
   padding: 5px 15px 7px;
@@ -65,5 +67,4 @@ ion-footer {
   width: 100%;
   }
 }
-
 }

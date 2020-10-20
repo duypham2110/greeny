@@ -24,10 +24,11 @@ export class DetailPage implements OnInit {
     this.activatedRoute.queryParams.subscribe(paramMap => {
       const $key = paramMap.$key;
       let temp = this.pdService.getProduct($key);
-      temp.snapshotChanges().subscribe(item => {{
-        this.loadedProduct = item.payload.toJSON();
-        console.log(this.loadedProduct);
-      }
+      temp.snapshotChanges().subscribe(item => {
+        {
+          this.loadedProduct = item.payload.toJSON();
+          console.log('tao = '+this.loadedProduct);
+        }
       })
     });
   }
