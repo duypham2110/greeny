@@ -1,55 +1,66 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-row>
+      <div>
+        <ion-buttons class="backTop" slot="start">
+          <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
+        </ion-buttons>
+      </div>
+      <ion-col class="mid">
+        <ion-title class="title-header">Nhà cung cấp</ion-title>
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <div class="img">
-    <ion-img [src]="loadedProduct.images[0]"></ion-img>
-  </div>
-
-  <div class="tach"></div>
-  <div class="list">
-    <div class="row">
-      <ion-item>
-        <div class="column">
-          <ion-img class="demo cursor"></ion-img>
+<ion-content>
+  <ion-slides [options]="sliderConfig">
+    <ion-slide>
+      <ion-card>
+        <div class="advertise">
+          <ion-img class="img" [src]="loadedProduct.images[0]"></ion-img>
         </div>
-      </ion-item>
-    </div>
-  </div>
-  <div class="tach"></div>
-  <div class="price">
-    <h5 style="margin: 0%;padding-top: 10px;padding-left: 20px;">{{loadedProduct.name}}</h5>
-    <p style="color:#58bc00;font-size:120%;margin: 0%;padding-left: 20px;">{{loadedProduct.price}}</p>
-  </div>
-  <div class="tach"></div>
-  <div class="info">
-    <h5 class="test">Thông tin sản phẩm</h5>
-    <p class="test">Xuất xứ: {{loadedProduct.madeIn}}</p>
-    <p class="test">Loại: {{loadedProduct.productType}}</p>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-row lines="none" class="cost-row" color="success">
+    <ion-label>{{loadedProduct.price}}</ion-label>
+  </ion-row>
 
-  </div>
-  <div class="tach"></div>
+  <ion-row lines="none" class="name-product-row">
+    <ion-label>{{loadedProduct.name}}</ion-label>
+  </ion-row>
+  <ion-item class="introduce">
+    <ion-row>
+      <ion-col size="3">
+        <ion-icon name="home" color="success"></ion-icon>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Greeny Farm</ion-label>
+        <ion-text>Nông trại organic cung cấp trái cây, thực phẩm.</ion-text>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button>Xem</ion-button>
+      </ion-col>
+    </ion-row>
 
-
-  <div>
-    <h5>Mô tả sản phẩm</h5>
-    <p>{{loadedProduct.description}}</p>
-
-  </div>
-
-
+  </ion-item>
+  <ion-list class="introduce">
+    <ion-row>
+      <ion-label>Thông tin dinh dưỡng</ion-label>
+      <ion-text>Vitamin A, B, C , X, Y, Z</ion-text>
+      <ion-text>Chất béo, chất xơ</ion-text>
+    </ion-row>
+    <ion-row>
+      <ion-label>HDSD & Bảo quản</ion-label>
+      <ion-text>Dùng trong vòng 1 - 2 ngày</ion-text>
+      <ion-text>Tránh ánh nắng trực tiếp</ion-text>
+    </ion-row>
+  </ion-list>
 </ion-content>
-
-<ion-footer class="footer">
-  <div>
-    <ion-button class="button" expand="block" color="success">Thêm vào giỏ hàng</ion-button>
-  </div>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row class="row">
+      <ion-button color="success" class="btn-footer">Đặt mua</ion-button>
+    </ion-row>
+  </ion-toolbar>
 </ion-footer>

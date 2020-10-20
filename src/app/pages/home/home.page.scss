@@ -146,6 +146,10 @@ ion-searchbar {
   }
 
   .list-img-products {
+
+    ion-slides {
+      width: 100%;
+   
     padding: 0 8px 0;
     ion-slide {
       height: 157px;
@@ -192,5 +196,6 @@ ion-searchbar {
     }
     }
   }
+   }
   
 }
