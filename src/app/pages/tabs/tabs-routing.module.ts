@@ -31,6 +31,20 @@ const routes: Routes = [
           }
         ]
       },
+      // chuyển đến producer
+      {
+        path: 'producer',
+        children: [
+          {
+            path: '',
+            loadChildren: '../producer/producer.module#ProducerPageModule'
+          },
+          {
+            path: ':id',
+            loadChildren: '../detail/detail.module#DetailPageModule'
+          }
+        ]
+      },
       // chuyển đến cart
       {
         path: 'cart',

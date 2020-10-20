@@ -1,130 +1,69 @@
-.tach{
-    max-width: 100%;
-    height: 5px;
-    background-color: #bab0b0;
-  }
-  .img{
-    background-color: blue;
-    max-width: 100%;
-    height: auto;
-    border-bottom: #222;
-  }
-  .list{
-   
-    max-width: 100%;
-    height: 40px;
-  }
-  .price{
-    margin-top: 0%;
-    height: 60px;
-  }
-  .info{
-    height: 80px;
-  }
-  .mota{
+* {
+  font-size: 13px;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.mid {
+  text-align: center;
+}
+
+.backTop {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+ion-card {
+  padding: 0;
+  margin: 0;
     
+  .advertise {
+    height: 130px;
+    .img {
+      width: 100%;
+      height: 100%;
+    }
   }
-  .footer{
-    height: auto;
+}
+
+.cost-row {
+  color: #fff;
+  background-color: aqua;
+  height: 100px;
+  ion-label {
+    font-size: 14px;
+    font-weight: 600;
   }
-  
-  .button{
-    background-color: #3bb54a;
-    max-width: 100%;
-    border-radius: 5%;
-    text-align: center;
-    color: white;
-    font-size: 120%;
+}
+
+.name-product-row {
+  ion-label {
+    font-weight: 600;
+    color: black;
   }
-  .test{
-    margin: 1%;
+}
+
+ion-footer {
+  width: 100%;
+  height: 100px;
+
+.row {
+  padding: 5px 15px 7px;
+  .btn-footer {
+  width: 100%;
   }
-  
-  ///////
-  * {
-    box-sizing: border-box;
-  }
-  
-  /* Position the image container (needed to position the left and right arrows) */
-  .container {
-    position: relative;
-  }
-  
-  /* Hide the images by default */
-  .mySlides {
-    display: none;
-  }
-  
-  /* Add a pointer when hovering over the thumbnail images */
-  .cursor {
-    cursor: pointer;
-  }
-  
-  /* Next & previous buttons */
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-  
-  /* Container for image text */
-  .caption-container {
-    text-align: center;
-    background-color: #222;
-    padding: 2px 16px;
-    color: white;
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Six columns side by side */
-  .column {
-    float: left;
-    width: 16.66%;
-  }
-  
-  /* Add a transparency effect for thumnbail images */
-  .demo {
-    opacity: 0.6;
-  }
-  
-  .active,
-  .demo:hover {
-    opacity: 1;
-  }
-  
+}
+
+}
