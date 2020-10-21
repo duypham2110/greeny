@@ -64,30 +64,32 @@
   <ion-list class="products">
     <div *ngFor="let item of cart">
       <ion-item *ngFor="let product of loadCartProduct(item)">
-        Name:{{product.name}} Quantity:{{item.quantity}}
+        <ion-row>
+          <ion-col size="4">
+            <img src="../../../assets/images/background-img-organic.jpg" alt="">
+          </ion-col>
+          <ion-col size="6" class="col-2">
+            <div class="div-1">
+              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+              <ion-note>{{product.name}}</ion-note>
+            </div>
+            <ion-label color="success" class="cost-label">Giá: {{product.price}}đ</ion-label>
+            <div class="div-2">
+              <ion-button fill="clear">
+                <ion-icon name="remove"></ion-icon>
+              </ion-button>
+              <ion-label>{{item.quantity}}</ion-label>
+              <ion-button fill="clear">
+                <ion-icon name="add"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-col>
+          <ion-col size="2" class="col-3">
+            <ion-icon name="close"></ion-icon>
+          </ion-col>
+        </ion-row>
       </ion-item>
     </div>
-    <!-- <ion-item>
-      <ion-row>
-        <ion-col size="4">
-          <img src="../../../assets/images/background-img-organic.jpg" alt="">
-        </ion-col>
-        <ion-col size="8">
-          <ion-row>
-            <div>
-              <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
-              <ion-note>Cà rốt</ion-note>
-            </div>
-            <ion-label class="cost-label">39.000đ</ion-label>
-          </ion-row>
-          <ion-row>
-            <ion-note class="text-11">
-              1 phần cơm 2 người gồm tôm nướng
-            </ion-note>
-          </ion-row>
-        </ion-col>
-      </ion-row>
-    </ion-item> -->
   </ion-list>
   <div class="line"></div>
 
