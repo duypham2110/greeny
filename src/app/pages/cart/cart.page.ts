@@ -22,7 +22,7 @@ export class CartPage implements OnInit {
   ngOnInit() {
   }
 
-  ionViewDidEnter(){
+  ionViewWillEnter(){
     this.loadProducts();
     this.user = JSON.parse(localStorage.getItem('user'));
     this.cart = JSON.parse(localStorage.getItem(this.user.uid)).products;
@@ -64,4 +64,16 @@ export class CartPage implements OnInit {
     return rs;
   }
 
+  Purchase(){
+    this.user = JSON.parse(localStorage.getItem('user'));
+    let getItemLocalStorage = JSON.parse(localStorage.getItem(this.user.uid));
+    getItemLocalStorage=null;
+    localStorage.setItem(this.user.uid, JSON.stringify(getItemLocalStorage));
+    
+    this.user=null;
+    this.cart=null;
+    this.products=null;
+    this.ionViewWillEnter();
+  }
+  
 }
