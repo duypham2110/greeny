@@ -95,6 +95,16 @@ const routes: Routes = [
           }
         ]
       },
+      // chuyển đến verify-email
+      {
+        path: 'verify-email',
+        children: [
+          {
+            path: '',
+            loadChildren: '../verify-email/verify-email.module#VerifyEmailPageModule'
+          }
+        ]
+      },
       // chuyển đến login
       {
         path: 'login',
