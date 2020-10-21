@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product-service';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { Collection } from 'src/app/models/collection';
+import { ProductType } from 'src/app/models/product-type';
 
 @Component({
   selector: 'app-home',
@@ -39,9 +40,7 @@ export class HomePage {
   ngOnInit() {
     this.loadProducts();
     this.loadCollections();
-    this.productTypes = this.pdService.getProductTypes();
-    this.searchedItem = this.products;
-    
+    this.loadProductTypes();    
    }
 
    loadProducts(){
@@ -54,6 +53,19 @@ export class HomePage {
         this.products.push(a as Product);
       })
       this.searchedItem = this.products;
+    })
+   }
+
+   loadProductTypes(){
+    // this.productTypes = this.pdService.getProductTypes();
+    let temp = this.pdService.getProductTypes();
+    temp.snapshotChanges().subscribe(res => {
+      this.productTypes=[];
+      res.forEach(item => {
+        let a = item.payload.toJSON();
+        a['$key'] = item.key;
+        this.productTypes.push(a as ProductType);
+      })
     })
    }
 
@@ -111,11 +123,6 @@ export class HomePage {
       })
     }
 
-  }
-
-  fetchProductList() {
-    this.pdService.getProducts().valueChanges().subscribe(res => {
-    })
   }
 
   addTocart(){

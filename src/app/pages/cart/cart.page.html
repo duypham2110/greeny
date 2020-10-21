@@ -62,11 +62,9 @@
     </ion-col>
   </ion-row>
   <ion-list class="products">
-    <div *ngFor="let item of cart.products">
-      <ion-item>Code:{{item.id}}</ion-item>
-      <ion-item>Quantity:{{item.quantity}}</ion-item>
+    <div *ngFor="let item of cart">
       <ion-item *ngFor="let product of loadCartProduct(item)">
-        Name:{{product.name}}
+        Name:{{product.name}} Quantity:{{item.quantity}}
       </ion-item>
     </div>
     <!-- <ion-item>

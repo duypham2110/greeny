@@ -37,13 +37,8 @@ export class ProductsPage implements OnInit {
   ngOnInit() {
     this.loadProducts();
     this.loadCollections();
-    this.productTypes = this.pdService.getProductTypes();
-    this.searchedItem = this.products;
-    this.fetchProductList();
-    this.loadProducts();
     this.loadProductTypes();
-   
-    this.productTypes = this.pdService.getProductTypes();
+    this.loadProducts();
   }
    loadProductTypes(){
     let temp = this.pdService.getProductTypes();
@@ -146,11 +141,6 @@ export class ProductsPage implements OnInit {
     });
   }
   
-  fetchProductList() {
-    this.pdService.getProducts().valueChanges().subscribe(res => {
-      this.searchedItem=this.products;
-    })
-  }
 
   /**
    * Tìm kiếm danh sách sản phẩm trong products
