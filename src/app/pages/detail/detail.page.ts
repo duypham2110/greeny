@@ -24,9 +24,9 @@ export class DetailPage implements OnInit {
 
   ) { }
 
-  
+
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user'));
+    JSON.parse(localStorage.getItem('user'))==null?this.user={uid:'tempCart'}:this.user=JSON.parse(localStorage.getItem('user'))
 
     this.activatedRoute.queryParams.subscribe(paramMap => {
       this.$key = paramMap.$key;
@@ -45,7 +45,10 @@ export class DetailPage implements OnInit {
 
   // Them vo localStorage
   addToCart() {
-    let getItemLocalStorage = JSON.parse(localStorage.getItem(this.user.uid));
+    let getItemLocalStorage;
+
+
+    getItemLocalStorage = JSON.parse(localStorage.getItem(this.user.uid));
 
     if (getItemLocalStorage === null) {
       getItemLocalStorage = {
@@ -53,10 +56,10 @@ export class DetailPage implements OnInit {
       }
     }
 
-    let item =getItemLocalStorage.products.find(item => item.id == this.$key);
+    let item = getItemLocalStorage.products.find(item => item.id == this.$key);
 
-    if(item) {
-      item.quantity+=1;
+    if (item) {
+      item.quantity += 1;
     } else {
       getItemLocalStorage.products.push({ id: this.$key, quantity: 1 });
     }

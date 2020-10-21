@@ -24,7 +24,8 @@ export class CartPage implements OnInit {
 
   ionViewWillEnter(){
     this.loadProducts();
-    this.user = JSON.parse(localStorage.getItem('user'));
+    JSON.parse(localStorage.getItem('user'))==null?this.user={uid:'tempCart'}:this.user=JSON.parse(localStorage.getItem('user'))
+
     this.cart = JSON.parse(localStorage.getItem(this.user.uid)).products;
   }
 
@@ -65,7 +66,6 @@ export class CartPage implements OnInit {
   }
 
   Purchase(){
-    this.user = JSON.parse(localStorage.getItem('user'));
     let getItemLocalStorage = JSON.parse(localStorage.getItem(this.user.uid));
     getItemLocalStorage=null;
     localStorage.setItem(this.user.uid, JSON.stringify(getItemLocalStorage));
