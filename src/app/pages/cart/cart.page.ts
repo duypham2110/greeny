@@ -10,9 +10,13 @@ import { ProductService } from 'src/app/services/product-service';
   styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
+  c: any;
+  public a: any;
+  rs= [];
   user: any;
   cart: any;
   products: any;
+  sum: any;
   constructor(
     private route: Router,
     public pdService: ProductService,
@@ -20,6 +24,8 @@ export class CartPage implements OnInit {
   }
 
   ngOnInit() {
+    
+    
   }
 
   ionViewWillEnter(){
@@ -27,6 +33,13 @@ export class CartPage implements OnInit {
     JSON.parse(localStorage.getItem('user'))==null?this.user={uid:'tempCart'}:this.user=JSON.parse(localStorage.getItem('user'))
 
     this.cart = JSON.parse(localStorage.getItem(this.user.uid)).products;
+    console.log(this.cart);
+    for(let i =0;i<this.cart.length;i++){
+      for(let j = 0;j<this.loadCartProduct(this.cart[i]).length;j++){
+        console.log(this.loadCartProduct(this.cart[i]));
+      }   
+    }
+
   }
 
   loadProducts() {
@@ -39,7 +52,11 @@ export class CartPage implements OnInit {
         this.products.push(a as Product);
       })
       console.log('product loaded')
+      return this.products;
+      console.log(this.products);
     })
+    return this.products;
+    console.log(this.products);
   }
 
   openHome() {
@@ -76,4 +93,9 @@ export class CartPage implements OnInit {
     this.ionViewWillEnter();
   }
   
+  Sum(){
+    console.log(this.cart);
+    
+  }
+
 }

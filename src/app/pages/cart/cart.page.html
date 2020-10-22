@@ -44,7 +44,7 @@
       <ion-row>
         <ion-col size="9">
           <ion-label class="">Thời gian giao</ion-label>
-          <ion-label class="text-14">Giao ngay (10 phút)</ion-label>
+          <ion-label class="text-14">Giao ngay (30 phút)</ion-label>
         </ion-col>
         <ion-col size="3" class="fl-r3px">
           <ion-button class="btn-href" fill="clear" size="small">Thay đổi</ion-button>
@@ -73,7 +73,7 @@
               <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
               <ion-note>{{product.name}}</ion-note>
             </div>
-            <ion-label color="success" class="cost-label">Giá: {{product.price}}đ</ion-label>
+            <ion-label color="success" class="cost-label">Đơn giá: {{product.price}}đ</ion-label>
             <div class="div-2">
               <ion-button fill="clear">
                 <ion-icon name="remove"></ion-icon>
@@ -83,6 +83,9 @@
                 <ion-icon name="add"></ion-icon>
               </ion-button>
             </div>
+          </ion-col>
+          <ion-col>
+            <ion-label></ion-label>
           </ion-col>
           <ion-col size="2" class="col-3">
             <ion-icon name="close"></ion-icon>

@@ -18,13 +18,13 @@
     <div class="replace_avt_div">
       <ion-icon name="camera"></ion-icon>
     </div>
-    <img src="../../../assets/images/avt_me.jpg" alt="">
-    <ion-label>Nguyễn Đức Hiếu</ion-label>
+    <img src="{{photo}}" alt="">
+    <ion-label>{{name}}</ion-label>
   </div>
   <ion-list>
     <ion-item>
       <ion-label position="floating">Họ và tên</ion-label>
-      <ion-input class="input-item" type="text"></ion-input>
+      <ion-input class="input-item" type="text" value ={{name}}></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Địa chỉ</ion-label>
@@ -32,11 +32,11 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Số điện thoại</ion-label>
-      <ion-input class="input-item" type="text"></ion-input>
+      <ion-input class="input-item" type="text" value ={{address}}></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Email</ion-label>
-      <ion-input class="input-item" type="text"></ion-input>
+      <ion-input class="input-item" type="text" value={{email}}></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Ngày sinh</ion-label>

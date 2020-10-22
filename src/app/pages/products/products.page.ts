@@ -84,6 +84,7 @@ export class ProductsPage implements OnInit {
       })
       this.searchedItem = this.products;
     })
+    console.log(this.searchedItem);
   }
 
   // loadProducts(){
@@ -125,7 +126,7 @@ export class ProductsPage implements OnInit {
           rs.push(product);
       })
     })
-    // console.log(rs);
+    console.log(rs);
     return rs;
   }
 

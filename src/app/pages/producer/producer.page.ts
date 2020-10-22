@@ -25,9 +25,11 @@ export class ProducerPage implements OnInit {
         let a = item.payload.toJSON();
         a['$key'] = item.key;
         this.products.push(a as Product);
+        console.log(this.products);
       })
       
     })
+    console.log(this.products);
   }
 
   viewDetail(item) {
