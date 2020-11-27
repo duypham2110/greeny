@@ -12,7 +12,6 @@
     </ion-row>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true" id="ion-content">
   <ion-searchbar #search placeholder='Tìm kiếm...' (ionChange)="_searchChange($event)"></ion-searchbar>
   <ion-list class="hot" *ngFor="let collection of collections">
