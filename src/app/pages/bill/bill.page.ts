@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./bill.page.scss'],
 })
 export class BillPage implements OnInit {
+
+
+  constructor() { }
 
   arrayItem = ["Tất cả đơn", "Chờ thanh toán", "Đang xử lý", "Đang giao", "Đã giao", "Đã hủy"];
 
@@ -21,6 +25,7 @@ export class BillPage implements OnInit {
   ngOnInit() {
   }
 
+
   openDetailBill() {
     this.router.navigate(['tabs/detail-bill']);
   }
@@ -28,6 +33,5 @@ export class BillPage implements OnInit {
   openCart() {
     this.router.navigate(['tabs/cart']);
   }
-
 
 }

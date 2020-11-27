@@ -1,5 +1,134 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
+    <ion-icon name="chevron-back-outline"></ion-icon>
+    <ion-title>
+      Đơn hàng của tôi
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="success">
+
+    <ion-segment value="all" color="tertiary" scrollable="true" mode="ios" [(ngModel)]="segmentModel"
+      (ionChange)="segmentChanged($event)">
+
+      <ion-segment-button value="all">
+        <ion-label>Tất cả đơn</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="shipped">
+        <ion-label>Đã giao</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="being-transporting">
+        <ion-label>Đang tới</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="cancel">
+        <ion-label>Đã hủy</ion-label>
+      </ion-segment-button>
+
+    </ion-segment>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-list *ngIf="segmentModel === 'all'">
+    <ion-item>
+      <ion-label>Giao hàng thành công</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-col size="3">
+        <img src="../../assets/images/nho_mau_don.jpg" alt="">
+      </ion-col>
+      <ion-col size="9">
+        <ion-label>Nho mẫu đơn</ion-label>
+        <ion-card-subtitle>1 hộp | 50.000 đ</ion-card-subtitle>
+      </ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col size="6">
+        <ion-button>Xem Chi Tiết</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button>Mua lại</ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="segmentModel === 'being-transporting'">
+    <ion-item>
+      <ion-label>Đang vận chuyển</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-col size="3">
+        <img src="../../assets/images/nho_mau_don.jpg" alt="">
+      </ion-col>
+      <ion-col size="9">
+        <ion-label>Nho mẫu đơn</ion-label>
+        <ion-card-subtitle>1 hộp | 50.000 đ</ion-card-subtitle>
+      </ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col size="6">
+        <ion-button>Xem Chi Tiết</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button>Mua lại</ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="segmentModel === 'shipped'">
+    <ion-item>
+      <ion-label>Giao hàng thành công</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-col size="3">
+        <img src="../../assets/images/nho_mau_don.jpg" alt="">
+      </ion-col>
+      <ion-col size="9">
+        <ion-label>Nho mẫu đơn</ion-label>
+        <ion-card-subtitle>1 hộp | 50.000 đ</ion-card-subtitle>
+      </ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col size="6">
+        <ion-button>Xem Chi Tiết</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button>Mua lại</ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="segmentModel === 'cancel'">
+    <ion-item>
+      <ion-label>Đã hủy</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-col size="3">
+        <img src="../../assets/images/nho_mau_don.jpg" alt="">
+      </ion-col>
+      <ion-col size="9">
+        <ion-label>Nho mẫu đơn</ion-label>
+        <ion-card-subtitle>1 hộp | 50.000 đ</ion-card-subtitle>
+      </ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col size="6">
+        <ion-button>Xem Chi Tiết</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button>Mua lại</ion-button>
+      </ion-col>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+=======
     <div>
       <ion-buttons class="backTop" slot="start">
         <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
@@ -273,3 +402,4 @@
 
   </super-tabs-container>
 </super-tabs>
+

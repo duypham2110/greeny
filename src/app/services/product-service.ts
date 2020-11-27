@@ -30,6 +30,19 @@ export class ProductService {
     searchedItem: any;
 
     get product() {
+      return this._products.asObservable();
+  }
+
+  private carts = {
+    username: 'Hieu dep trai',
+    address: 'cau giay',
+    products: [{
+      id: 'v1',
+      quantity: 2
+    }, {
+        id: 'f1',
+      quantity: 3
+    }]
         return this._products.asObservable();
     }
 
@@ -42,7 +55,6 @@ export class ProductService {
         private db: AngularFireDatabase) {
         this.searchedItem = this.products;
         this.productList = this.getProducts();
-
     }
 
     // ===Product===

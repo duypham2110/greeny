@@ -10,11 +10,13 @@ const routes: Routes = [
   },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'registration', loadChildren: './pages/registration/registration.module#RegistrationPageModule' },
-  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },  {
+  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
+  {
     path: 'detail-bill',
     loadChildren: () => import('./pages/detail-bill/detail-bill.module').then( m => m.DetailBillPageModule)
   },
   {
+
     path: 'producer',
     loadChildren: () => import('./pages/producer/producer.module').then( m => m.ProducerPageModule)
   },

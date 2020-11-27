@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { OrderService } from 'src/app/services/order-service';
@@ -10,6 +11,10 @@ import { ProductService } from 'src/app/services/product-service';
   styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
+
+
+  productTypes;
+
   user: any;
   cart: any;
   products: any;
@@ -19,8 +24,14 @@ export class CartPage implements OnInit {
   ) { 
   }
 
-  ngOnInit() {
+  constructor(
+    public pdService: ProductService
+  ) {
+    this.productTypes = pdService.getProductTypes();
   }
+
+  ngOnInit() { }
+
 
   ionViewWillEnter(){
     this.loadProducts();
@@ -75,5 +86,4 @@ export class CartPage implements OnInit {
     this.products=null;
     this.ionViewWillEnter();
   }
-  
 }
