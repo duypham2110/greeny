@@ -8,12 +8,17 @@ import { BillPageRoutingModule } from './bill-routing.module';
 
 import { BillPage } from './bill.page';
 
+import { SuperTabsModule } from '@ionic-super-tabs/angular';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BillPageRoutingModule
+
+    BillPageRoutingModule,
+    SuperTabsModule
   ],
   declarations: [BillPage]
 })

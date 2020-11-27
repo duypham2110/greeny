@@ -1,0 +1,80 @@
+.mid {
+  text-align: center;
+}
+
+.backTop {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.logo-div {
+  display: block;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 8px;
+  img {
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
+  }
+  ion-label {
+    font-weight: 600;
+    color: #807171;
+  }
+}
+
+.title-tutorial {
+    font-weight: 600;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+.input-item {
+  --border-color: transparent!important;
+  --highlight-height: 0;
+  --background: none;
+  background: rgba(var(--ion-color-primary-rgb), 0.06);
+  border-radius: 4px;
+  height: 52px;
+
+  ion-label {
+      color: #777!important;
+      font-weight: 300;
+      font-size: 1rem!important;
+  }
+  ion-input {
+      --color: #777;
+  }
+}
+
+ion-row {
+  ion-col {
+    padding: 0;
+    ion-button {
+      text-transform: capitalize;
+      --border-radius: 7px;
+    }
+  }
+}
+
+.sign-in-row {
+  ion-col {
+    ion-button {
+      --background: rgb(253,226,45);
+      --background: linear-gradient(267deg, rgba(253,226,45,1) 0%, rgba(253,128,45,1) 100%);
+    }
+  }
+}
+
+.margin-bottom {
+  height: 10px;
+}
+

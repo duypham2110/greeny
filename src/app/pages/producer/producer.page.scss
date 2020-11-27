@@ -1,0 +1,131 @@
+* {
+  font-size: 13px;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+  
+.title-item {
+    color: #484646f2;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.mid {
+  text-align: center;
+}
+
+.backTop {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+ion-card {
+  padding: 0;
+  margin: 0;
+    
+  .advertise {
+    height: 130px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.title-row {
+   background-color: #f3ebeb;
+  height: 44px;
+  display: flex;
+  padding-left: 8px;
+  margin-top: 5px;
+
+  ion-col {
+    padding:0;
+    align-self: center;
+  }
+  ion-label {
+    color: #484646f2;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.introduce {
+  ion-item {
+    
+  ion-icon:first-child {
+    font-size: 1.65rem;
+  }
+  ion-text {
+    padding-left: 10px;
+    font-size: 13px;
+  }
+  }
+
+}
+
+.hot {
+  padding-top: 0;
+    
+.title-item {
+    color: #484646f2;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+  .products-hot-row {
+    display: flex;
+    padding: 0 4px;
+    ion-col {
+      display: block;
+      height: 160px;
+      padding: 0;
+      margin-bottom: 10px;
+      .item {
+        width: 90%;
+        margin: 0 6px;
+        height: 100%;
+        img {
+        height: 55%;
+        width: -webkit-fill-available;
+        border-radius: 6px;
+      }
+      div {
+        display: block;
+        height: 22.5%;
+        padding: 8px 8px 0;
+        .ticket-icon {
+          margin-right: 5px;
+        }
+        
+        .add-icon {
+          right: 8px;
+          bottom: 8px;
+          position: absolute;
+          display: block;
+          font-size: 1.5rem;
+        }
+        .cost-label {
+          font-weight: 600;
+        }
+      }
+      }
+     
+    }
+  }
+}
+

@@ -5,36 +5,68 @@ import { ProductService } from '../../services/product-service';
 import { Product } from '../../models/product';
 
 
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.page.html',
   styleUrls: ['./detail.page.scss'],
 })
 export class DetailPage implements OnInit {
-  loadedProduct: Product;
-  imgUrl: string;
+  user: any;
+  loadedProduct: any;
+  $key: any;
   constructor(
     //Dependency Injection
+    public route: Router,
     private authService: AuthenticationService,
     private activatedRoute: ActivatedRoute,
-    private pdService: ProductService
+    private pdService: ProductService,
+
   ) { }
 
+
   ngOnInit() {
-    this.imgUrl = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg";
-    this.activatedRoute.paramMap.subscribe(paramMap => {
-      if (!paramMap.has('id')) {
-        return;
-      }
-      const id = paramMap.get('id');
-      this.loadedProduct = this.pdService.getProduct(id);
-      console.log(this.loadedProduct);
+    JSON.parse(localStorage.getItem('user'))==null?this.user={uid:'tempCart'}:this.user=JSON.parse(localStorage.getItem('user'))
+
+    this.activatedRoute.queryParams.subscribe(paramMap => {
+      this.$key = paramMap.$key;
+      let temp = this.pdService.getProduct(this.$key);
+      temp.snapshotChanges().subscribe(item => {
+        {
+          this.loadedProduct = item.payload.toJSON();
+        }
+      })
     });
   }
-  changeImg(){
-    this.imgUrl="https://upload.wikimedia.org/wikipedia/commons/2/2f/Culinary_fruits_front_view.jpg";
+
+  openProducer() {
+    this.route.navigate(['tabs/producer']);
   }
-  changeImg1(){
-    this.imgUrl="https://i5.walmartimages.ca/images/Enlarge/686/686/6000198686686.jpg";
+
+  // Them vo localStorage
+  addToCart() {
+    let getItemLocalStorage;
+
+
+    getItemLocalStorage = JSON.parse(localStorage.getItem(this.user.uid));
+
+    if (getItemLocalStorage === null) {
+      getItemLocalStorage = {
+        products: []
+      }
+    }
+
+    let item = getItemLocalStorage.products.find(item => item.id == this.$key);
+
+    if (item) {
+      item.quantity += 1;
+    } else {
+      getItemLocalStorage.products.push({ id: this.$key, quantity: 1 });
+    }
+
+    console.log('Add to cart')
+    console.log(getItemLocalStorage);
+
+    localStorage.setItem(this.user.uid, JSON.stringify(getItemLocalStorage));
   }
 }

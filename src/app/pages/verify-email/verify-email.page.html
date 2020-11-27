@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <div>
+        <ion-buttons class="backTop" slot="start">
+          <ion-back-button icon="chevron-back-outline" defaultHref="/registration"></ion-back-button>
+        </ion-buttons>
+      </div>
+      <ion-col class="mid">
+        <ion-title class="title-header">Verify Email</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="logo-div">
+    <img src="../../../assets/images/man.png" alt="">
+  </div>
+  <ion-item lines="none">
+    <p>Vui lòng kiểm tra email của bạn, nhấp vào liên kết để xác minh tài khoản!</p>
+  </ion-item>
+
+  <ion-row class="sign-in-row">
+    <ion-col>
+      <ion-button type="submit" (click)="authService.SendVerificationEmail()" expand="block">Resend
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="row2 sign-in-row2">
+    <ion-col>
+      <ion-button color="success" type="submit" routerLink="/tabs/login" expand="block"> Back Login</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

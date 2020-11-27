@@ -1,5 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
     <ion-icon name="chevron-back-outline"></ion-icon>
     <ion-title>
       Đơn hàng của tôi
@@ -127,3 +128,278 @@
   </ion-list>
 
 </ion-content>
+=======
+    <div>
+      <ion-buttons class="backTop" slot="start">
+        <ion-back-button icon="chevron-back-outline" defaultHref="tabs/home"></ion-back-button>
+      </ion-buttons>
+    </div>
+    <ion-row>
+      <ion-col class="mid">
+        <ion-title class="title-header">Đơn hàng của tôi</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<super-tabs>
+  <super-tabs-toolbar slot="top">
+    <ion-slides [options]="sliderConfig">
+      <ion-slide *ngFor="let item of arrayItem">
+        <super-tab-button>
+          <ion-label>{{item}}</ion-label>
+        </super-tab-button>
+      </ion-slide>
+    </ion-slides>
+  </super-tabs-toolbar>
+
+  <super-tabs-container>
+    <super-tab>
+      <ion-content>
+        <div class="line"></div>
+        <ion-list class="promotion">
+          <ion-item>
+            <ion-label>Giao hàng thành công</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-row>
+              <ion-col size="4">
+                <!-- <img [src]="item.images" alt=""> -->
+                <img src="../../../assets/images/background-img-organic.jpg" alt="">
+              </ion-col>
+              <ion-col size="8">
+                <ion-row>
+                  <div>
+                    <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+                    <ion-note>Cà rốt | 2kg</ion-note>
+                  </div>
+                  <ion-label class="cost-label">90.000đ</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-note class="text-11">
+                    1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
+                  </ion-note>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-row class="btn-row">
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openDetailBill()">Chi tiết</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openCart()">Mua lại</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+        <div class="line"></div>
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        <div class="line"></div>
+        <ion-list class="promotion">
+          <ion-item>
+            <ion-label>Đang chờ thanh toán</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-row>
+              <ion-col size="4">
+                <!-- <img [src]="item.images" alt=""> -->
+                <img src="../../../assets/images/background-img-organic.jpg" alt="">
+              </ion-col>
+              <ion-col size="8">
+                <ion-row>
+                  <div>
+                    <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+                    <ion-note>Cà rốt | 2kg</ion-note>
+                  </div>
+                  <ion-label class="cost-label">90.000đ</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-note class="text-11">
+                    1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
+                  </ion-note>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-row class="btn-row">
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openDetailBill()">Chi tiết</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openCart()">Mua lại</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+        <div class="line"></div>
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        <div class="line"></div>
+        <ion-list class="promotion">
+          <ion-item>
+            <ion-label>Đang xử lý</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-row>
+              <ion-col size="4">
+                <!-- <img [src]="item.images" alt=""> -->
+                <img src="../../../assets/images/background-img-organic.jpg" alt="">
+              </ion-col>
+              <ion-col size="8">
+                <ion-row>
+                  <div>
+                    <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+                    <ion-note>Cà rốt | 2kg</ion-note>
+                  </div>
+                  <ion-label class="cost-label">90.000đ</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-note class="text-11">
+                    1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
+                  </ion-note>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-row class="btn-row">
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openDetailBill()">Chi tiết</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openCart()">Mua lại</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+        <div class="line"></div>
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        <div class="line"></div>
+        <ion-list class="promotion">
+          <ion-item>
+            <ion-label>Đang giao</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-row>
+              <ion-col size="4">
+                <!-- <img [src]="item.images" alt=""> -->
+                <img src="../../../assets/images/background-img-organic.jpg" alt="">
+              </ion-col>
+              <ion-col size="8">
+                <ion-row>
+                  <div>
+                    <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+                    <ion-note>Cà rốt | 2kg</ion-note>
+                  </div>
+                  <ion-label class="cost-label">90.000đ</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-note class="text-11">
+                    1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
+                  </ion-note>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-row class="btn-row">
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openDetailBill()">Chi tiết</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openCart()">Mua lại</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+        <div class="line"></div>
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        <div class="line"></div>
+        <ion-list class="promotion">
+          <ion-item>
+            <ion-label>Giao hàng thành công</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-row>
+              <ion-col size="4">
+                <!-- <img [src]="item.images" alt=""> -->
+                <img src="../../../assets/images/background-img-organic.jpg" alt="">
+              </ion-col>
+              <ion-col size="8">
+                <ion-row>
+                  <div>
+                    <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+                    <ion-note>Cà rốt | 2kg</ion-note>
+                  </div>
+                  <ion-label class="cost-label">90.000đ</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-note class="text-11">
+                    1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
+                  </ion-note>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-row class="btn-row">
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openDetailBill()">Chi tiết</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openCart()">Mua lại</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+        <div class="line"></div>
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        <div class="line"></div>
+        <ion-list class="promotion">
+          <ion-item>
+            <ion-label>Đã hủy</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-row>
+              <ion-col size="4">
+                <!-- <img [src]="item.images" alt=""> -->
+                <img src="../../../assets/images/background-img-organic.jpg" alt="">
+              </ion-col>
+              <ion-col size="8">
+                <ion-row>
+                  <div>
+                    <ion-icon class="ticket-icon" name="ticket-outline" color="danger"></ion-icon>
+                    <ion-note>Cà rốt | 2kg</ion-note>
+                  </div>
+                  <ion-label class="cost-label">90.000đ</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-note class="text-11">
+                    1 phần cơm 2 người gồm tôm nướng, ba chỉ, nạc, sườn non và canh cho 2 người
+                  </ion-note>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <ion-row class="btn-row">
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openDetailBill()">Chi tiết</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button expand="block" fill="outline" color="primary" (click)="openCart()">Mua lại</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+        <div class="line"></div>
+      </ion-content>
+    </super-tab>
+
+  </super-tabs-container>
+</super-tabs>
+

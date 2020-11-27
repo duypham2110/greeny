@@ -4,6 +4,7 @@ import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import * as firebase from 'firebase';
 
 @Injectable({
     providedIn: 'root'
@@ -11,6 +12,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 
 export class AuthenticationService {
     userData: any;
+    mess: string;
 
     constructor(
         public afStore: AngularFirestore,
@@ -53,6 +55,10 @@ export class AuthenticationService {
         return this.AuthLogin(new auth.GoogleAuthProvider());
     }
 
+    FacebookAuth(){
+        return this.AuthLogin(new auth.FacebookAuthProvider());
+    }
+
     // Auth providers
     AuthLogin(provider) {
         return this.ngFireAuth.signInWithPopup(provider)
@@ -85,7 +91,26 @@ export class AuthenticationService {
     SignOut() {
         return this.ngFireAuth.signOut().then(() => {
            localStorage.removeItem('user');
-            this.router.navigate(['login'])
+            this.router.navigate(['tabs/login'])
+        })
+    }
+
+    get isEmailVerified():boolean{
+        const user = JSON.parse(localStorage.getItem('user'));
+        return (user.emailVerified !== false) ? true : false;
+    }
+
+    SendVerificationEmail(){
+        return firebase.auth().currentUser.sendEmailVerification().then(()=>{
+            this.router.navigate(['verify-email']);
+        });
+    }
+
+    RecoverPassword(email){
+        return firebase.auth().sendPasswordResetEmail(email).then(()=> {
+            this.mess = 'There is a message sent to your email, please check!';
+        }).catch((error) => {
+            this.mess = error;
         })
     }
 }
