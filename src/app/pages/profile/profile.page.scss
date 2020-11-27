@@ -1,0 +1,118 @@
+* {
+  font-size: 12px;
+}
+
+.orange-color {
+  color: #e67e22;
+}
+
+.blue-sky-color {
+  color: #189EFF;
+}
+
+.blue-sky-slight-color {
+  color: #1a73e8;
+}
+
+.yellow-color {
+  color: #fbc531;
+}
+
+.red-light-color {
+  color: #ff4d4d;
+}
+
+.purple-color {
+  color: #c56cf0;
+}
+
+.green-color {
+  color: #44bd32;
+}
+
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  ion-icon:first-child {
+    font-size: 1.65rem;
+  }
+  ion-label {
+    padding-left: 10px;
+    font-size: 13px;
+  }
+}
+
+ion-nav {
+
+  ion-icon:first-child {
+    font-size: 1.65rem;
+  }
+  ion-label {
+    padding-left: 10px;
+    font-size: 13px;
+  }
+}
+
+.backTop {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.mid {
+  text-align: center;
+}
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.avatar-div {
+  height: 110px;
+  padding-top: 3%;
+  text-align: center;
+  background: url("../../../assets/images/background-avt-green.jpg");
+
+  .replace_avt_div {
+    top: 55px;
+    right: 94px;
+    display: flex;
+    position: absolute;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: #f6f6f6;
+    ion-icon {
+      font-size: 1.3rem;
+    }
+  }
+
+  img {
+    height: 70px;
+    width: 70px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 60%;
+  }
+
+  ion-label {
+    font-weight: 800;
+    font-size: 1rem;
+    margin-top: 3px;
+    display: block;
+  }
+}
+
+.logout-row {
+  background-color: #f6f6f6;
+  ion-button {
+    --background: #ffffff;
+    color: #44bd32;;
+    border: .5px solid #44bd32;;
+  }
+}

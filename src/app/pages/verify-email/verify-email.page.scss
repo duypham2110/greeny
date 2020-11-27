@@ -1,0 +1,68 @@
+
+.mid {
+  text-align: center;
+}
+
+.backTop {
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+.logo-div {
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 8px;
+    background: rgb(236,237,238);
+    background: radial-gradient(circle, rgba(236,237,238,1) 0%, rgba(242,226,233,1) 40%);
+  img {
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
+  }
+  ion-label {
+    font-weight: 600;
+    color: #807171;
+  }
+}
+
+ion-row {
+  ion-col {
+    padding: 0;
+    ion-button {
+      text-transform: capitalize;
+      --border-radius: 7px;
+      font-weight: 600;
+    }
+  }
+}
+
+.row2 {
+  margin-top: 15px;
+}
+
+.sign-in-row {
+  ion-col {
+    ion-button {
+      --background: rgb(253,193,45);
+      --background: linear-gradient(267deg, rgba(253,193,45,1) 4%, rgba(253,226,45,1) 100%);
+    }
+  }
+}
+
+.sign-in-row2 {
+  ion-col {
+    ion-button {
+      --background: rgb(29,253,175);
+      --background: linear-gradient(90deg, rgba(29,253,175,1) 0%, rgba(147,212,119,1) 100%);
+    }
+  }
+}

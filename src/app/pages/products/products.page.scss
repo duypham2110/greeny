@@ -1,0 +1,144 @@
+* {
+  font-size: 13px;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+ion-col {
+  padding: 0;
+}
+
+ion-searchbar {
+  --border-radius: 25px;
+  --icon-color:#2dd66f;
+  --placeholder-color: grey;
+}
+
+.mid {
+  text-align: center;
+}
+
+.backTop {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.title-header {
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.text-11 {
+  font-size: 11px;
+}
+
+.title-item {
+    color: #484646f2;
+    font-size: 1rem;
+    font-weight: 600;
+  
+}
+.cost-label {
+          font-weight: 600;
+          font-size: 13px;
+        }
+
+.hot {
+  padding-top: 0;
+  
+.title-item {
+    color: #484646f2;
+    font-size: 1rem;
+    font-weight: 600;
+}
+  .products-hot-row {
+    display: flex;
+    padding: 0 10px;
+    ion-col {
+      display: block;
+      height: 160px;
+      padding: 0;
+      margin-bottom: 10px;
+      .item {
+        width: 90%;
+        margin: 0 6px;
+        height: 100%;
+        img {
+        height: 55%;
+        width: -webkit-fill-available;
+        border-radius: 6px;
+      }
+      div {
+        display: block;
+        height: 22.5%;
+        padding: 8px 8px 0;
+        .ticket-icon {
+          margin-right: 5px;
+        }
+        
+        .add-icon {
+          right: 8px;
+          bottom: 8px;
+          position: absolute;
+          display: block;
+          font-size: 1.5rem;
+        }
+      }
+      }
+     
+    }
+  }
+}
+
+.line {
+  background: #edf2f6;
+  height: 8px;
+}
+
+.promotion {
+  padding-bottom: 0;
+  ion-col {
+    height: 90px;
+    img {
+      max-width: 100%;
+      border: 0;
+      margin-top: 5px;
+    }
+    ion-row {
+      height: 50%;
+      padding: 10px 0 15px 10px;
+    }
+    ion-row:first-child {
+      padding-bottom: 0;
+      div {
+        width: 70%;
+        .ticket-icon {
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+      }
+      ion-label {
+          text-align: end;
+          padding-right: 5px;
+          width: 30%;
+        }
+    }
+    ion-row:nth-child(2) {
+      padding-right: 5px;
+      padding-top: 0;
+      height: 58%;
+      --overflow: hidden;
+      ion-note {
+        overflow: hidden;
+        height: 100%;
+      }
+    }
+  }
+}
